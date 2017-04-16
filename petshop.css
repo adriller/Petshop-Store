@@ -396,9 +396,18 @@ footer{
 	left: 0;
 	height: 80px;
 	background-color: rgb(53, 53, 53);
-    text-align: center;
+  text-align: center;
 }
 
+#footercalendario{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 80px;
+  top: 145%;
+  background-color: rgb(53, 53, 53);
+  text-align: center;
+}
 
 .headFixed {
     overflow: hidden;
@@ -414,8 +423,6 @@ footer p {
     color:white;
 }
 
-
-
 .imggrid2:hover {
     opacity: 0.5;
 }
@@ -423,8 +430,6 @@ footer p {
 .page {
     text-align: center;
 }
-
-
 
 .produto:hover {
     box-shadow: 0px 0px 150px #000000;
@@ -1572,7 +1577,6 @@ div.userbar > ul.signInList > li a{
     height: 100%;
     margin: auto;
     box-sizing: border-box;
-    z-index: 10000;
 }
 
 #sectioncalendar:hover .overlaycalendar {
