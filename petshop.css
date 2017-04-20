@@ -10,6 +10,8 @@
 
 #bagbar{
     position: absolute;
+    top:-5px;
+    padding-bottom: 3px;
 	width: 100%;
 	height: 15%;
 	background-color: rgb(53, 53, 53);
@@ -53,9 +55,9 @@ p.bagright:hover{
 .userbar{
 	position: absolute;
     left:0;
-    top:4%;
+    top:1%;
 	width: 100%;
-	height: 27%;
+	height: 32%;
 	background-color: rgb(235, 235, 255);
 
 }
@@ -112,7 +114,7 @@ div.userbar > ul.signInList > li a:not(.divisor):hover{
 
 .majorbar{
 	position: relative;
-    top:62px;
+    top:55px;
 	width: 100%;
     height:120px;
 	background-image: url("img/Pets.svg");
@@ -123,24 +125,22 @@ div.userbar > ul.signInList > li a:not(.divisor):hover{
 }
 
 .logobar{
-    top:-10%;
+    position: absolute;
 	position: relative;
 	text-align: center;
 	width: 100%;
-    height: 70%;
-    z-index: 9999;
+    height: 75%;
 }
 
 .optionbar{
 	position: absolute;
-    top:76%;
+    top:83%;
     left:0;
 	width: 100%;
 }
 
 #logoimg{
     position:absolute;
-    top:9%;
 	width: 120px;
 	height: 65;
     margin-left:46%;
@@ -201,7 +201,7 @@ div.optionbar > ul > li a:hover{
 	background-color: rgb(235, 235, 255);
 }
 
-#cat{
+.cat{
 	position: absolute;
     left: 0;
     background-image: url(img/dog.jpg);
@@ -401,7 +401,7 @@ footer{
     top: 0px;
     left:0px;
     width: 100%;
-    height: 200px;
+    height: 175px;
     z-index: 1;
 }
 
@@ -528,7 +528,7 @@ footer p {
 body {
    margin:0;
    padding:0;
-   height:100%;
+   min-height:100%;
 }
 
 div {
@@ -674,6 +674,7 @@ p {
 .extrasobrenos {
     position: relative;
     height: auto;
+    top:9px;
     background-color: rgba(0, 0, 0, 0.9);
   padding: 0px 0 0px;
   text-align: center;
@@ -764,9 +765,9 @@ p {
 }
 #serv {
     position: absolute;
-    top:182px;
+    top:178px;
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 .btn2 {
@@ -913,7 +914,7 @@ image2 {
 
 #nome {
     position: absolute;
-    top:87%;
+    top:68%;
     left:44%;
 	width: 200px;
 	height: 70;
@@ -942,9 +943,8 @@ image2 {
 }
 
 .cao-image {
-    width: 100%;
-    height: auto;
-
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .cao-container {
@@ -957,7 +957,7 @@ image2 {
 .cao-menu{
     left:0;
     position: relative;
-top:182px;
+top:175px;
     height: 200px;
 
 }
@@ -989,11 +989,12 @@ top:182px;
     color: white;
 }
 
-.prodContainer {
+#prodContainer {
     position: relative;
-    left:15%;
+    left:18%;
     width: 80%;
-    height: 100%;
+    min-height: 100%;
+    text-align: center;
 }
 
 .descricao {
@@ -1014,7 +1015,7 @@ top:182px;
 
 .descr-bg {
     position: absolute;
-    top:182px;
+    top:178px;
     width:100%;
     height:180%;
     background-color: rgba(0, 0, 0, 0.2);
@@ -1062,7 +1063,7 @@ top:182px;
 .descr-item2 {
     position: absolute;
     margin:0;
-    top:33%;
+    top:38%;
     left:15%;
     width:75%;
     height: 300px;
@@ -1199,19 +1200,17 @@ top:182px;
 }
 
 #footerD {
-        position: relative;
-	width: 100%;
-    bottom: 15.5%;
-    padding-top:5px;
-	left: 0;
-	height: 80px;
+    clear: both;
+    position: absolute;
+    z-index: 10;
+    padding-top: 20px;
 	background-color: rgb(53, 53, 53);
     text-align: center;
 }
 
-.cartPage {
+#cartPage {
     position: relative;
-    top:182px;
+    top:178px;
     width: 100%;
     height:auto;
     overflow: auto;
@@ -1577,4 +1576,153 @@ div.userbar > ul.signInList > li a{
     height:80px;
     width:100%;
     background-color: white;
+}
+
+#footerSobre {
+        position: relative;
+	width: 100%;
+	left: 0;
+	height: 80px;
+    padding-top: 5px;
+    top:9px;
+	background-color: rgb(53, 53, 53);
+    text-align: center;
+}
+
+/*Rita*/
+
+/* Full-width input fields */
+.inputCad {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttonCads */
+.buttonCad {
+    background-color: #353535;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.buttonCad:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel buttonCad */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #666666;
+}
+
+.cancelbtn:hover {
+    opacity: 0.8;
+}
+
+/* Center the image and position the close buttonCad */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.containerCad {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close buttonCad (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: gray;
+    cursor: pointer;
+}
+
+.modal2 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal-content2 {
+     background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 70%; /* Could be more or less, depending on screen size */
+}
+
+
+
+#descprodContainer {
+    position: relative;
+    left:10%;
+    width: 80%;
+    height: 110%;
+    background-color: white;
+}
+
+#descr-bg {
+        position: absolute;
+    top:178px;
+    width:100%;
+    height:180%;
+    background-color: rgba(0, 0, 0, 0.2);
+    overflow:hidden;
 }

@@ -1,0 +1,326 @@
+<!--
+Obs:
+Os tipos devem ser: comida, casa, saude, outro.
+para quebrar linha ao escrever a DESCRICAO basta incluir &lt;br&gt;
+-->
+<PRODUTOS>
+<PRODUTO>
+<NOME>casinha grande</NOME>
+<DESCRICAO>deliciaa</DESCRICAO>
+<TIPO>CASA</TIPO>
+<PRECO>118</PRECO>
+<QTDE>10</QTDE>
+<QTDV>9</QTDV>
+<PARA>
+<ANIMAL>CACHORRO</ANIMAL>
+<ANIMAL>GATO</ANIMAL>
+</PARA>
+<FOTO>cao-casa1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Dia casinha</NOME>
+<DESCRICAO>racao ruim</DESCRICAO>
+<TIPO>CASA</TIPO>
+<PRECO>149,90</PRECO>
+<QTDE>10</QTDE>
+<QTDV>2</QTDV>
+<PARA>
+<ANIMAL>CACHORRO</ANIMAL>
+<ANIMAL>GATO</ANIMAL>
+</PARA>
+<FOTO>cao-casa2.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Nero casa</NOME>
+<DESCRICAO>fonte de energia pro seu cao</DESCRICAO>
+<TIPO>CASA</TIPO>
+<PRECO>134</PRECO>
+<QTDE>6</QTDE>
+<QTDV>4</QTDV>
+<PARA>
+<ANIMAL>CACHORRO</ANIMAL>
+<ANIMAL>GATO</ANIMAL>
+</PARA>
+<FOTO>cao-casa3.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Ossinho grande</NOME>
+<DESCRICAO>deliciaa</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>118</PRECO>
+<QTDE>10</QTDE>
+<QTDV>9</QTDV>
+<PARA>
+<ANIMAL>CACHORRO</ANIMAL>
+</PARA>
+<FOTO>cao-osso1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Dia casa</NOME>
+<DESCRICAO>racao ruim</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>149,90</PRECO>
+<QTDE>10</QTDE>
+<QTDV>2</QTDV>
+<PARA>
+<ANIMAL>CACHORRO</ANIMAL>
+</PARA>
+<FOTO>cao-osso2.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Nero osso</NOME>
+<DESCRICAO>fonte de energia pro seu cao</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>134</PRECO>
+<QTDE>6</QTDE>
+<QTDV>4</QTDV>
+<PARA>
+<ANIMAL>CACHORRO</ANIMAL>
+</PARA>
+<FOTO>cao-osso3.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Nero ossinho</NOME>
+<DESCRICAO>fonte de energia pro seu cao</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>134</PRECO>
+<QTDE>6</QTDE>
+<QTDV>4</QTDV>
+<PARA>
+<ANIMAL>CACHORRO</ANIMAL>
+</PARA>
+<FOTO>cao-osso4.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Boca Sorriso</NOME>
+<DESCRICAO>linda</DESCRICAO>
+<TIPO>outro</TIPO>
+<PRECO>18</PRECO>
+<QTDE>10</QTDE>
+<QTDV>9</QTDV>
+<PARA>
+<ANIMAL>cachorro</ANIMAL>
+<ANIMAL>gato</ANIMAL>
+</PARA>
+<FOTO>bocasorriso.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Royal Canin</NOME>
+<DESCRICAO>deliciaa</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>88</PRECO>
+<QTDE>10</QTDE>
+<QTDV>9</QTDV>
+<PARA>
+<ANIMAL>CACHORRO</ANIMAL>
+</PARA>
+<FOTO>racao.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Dia</NOME>
+<DESCRICAO>racao ruim</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>49,90</PRECO>
+<QTDE>10</QTDE>
+<QTDV>2</QTDV>
+<PARA>
+<ANIMAL>CACHORRO</ANIMAL>
+</PARA>
+<FOTO>cao-r6.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Nero</NOME>
+<DESCRICAO>fonte de energia pro seu cao</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>34</PRECO>
+<QTDE>6</QTDE>
+<QTDV>4</QTDV>
+<PARA>
+<ANIMAL>CACHORRO</ANIMAL>
+</PARA>
+<FOTO>cao-r5.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Pedigree</NOME>
+<DESCRICAO>Racao Cara</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>79,90</PRECO>
+<QTDE>33</QTDE>
+<QTDV>2</QTDV>
+<PARA>
+<ANIMAL>CACHORRO</ANIMAL>
+</PARA>
+<FOTO>racao2.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Heroi</NOME>
+<DESCRICAO>mais uma racao ruim</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>29,90</PRECO>
+<QTDE>33</QTDE>
+<QTDV>2</QTDV>
+<PARA>
+<ANIMAL>CACHORRO</ANIMAL>
+</PARA>
+<FOTO>cao-r4.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Bandit</NOME>
+<DESCRICAO>Racao gostosa barata</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>49,90</PRECO>
+<QTDE>33</QTDE>
+<QTDV>2</QTDV>
+<PARA>
+<ANIMAL>CACHORRO</ANIMAL>
+</PARA>
+<FOTO>cao-r3.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Mistura para Papagaio</NOME>
+<DESCRICAO>Racao gostosa barata</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>49,90</PRECO>
+<QTDE>32</QTDE>
+<QTDV>2</QTDV>
+<PARA>
+<ANIMAL>passaro</ANIMAL>
+</PARA>
+<FOTO>passaro-r1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Gaiola Rosa</NOME>
+<DESCRICAO>Gaiola linda</DESCRICAO>
+<TIPO>casa</TIPO>
+<PRECO>149,90</PRECO>
+<QTDE>10</QTDE>
+<QTDV>2</QTDV>
+<PARA>
+<ANIMAL>passaro</ANIMAL>
+</PARA>
+<FOTO>passaro-casa1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Gaiola Hamster Completa Pop Star Brancos - Rosa</NOME>
+<DESCRICAO>Gaiola linda</DESCRICAO>
+<TIPO>casa</TIPO>
+<PRECO>35,90</PRECO>
+<QTDE>10</QTDE>
+<QTDV>2</QTDV>
+<PARA>
+<ANIMAL>roedor</ANIMAL>
+</PARA>
+<FOTO>roedor-casa1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>racao nutropica</NOME>
+<DESCRICAO>Racao gostosa barata</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>49,90</PRECO>
+<QTDE>22</QTDE>
+<QTDV>20</QTDV>
+<PARA>
+<ANIMAL>roedor</ANIMAL>
+</PARA>
+<FOTO>roedor-r1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Globo de Exercício</NOME>
+<DESCRICAO>brinquedo para hamster</DESCRICAO>
+<TIPO>outro</TIPO>
+<PRECO>29,90</PRECO>
+<QTDE>12</QTDE>
+<QTDV>1</QTDV>
+<PARA>
+<ANIMAL>roedor</ANIMAL>
+</PARA>
+<FOTO>reoedor-outro1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Mini Caverna para Répteis</NOME>
+<DESCRICAO>casa para seus repteis</DESCRICAO>
+<TIPO>casa</TIPO>
+<PRECO>79,90</PRECO>
+<QTDE>10</QTDE>
+<QTDV>1</QTDV>
+<PARA>
+<ANIMAL>outro</ANIMAL>
+</PARA>
+<FOTO>outro-casa1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Gancho Ajustável</NOME>
+<DESCRICAO>pegue na cobra</DESCRICAO>
+<TIPO>outro</TIPO>
+<PRECO>19,90</PRECO>
+<QTDE>10</QTDE>
+<QTDV>50</QTDV>
+<PARA>
+<ANIMAL>outro</ANIMAL>
+</PARA>
+<FOTO>outro-outro1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Racao peixes Alcon Mini</NOME>
+<DESCRICAO>racao para peixes</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>9,90</PRECO>
+<QTDE>80</QTDE>
+<QTDV>40</QTDV>
+<PARA>
+<ANIMAL>outro</ANIMAL>
+</PARA>
+<FOTO>outro-r1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Whiskas pate</NOME>
+<DESCRICAO>racao para gato</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>9,90</PRECO>
+<QTDE>30</QTDE>
+<QTDV>20</QTDV>
+<PARA>
+<ANIMAL>GATO</ANIMAL>
+</PARA>
+<FOTO>gato-r1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Xampu xuxa</NOME>
+<DESCRICAO>Xampu com fragrancia de chocolate para seus baixinhos</DESCRICAO>
+<TIPO>saude</TIPO>
+<PRECO>19,90</PRECO>
+<QTDE>22</QTDE>
+<QTDV>20</QTDV>
+<PARA>
+<ANIMAL>GATO</ANIMAL>
+<ANIMAL>cachorro</ANIMAL>
+</PARA>
+<FOTO>gato-higiene1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Ninho forro de corda</NOME>
+<DESCRICAO>-Ninho de corda para passaros &lt;br&gt;-Feito de material cisal</DESCRICAO>
+<TIPO>casa</TIPO>
+<PRECO>3,90</PRECO>
+<QTDE>12</QTDE>
+<QTDV>20</QTDV>
+<PARA>
+<ANIMAL>passaro</ANIMAL>
+</PARA>
+<FOTO>passaro-casa2.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Coleira preta punk</NOME>
+<DESCRICAO>-Coleira super fashion &lt;br&gt;-Couro original</DESCRICAO>
+<TIPO>outro</TIPO>
+<PRECO>13,90</PRECO>
+<QTDE>10</QTDE>
+<QTDV>25</QTDV>
+<PARA>
+<ANIMAL>gato</ANIMAL>
+<ANIMAL>cachorro</ANIMAL>
+<ANIMAL>outro</ANIMAL>
+</PARA>
+<FOTO>gato-outro2.jpg</FOTO>
+</PRODUTO>
+</PRODUTOS>

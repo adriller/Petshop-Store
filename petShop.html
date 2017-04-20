@@ -16,6 +16,10 @@ Rita Raad - NºUSP: 8061452
 	<link href="https://www.fontify.me/wf/286485579c18cc33be86ce8fb95c24d1" rel="stylesheet" type="text/css"/>
 	<link href="https://www.fontify.me/wf/bc8e0f71e2449a0b4e9d8b0ad1509259" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script type="text/javascript" src="funcoes.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
 
@@ -71,140 +75,144 @@ Rita Raad - NºUSP: 8061452
 	</div>
 </nav>
 </div>
-<section id = "cat">
 
-</section>
-
-<div id = "maisvendidos">
-    <h3 class = "titulo"><span>MAIS BUSCADOS</span></h3>
+<div id="petShop">
+    <div class = "cat">
+    </div>
 
 
-<section id = "selection">
-	<img class = "arrow" src = "img/back.png" alt = "Seta apontando para antes"/>
-
-	<a href="descr-prod.html"><div class = "produto">
-		<img class = "image" src = "img/racao.jpg" alt = "Ração"/>
-		<div class="container">
-			<p class = "descricao">ROYAL CANIN<br><span class = "descricao">Ração</span><br><span class = "preco">R$ 79,80</span><p>
-		</div>
-	</div></a>
-
-	<div class = "produto">
-		<img class = "image"src = "img/casa-aquario.jpg" alt = "Ração de gato"/>
-		<div class="container">
-			<p class = "descricao">Casa Aquario<br><span class = "descricao">Casinha</span><br><span class = "preco">R$ 332,50</span><p>
-		</div>
-	</div>
-
-	<div class = "produto">
-		<img class = "image"src = "img/pote.jpg" alt = "Pote para ração"/>
-		<div class="container">
-			<p class = "descricao">PETZ<br><span class = "descricao">Vasilha para pets</span><br><span class = "preco">R$ 10,50</span><p>
-		</div>
-	</div>
-
-	<div class = "produto">
-		<img class = "image"src = "img/bigode.jpg" alt = "Sache para cães"/>
-		<div class="container">
-			<p class = "descricao">bolinha com bigode<br><span class = "descricao">Variedades</span><br><span class = "preco">R$ 1,80</span><p>
-		</div>
-	</div>
-
-	<img class = "arrow" src = "img/next.png" alt = "Seta apontando para depois"/>
-</section>
-
-<div id = "linedivider"></div>
+    <div id = "maisvendidos">
+        <h3 class = "titulo"><span>MAIS BUSCADOS</span></h3>
 
 
-<section id = "grid">
-	<div class = "gridvertical">
-		<img id = "imggrid1" src = "img/cat.jpg" alt = "Gato mostrando a patinha"/>
-        <div class="center">Ofertas</div>
-	</div>
+    <section id = "selection">
+        <img class = "arrow" src = "img/back.png" alt = "Seta apontando para antes"/>
 
-	<div class = "gridvertical">
-		<div class = "gridhorizontal">
-			<img class = "imggrid2" src = "img/bird.jpg" alt = "Três passaros"/>
-            <div class="center2">Novidades</div>
-		</div>
+        <a href="#produto" onclick="loadPageDesc('Royal Canin')"><div class = "produto">
+            <img class = "image" src = "img/racao.jpg" alt = "Ração"/>
+            <div class="container">
+                <p class = "descricao">ROYAL CANIN<br><span class = "descricao">Ração</span><br><span class = "preco">R$ 79,80</span><p>
+            </div>
+        </div></a>
 
-		<div class = "gridhorizontal">
-			<a><img class = "imggrid2" src = "img/racaocachorro.jpg" alt = "Cachorro comendo"/></a>
-            <div class="center3">Recomendados</div>
-		</div>
-	</div>
+        <a href="#produto" onclick="loadPageDesc('casinha grande')"><div class = "produto">
+            <img class = "image"src = "img/casa-aquario.jpg" alt = "Ração de gato"/>
+            <div class="container">
+                <p class = "descricao">Casa Aquario<br><span class = "descricao">Casinha</span><br><span class = "preco">R$ 332,50</span><p>
+            </div>
+        </div></a>
 
-</section>
+        <div class = "produto">
+            <img class = "image"src = "img/pote.jpg" alt = "Pote para ração"/>
+            <div class="container">
+                <p class = "descricao">PETZ<br><span class = "descricao">Vasilha para pets</span><br><span class = "preco">R$ 10,50</span><p>
+            </div>
+        </div>
 
-<section id = "selection2">
-    <h1 id="ClientsPets">Ultimos PETs cadastrados:</h1>
+        <div class = "produto">
+            <img class = "image"src = "img/bigode.jpg" alt = "Sache para cães"/>
+            <div class="container">
+                <p class = "descricao">bolinha com bigode<br><span class = "descricao">Variedades</span><br><span class = "preco">R$ 1,80</span><p>
+            </div>
+        </div>
 
-	<img class = "arrow" src = "img/back.png" alt = "Seta apontando para antes"/>
+        <img class = "arrow" src = "img/next.png" alt = "Seta apontando para depois"/>
+    </section>
 
-	<div class = "produto2">
-		<img class = "image2" src = "img/meme2.jpg" alt = "Ração"/>
-		<div class="container">
-			<p class = "descricao">Abigail<p>
-		</div>
-	</div>
-
-    	<div class = "produto2">
-		<img class = "image2" src = "img/meme10.jpg" alt = "Ração"/>
-		<div class="container">
-			<p class = "descricao">Abelardo<p>
-		</div>
-	</div>
-
-    	<div class = "produto2">
-		<img class = "image2" src = "img/meme4.jpg" alt = "Ração"/>
-		<div class="container">
-			<p class = "descricao">Onix<p>
-		</div>
-	</div>
-
-    	<div class = "produto2">
-		<img class = "image2" src = "img/meme5.jpg" alt = "Ração"/>
-		<div class="container">
-			<p class = "descricao">Floquinho<p>
-		</div>
-	</div>
-
-	<div class = "produto2">
-		<img class = "image2"src = "img/meme6.jpg" alt = "Ração de gato"/>
-		<div class="container">
-			<p class = "descricao">Bugão<p>
-		</div>
-	</div>
-
-	<div class = "produto2">
-		<img class = "image2"src = "img/meme7.jpg" alt = "Pote para ração"/>
-		<div class="container">
-			<p class = "descricao">K-9<p>
-		</div>
-	</div>
-
-	<div class = "produto2">
-		<img class = "image2"src = "img/meme8.jpg" alt = "Sache para cães"/>
-		<div class="container">
-			<p class = "descricao">Totó <p>
-		</div>
-	</div>
-
-	<img class = "arrow" src = "img/next.png" alt = "Seta apontando para depois"/>
-    <h3>Quer seu pet aqui?</h3>
-    <a id="btnMain" href="cadpet.html">Cadastre</a>
-</section>
+    <div id = "linedivider"></div>
 
 
-<footer>
-	<p>Trabalho de WEB</p>
+    <section id = "grid">
+        <div class = "gridvertical">
+            <img id = "imggrid1" src = "img/cat.jpg" alt = "Gato mostrando a patinha"/>
+            <div class="center">Ofertas</div>
+        </div>
 
-    <p>Adriller, Matheus, Rita, Allan, Hikaro</p>
+        <div class = "gridvertical">
+            <div class = "gridhorizontal">
+                <img class = "imggrid2" src = "img/bird.jpg" alt = "Três passaros"/>
+                <div class="center2">Novidades</div>
+            </div>
+
+            <div class = "gridhorizontal">
+                <a><img class = "imggrid2" src = "img/racaocachorro.jpg" alt = "Cachorro comendo"/></a>
+                <div class="center3">Recomendados</div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id = "selection2">
+        <h1 id="ClientsPets">Ultimos PETs cadastrados:</h1>
+
+        <img class = "arrow" src = "img/back.png" alt = "Seta apontando para antes"/>
+
+        <div class = "produto2">
+            <img class = "image2" src = "img/meme2.jpg" alt = "Ração"/>
+            <div class="container">
+                <p class = "descricao">Abigail<p>
+            </div>
+        </div>
+
+            <div class = "produto2">
+            <img class = "image2" src = "img/meme10.jpg" alt = "Ração"/>
+            <div class="container">
+                <p class = "descricao">Abelardo<p>
+            </div>
+        </div>
+
+            <div class = "produto2">
+            <img class = "image2" src = "img/meme4.jpg" alt = "Ração"/>
+            <div class="container">
+                <p class = "descricao">Onix<p>
+            </div>
+        </div>
+
+            <div class = "produto2">
+            <img class = "image2" src = "img/meme5.jpg" alt = "Ração"/>
+            <div class="container">
+                <p class = "descricao">Floquinho<p>
+            </div>
+        </div>
+
+        <div class = "produto2">
+            <img class = "image2"src = "img/meme6.jpg" alt = "Ração de gato"/>
+            <div class="container">
+                <p class = "descricao">Bugão<p>
+            </div>
+        </div>
+
+        <div class = "produto2">
+            <img class = "image2"src = "img/meme7.jpg" alt = "Pote para ração"/>
+            <div class="container">
+                <p class = "descricao">K-9<p>
+            </div>
+        </div>
+
+        <div class = "produto2">
+            <img class = "image2"src = "img/meme8.jpg" alt = "Sache para cães"/>
+            <div class="container">
+                <p class = "descricao">Totó <p>
+            </div>
+        </div>
+
+        <img class = "arrow" src = "img/next.png" alt = "Seta apontando para depois"/>
+        <h3>Quer seu pet aqui?</h3>
+        <a id="btnMain" href="cadpet.html">Cadastre</a>
+    </section>
 
 
-</footer>
+    <footer>
+        <p>Trabalho de WEB</p>
+
+        <p>Adriller, Matheus, Rita, Allan, Hikaro</p>
+
+
+    </footer>
+    </div>
 </div>
 </div>
+
 </body>
 
 </html>
