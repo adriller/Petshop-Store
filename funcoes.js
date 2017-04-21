@@ -1,3 +1,5 @@
+var inicio = 0;
+
 function refreshNav(){
     $(".nav a").on("click", function(){
        $(".nav").find(".active").removeClass("active");
@@ -120,4 +122,65 @@ function myFunctionP(xml, nome) {
   }
   document.getElementById("descprodContainer").innerHTML = prod;
   return prod;
+}
+
+function loadMaisVendidos(prevOrNext) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunctionVendidos(this, prevOrNext);
+    }
+  };
+  xhttp.open("GET", "maisvendidos.xml", true);
+  xhttp.send();
+}
+
+function myFunctionVendidos(xml, prevOrNext) {
+  var i, count = 4;
+  var xmlDoc = xml.responseXML;
+  var prod= '<a href="#prev" onclick=\'loadMaisVendidos("prev")\'><img class = "arrow" src = "../img/back.png" alt = "Seta apontando para antes"/></a>';
+  var x = xmlDoc.getElementsByTagName("PRODUTO");
+  if(prevOrNext.toUpperCase() == "PREV"){
+      inicio -= 8;
+  }
+  if(inicio > x.length){
+    inicio = inicio % x.length;
+  }
+  else if (inicio < 0){
+    inicio = x.length + inicio;
+  }
+  for (i = inicio, j = 0; j < count; j++, i++, inicio++) {
+    if(i >= x.length){
+      i = i % x.length;
+    }
+    else if(i < 0){
+      i = x.length - i;
+    }
+    prod += '\n<a href="#prod" onclick=\'loadPageDesc("' + x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue + '")\'>' +
+                '<div class = "produto ';
+                if(prevOrNext.toUpperCase() == "NEXT") prod+= 'w3-animate-left'; else prod+= 'w3-animate-right';
+                prod+= '  ">\n' +
+                    '<img class = "image" src = "img/' + x[i].getElementsByTagName("FOTO")[0].childNodes[0].nodeValue + '" alt = "Ração"/>\n' +
+                        '<div class="container">\n' +
+                            '<p class = "descricao">' + x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue +
+                                '<br><span class = "descricao">'  + x[i].getElementsByTagName("TIPO")[0].childNodes[0].nodeValue + '</span><br><span class = "preco">R$' + x[i].getElementsByTagName("PRECO")[0].childNodes[0].nodeValue +'</span>' +
+                            '</p>\n' +
+                        '</div>\n' +
+                '</div>' +
+            '</a>\n' ;
+
+  }
+  prod += '<a href="#next" onclick=\'loadMaisVendidos("next")\'><img class = "arrow" src = "../img/next.png" alt = "Seta apontando para antes"/></a>';
+  document.getElementById("selection").innerHTML = prod;
+}
+
+function loadMainPage(){
+    var path = "ajax/petShop.html" + " #" + "petShop";
+    $( "#success" ).load( "/" + path, function( response, status, xhr ) {
+      if ( status == "error" ) {
+        var msg = "Sorry but there was an error: ";
+        $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
+      }
+    });
+  loadMaisVendidos("next");
 }

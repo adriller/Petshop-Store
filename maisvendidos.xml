@@ -53,6 +53,68 @@ para quebrar linha ao escrever a DESCRICAO basta incluir &lt;br&gt;
 <FOTO>roedor-r1.jpg</FOTO>
 </PRODUTO>
 <PRODUTO>
+<NOME>Globo de Exercício</NOME>
+<DESCRICAO>brinquedo para hamster</DESCRICAO>
+<TIPO>outro</TIPO>
+<PRECO>29,90</PRECO>
+<QTDE>12</QTDE>
+<QTDV>1</QTDV>
+<PARA>
+<ANIMAL>roedor</ANIMAL>
+</PARA>
+<FOTO>reoedor-outro1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Mini Caverna para Répteis</NOME>
+<DESCRICAO>casa para seus repteis</DESCRICAO>
+<TIPO>casa</TIPO>
+<PRECO>79,90</PRECO>
+<QTDE>10</QTDE>
+<QTDV>1</QTDV>
+<PARA>
+<ANIMAL>outro</ANIMAL>
+</PARA>
+<FOTO>outro-casa1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Ninho forro de corda</NOME>
+<DESCRICAO>-Ninho de corda para passaros &lt;br&gt;-Feito de material cisal</DESCRICAO>
+<TIPO>casa</TIPO>
+<PRECO>3,90</PRECO>
+<QTDE>12</QTDE>
+<QTDV>20</QTDV>
+<PARA>
+<ANIMAL>passaro</ANIMAL>
+</PARA>
+<FOTO>passaro-casa2.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Coleira preta punk</NOME>
+<DESCRICAO>-Coleira super fashion &lt;br&gt;-Couro original</DESCRICAO>
+<TIPO>outro</TIPO>
+<PRECO>13,90</PRECO>
+<QTDE>10</QTDE>
+<QTDV>25</QTDV>
+<PARA>
+<ANIMAL>gato</ANIMAL>
+<ANIMAL>cachorro</ANIMAL>
+<ANIMAL>outro</ANIMAL>
+</PARA>
+<FOTO>gato-outro2.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Gancho Ajustável</NOME>
+<DESCRICAO>pegue na cobra</DESCRICAO>
+<TIPO>outro</TIPO>
+<PRECO>19,90</PRECO>
+<QTDE>10</QTDE>
+<QTDV>50</QTDV>
+<PARA>
+<ANIMAL>outro</ANIMAL>
+</PARA>
+<FOTO>outro-outro1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
 <NOME>Racao peixes Alcon Mini</NOME>
 <DESCRICAO>racao para peixes</DESCRICAO>
 <TIPO>comida</TIPO>
@@ -75,5 +137,18 @@ para quebrar linha ao escrever a DESCRICAO basta incluir &lt;br&gt;
 <ANIMAL>GATO</ANIMAL>
 </PARA>
 <FOTO>gato-r1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Xampu xuxa</NOME>
+<DESCRICAO>Xampu com fragrancia de chocolate para seus baixinhos</DESCRICAO>
+<TIPO>saude</TIPO>
+<PRECO>19,90</PRECO>
+<QTDE>22</QTDE>
+<QTDV>20</QTDV>
+<PARA>
+<ANIMAL>GATO</ANIMAL>
+<ANIMAL>cachorro</ANIMAL>
+</PARA>
+<FOTO>gato-higiene1.jpg</FOTO>
 </PRODUTO>
 </PRODUTOS>

@@ -18,6 +18,7 @@ Rita Raad - NºUSP: 8061452
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script type="text/javascript" src="funcoes.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -141,12 +142,9 @@ Rita Raad - NºUSP: 8061452
 
     <script>
     jQuery.ajaxSetup({async:false});
-    $( "#success" ).load( "/ajax/petShop.html #petShop", function( response, status, xhr ) {
-      if ( status == "error" ) {
-        var msg = "Sorry but there was an error: ";
-        $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
-      }
-    });
+
+    $( "#success" ).load = loadMainPage();
+
 
     var modal = document.getElementById('id01');
     var modal2 = document.getElementById('id02');

@@ -10,7 +10,7 @@ Rita Raad - NºUSP: 8061452
 <head>
 	<meta charset="UTF-8">
 	<title> Pet Shop </title>
-	<link rel = "stylesheet" type="text/css" href="../petshop.css"/>
+
 	<link href="https://www.fontify.me/wf/693cf7e024424b9af926089e4e84c6b4" rel="stylesheet" type="text/css"/>
 	<link href="https://www.fontify.me/wf/3b085f452637bd2f779b6cc2db4972cb" rel="stylesheet" type="text/css"/>
 	<link href="https://www.fontify.me/wf/286485579c18cc33be86ce8fb95c24d1" rel="stylesheet" type="text/css"/>
@@ -20,7 +20,7 @@ Rita Raad - NºUSP: 8061452
 	<script type="text/javascript" src="funcoes.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+    <link rel = "stylesheet" type="text/css" href="../petshop.css"/>
 </head>
 
 <body>
@@ -86,37 +86,36 @@ Rita Raad - NºUSP: 8061452
 
 
     <section id = "selection">
-        <img class = "arrow" src = "../img/back.png" alt = "Seta apontando para antes"/>
-
-        <a href="#produto" onclick="loadPageDesc('Royal Canin')"><div class = "produto">
+    <a href="#prev" onclick='loadMaisVendidos("prev")'><img class = "arrow" src = "../img/back.png" alt = "Seta apontando para antes"/></a>
+        <a href="#produto" onclick="loadPageDesc('Royal Canin')"><div class = "produto w3-animate-right">
             <img class = "image" src = "../img/racao.jpg" alt = "Ração"/>
             <div class="container">
                 <p class = "descricao">ROYAL CANIN<br><span class = "descricao">Ração</span><br><span class = "preco">R$ 79,80</span><p>
             </div>
         </div></a>
 
-        <a href="#produto" onclick="loadPageDesc('casinha grande')"><div class = "produto">
+        <a href="#produto" onclick="loadPageDesc('casinha grande')"><div class = "produto w3-animate-right">
             <img class = "image"src = "../img/casa-aquario.jpg" alt = "Ração de gato"/>
             <div class="container">
                 <p class = "descricao">Casa Aquario<br><span class = "descricao">Casinha</span><br><span class = "preco">R$ 332,50</span><p>
             </div>
         </div></a>
 
-        <div class = "produto">
+        <div class = "produto w3-animate-right">
             <img class = "image"src = "../img/pote.jpg" alt = "Pote para ração"/>
             <div class="container">
                 <p class = "descricao">PETZ<br><span class = "descricao">Vasilha para pets</span><br><span class = "preco">R$ 10,50</span><p>
             </div>
         </div>
 
-        <div class = "produto">
+        <div class = "produto w3-animate-right">
             <img class = "image"src = "../img/bigode.jpg" alt = "Sache para cães"/>
             <div class="container">
                 <p class = "descricao">bolinha com bigode<br><span class = "descricao">Variedades</span><br><span class = "preco">R$ 1,80</span><p>
             </div>
         </div>
+    <a href="#next" onclick='loadMaisVendidos("next")'><img class = "arrow" src = "../img/next.png" alt = "Seta apontando para antes"/></a>
 
-        <img class = "arrow" src = "../img/next.png" alt = "Seta apontando para depois"/>
     </section>
 
     <div id = "linedivider"></div>
@@ -124,19 +123,19 @@ Rita Raad - NºUSP: 8061452
 
     <section id = "grid">
         <div class = "gridvertical">
-            <img id = "imggrid1" src = "../img/cat.jpg" alt = "Gato mostrando a patinha"/>
-            <div class="center">Ofertas</div>
+            <a class="destaques"><img id = "imggrid1" src = "../img/cat.jpg" alt = "Gato mostrando a patinha"/>
+              <div class="center">Ofertas</div></a>
         </div>
 
         <div class = "gridvertical">
             <div class = "gridhorizontal">
-                <img class = "imggrid2" src = "../img/bird.jpg" alt = "Três passaros"/>
-                <div class="center2">Novidades</div>
+                <a class="destaques"><img class = "imggrid2" src = "../img/bird.jpg" alt = "Três passaros"/>
+                  <div class="center2">Novidades</div></a>
             </div>
 
             <div class = "gridhorizontal">
-                <a><img class = "imggrid2" src = "../img/racaocachorro.jpg" alt = "Cachorro comendo"/></a>
-                <div class="center3">Recomendados</div>
+                <a class="destaques"><img class = "imggrid2" src = "../img/racaocachorro.jpg" alt = "Cachorro comendo"/>
+                <div class="center3">Recomendados</div></a>
             </div>
         </div>
 
@@ -145,7 +144,7 @@ Rita Raad - NºUSP: 8061452
     <section id = "selection2">
         <h1 id="ClientsPets">Ultimos PETs cadastrados:</h1>
 
-        <img class = "arrow" src = "../img/back.png" alt = "Seta apontando para antes"/>
+        <img class = "arrow2" src = "../img/back.png" alt = "Seta apontando para antes"/>
 
         <div class = "produto2">
             <img class = "image2" src = "../img/meme2.jpg" alt = "Ração"/>
@@ -196,9 +195,11 @@ Rita Raad - NºUSP: 8061452
             </div>
         </div>
 
-        <img class = "arrow" src = "../img/next.png" alt = "Seta apontando para depois"/>
-        <h3>Quer seu pet aqui?</h3>
-        <a id="btnMain" href="cadpet.html">Cadastre</a>
+        <img class = "arrow2" src = "../img/next.png" alt = "Seta apontando para depois"/>
+        <div class="container-PET">
+          <h3>Quer seu pet aqui?</h3>
+          <a id="btnMain" href="cadpet.html">Cadastre</a>
+        </div>
     </section>
 
 
