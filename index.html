@@ -24,16 +24,16 @@ Rita Raad - NºUSP: 8061452
     <div class="headFixed">
         <header id = "bagbar">
             <p id = "bagleft"> <span class= "tw">FRETE GRÁTIS</span> NAS COMPRAS ACIMA DE R$ 300 <span class="tw">|</span> PARCELE EM ATÉ <span class="tw">6X SEM JUROS </span></p>
-            <a href="carrinho.html" onclick="loadPage('carrinho.html', 'cartPage')"><p class = "bagright">SACOLA (0)</p>
+            <a href="#carrinho" onclick="loadPage('ajax/carrinho.html', 'cartPage')"><p class = "bagright">SACOLA (0)</p>
             <img id = "bagimg" src = "img/sacola.png" alt = "imagem da sacola"/></a>
         </header>
 
         <nav>
          <div class = "userbar">
             <ul class = "menuList">
-                <li><a href="#calendario" onclick="loadPage('calendario.html', 'calendarioPage')">AGENDA</a></li>
-                <li><a href="#servico" onclick="loadPage('servicos.html', 'serv')"><span>SERVIÇOS</span></a></li>
-                <li><a class="refLoja" href="#loja" onclick="loadPage('petShop.html', 'petShop')"><span>LOJA</span></a></li>
+                <li><a href="#calendario" onclick="loadPage('ajax/calendario.html', 'calendarioPage')">AGENDA</a></li>
+                <li><a href="#servico" onclick="loadPage('ajax/servicos.html', 'serv')"><span>SERVIÇOS</span></a></li>
+                <li><a class="refLoja" href="#loja" onclick="loadPage('ajax/petShop.html', 'petShop')"><span>LOJA</span></a></li>
             </ul>
 
             <ul class = "signInList">
@@ -49,9 +49,9 @@ Rita Raad - NºUSP: 8061452
 
         <div class = "majorbar">
             <div class = "logobar">
-                <a href="#loja" onclick="loadPage('petShop.html', 'petShop')"><img id = "logoimg" src = "img/aa2.png" alt = "logo"/></a>
+                <a href="#loja" onclick="loadPage('ajax/petShop.html', 'petShop')"><img id = "logoimg" src = "img/aa2.png" alt = "logo"/></a>
 
-                <a href="#loja" onclick="loadPage('petShop.html', 'petShop')"><img id = "nome" src = "img/logo.png" alt = "logo"/></a>
+                <a href="#loja" onclick="loadPage('ajax/petShop.html', 'petShop')"><img id = "nome" src = "img/logo.png" alt = "logo"/></a>
 
                 <form id = "formbusca">
                     <input type="text" id="busca" name="busca">
@@ -63,21 +63,20 @@ Rita Raad - NºUSP: 8061452
 
             <div class = "optionbar">
                 <ul>
-                    <li><a href="#Cachorro" onclick="loadProdPage('loja-cao.html', 'loja-cao', 'COMIDA', 'CACHORRO' )">CACHORROS</a></li>
-                    <li><a href="#Gato" onclick="loadProdPage('loja-gato.html', 'loja-gato', 'COMIDA', 'GATO' )">GATOS</a></li>
-                    <li><a href="#Passaro" onclick="loadProdPage('loja-passaro.html', 'loja-passaro', 'COMIDA', 'PASSARO' )">PÁSSAROS</a></li>
-                    <li><a href="#Roedores" onclick="loadProdPage('loja-roedor.html', 'loja-roedor', 'COMIDA', 'ROEDOR' )">ROEDORES</a></li>
-                    <li><a href="#Outros" onclick="loadProdPage('loja-outro.html', 'loja-outro', 'COMIDA', 'OUTRO' )">OUTROS</a></li>
+                    <li><a href="#Cachorro" onclick="loadProdPage('ajax/loja-cao.html', 'loja-cao', 'COMIDA', 'CACHORRO' )">CACHORROS</a></li>
+                    <li><a href="#Gato" onclick="loadProdPage('ajax/loja-gato.html', 'loja-gato', 'COMIDA', 'GATO' )">GATOS</a></li>
+                    <li><a href="#Passaro" onclick="loadProdPage('ajax/loja-passaro.html', 'loja-passaro', 'COMIDA', 'PASSARO' )">PÁSSAROS</a></li>
+                    <li><a href="#Roedores" onclick="loadProdPage('ajax/loja-roedor.html', 'loja-roedor', 'COMIDA', 'ROEDOR' )">ROEDORES</a></li>
+                    <li><a href="#Outros" onclick="loadProdPage('ajax/loja-outro.html', 'loja-outro', 'COMIDA', 'OUTRO' )">OUTROS</a></li>
                 </ul>
 
             </div>
         </nav>
     </div>
     <div id="success"></div>
-    <b>Error Response:</b>
     <div id="error"></div>
 
-    /*form cadastro*/
+    <!--/*form cadastro*/-->
     <div id="id01" class="modal">
 
       <form class="modal-content animate" action="/action_page.php">
@@ -115,7 +114,7 @@ Rita Raad - NºUSP: 8061452
       </form>
     </div>
 
-    /*form login*/
+    <!--/*form login*/-->
     <div id="id02" class="modal2">
       <form class="modal-content2 animate" action="/action_page.php">
         <div class="imgcontainer">
@@ -142,7 +141,7 @@ Rita Raad - NºUSP: 8061452
 
     <script>
     jQuery.ajaxSetup({async:false});
-    $( "#success" ).load( "/petShop.html #petShop", function( response, status, xhr ) {
+    $( "#success" ).load( "/ajax/petShop.html #petShop", function( response, status, xhr ) {
       if ( status == "error" ) {
         var msg = "Sorry but there was an error: ";
         $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );

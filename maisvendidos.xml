@@ -1,0 +1,79 @@
+<!--
+Obs:
+Os tipos devem ser: comida, casa, saude, outro.
+para quebrar linha ao escrever a DESCRICAO basta incluir &lt;br&gt;
+-->
+<PRODUTOS>
+<PRODUTO>
+<NOME>Nero osso</NOME>
+<DESCRICAO>fonte de energia pro seu cao</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>134</PRECO>
+<QTDE>6</QTDE>
+<QTDV>4</QTDV>
+<PARA>
+<ANIMAL>CACHORRO</ANIMAL>
+</PARA>
+<FOTO>cao-osso3.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Nero ossinho</NOME>
+<DESCRICAO>fonte de energia pro seu cao</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>134</PRECO>
+<QTDE>6</QTDE>
+<QTDV>4</QTDV>
+<PARA>
+<ANIMAL>CACHORRO</ANIMAL>
+</PARA>
+<FOTO>cao-osso4.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Gaiola Hamster Completa Pop Star Brancos - Rosa</NOME>
+<DESCRICAO>Gaiola linda</DESCRICAO>
+<TIPO>casa</TIPO>
+<PRECO>35,90</PRECO>
+<QTDE>10</QTDE>
+<QTDV>2</QTDV>
+<PARA>
+<ANIMAL>roedor</ANIMAL>
+</PARA>
+<FOTO>roedor-casa1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>racao nutropica</NOME>
+<DESCRICAO>Racao gostosa barata</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>49,90</PRECO>
+<QTDE>22</QTDE>
+<QTDV>20</QTDV>
+<PARA>
+<ANIMAL>roedor</ANIMAL>
+</PARA>
+<FOTO>roedor-r1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Racao peixes Alcon Mini</NOME>
+<DESCRICAO>racao para peixes</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>9,90</PRECO>
+<QTDE>80</QTDE>
+<QTDV>40</QTDV>
+<PARA>
+<ANIMAL>outro</ANIMAL>
+</PARA>
+<FOTO>outro-r1.jpg</FOTO>
+</PRODUTO>
+<PRODUTO>
+<NOME>Whiskas pate</NOME>
+<DESCRICAO>racao para gato</DESCRICAO>
+<TIPO>comida</TIPO>
+<PRECO>9,90</PRECO>
+<QTDE>30</QTDE>
+<QTDV>20</QTDV>
+<PARA>
+<ANIMAL>GATO</ANIMAL>
+</PARA>
+<FOTO>gato-r1.jpg</FOTO>
+</PRODUTO>
+</PRODUTOS>
