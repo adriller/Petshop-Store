@@ -10,21 +10,19 @@ Rita Raad - NºUSP: 8061452
 <head>
 	<meta charset="UTF-8">
 	<title> Pet Shop </title>
-	<link rel = "stylesheet" type="text/css" href="petshop.css"/>
+    <link rel = "stylesheet" type="text/css" href="petshop.css"/>
 	<link href="https://www.fontify.me/wf/693cf7e024424b9af926089e4e84c6b4" rel="stylesheet" type="text/css"/>
 	<link href="https://www.fontify.me/wf/3b085f452637bd2f779b6cc2db4972cb" rel="stylesheet" type="text/css"/>
 	<link href="https://www.fontify.me/wf/286485579c18cc33be86ce8fb95c24d1" rel="stylesheet" type="text/css"/>
 	<link href="https://www.fontify.me/wf/bc8e0f71e2449a0b4e9d8b0ad1509259" rel="stylesheet" type="text/css"/>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 </head>
 
 <body>
-
 <div class="headFixed">
 <header id = "bagbar">
-	<p id = "bagleft"> <span class= "tw">FRETE GRÁTIS</span> NAS COMPRAS ACIMA DE R$ 300 <span class="tw">|</span> PARCELE EM ATÉ <span class="tw">6X SEM JUROS |</span></p>
+	<p id = "bagleft"> <span class= "tw">FRETE GRÁTIS</span> NAS COMPRAS ACIMA DE R$ 300 <span class="tw">|</span> PARCELE EM ATÉ <span class="tw">6X SEM JUROS </span></p>
 	<a href="carrinho.html"><p class = "bagright">SACOLA (0)</p>
 	<img id = "bagimg" src = "img/sacola.png" alt = "imagem da sacola"/></a>
 </header>
@@ -32,7 +30,7 @@ Rita Raad - NºUSP: 8061452
 <nav>
  <div class = "userbar">
 	<ul class = "menuList">
-		<li><a href="#Agenda">AGENDA</a></li>
+		<li><a href="calendario.html">AGENDA</a></li>
 		<li><a href="servicos.html"><span>SERVIÇOS</span></a></li>
 		<li><a class="refLoja" href="petShop.html"><span>LOJA</span></a></li>
 	</ul>
@@ -73,44 +71,26 @@ Rita Raad - NºUSP: 8061452
 </nav>
 </div>
 
-<div id="serv">
-    <div class="mainsobrenos">
-      <div class="container">
-        <h1>O Petshop</h1>
-          <p>A loja nasceu em 2014, com o intuito de ser uma alternativa mais barata para os donos de animalzinhos. Conseguimos a atenção do publico alvo e em 2 anos ganhamos o premio de petshop mais bem avaliado de 2016.</p>
-        <h1>O Futuro</h1>
-          <p>Para o ano de 2017 queremos aumentar o numero de lojas e fazer mais donos felizes com preços baixo, alem de dar muito amor e carinho para esses novos pets.</p>
-      </div>
-    </div>
-    
-    <div class="extrasobrenos">
-      <div class="container">
-        <div class="col">
-          <h2>Mídia</h2>
-        </div>
-        <div class="col">
-          <h2>Eventos</h2>
-        </div>
-        <div class="col">
-          <h2>Avaliações</h2>
-        </div>
-        <div class="col">
-          <img class = "image" src = "img/redessociais.png" alt = "Redes Sociais"/>
-        </div>
-        <div class="clearfix"></div>
-        
-      </div>
+<div id="calendarioPage">
 
+    <div id = "titlecalendar">
+        <p><span class = "titulo">AGENDE UM SERVIÇO</span><br><span class = "subtitulo">Datas disponíveis sem sombreamento</span></p>
     </div>
 
-    <footer id="footerSobre">
-        <p>Trabalho de WEB</p>
+    <section id = "sectioncalendar">
+        <img id = "calendarioimg" src = "img/calendario.png" alt = "Calendário"/>
 
-        <p>Adriller, Matheus, Rita, Allan, Hikaro</p>
+        <section class = "overlaycalendar">
+            <img id = "agendaimg" src = "img/agenda.png" alt = "Agenda"/>
+        </section>
+    </section>
 
+    <footer>
 
     </footer>
+
 </div>
+
 </body>
 
 </html>

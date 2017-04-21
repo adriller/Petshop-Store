@@ -10,19 +10,64 @@ Rita Raad - NºUSP: 8061452
 <head>
 	<meta charset="UTF-8">
 	<title> Pet Shop </title>
-    <link rel = "stylesheet" type="text/css" href="petshop.css"/>
+	<link rel = "stylesheet" type="text/css" href="petshop.css"/>
 	<link href="https://www.fontify.me/wf/693cf7e024424b9af926089e4e84c6b4" rel="stylesheet" type="text/css"/>
 	<link href="https://www.fontify.me/wf/3b085f452637bd2f779b6cc2db4972cb" rel="stylesheet" type="text/css"/>
 	<link href="https://www.fontify.me/wf/286485579c18cc33be86ce8fb95c24d1" rel="stylesheet" type="text/css"/>
 	<link href="https://www.fontify.me/wf/bc8e0f71e2449a0b4e9d8b0ad1509259" rel="stylesheet" type="text/css"/>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 </head>
+<style>
 
+.w3-card-2{
+box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+}
+
+.w3-panel{
+padding:0.05em 20px
+}
+.w3-panel{
+margin-right:100px;
+margin-left:100px
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #353535;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.container {
+    padding: 16px;
+}
+
+</style>
 <body>
+
 <div class="headFixed">
 <header id = "bagbar">
-	<p id = "bagleft"> <span class= "tw">FRETE GRÁTIS</span> NAS COMPRAS ACIMA DE R$ 300 <span class="tw">|</span> PARCELE EM ATÉ <span class="tw">6X SEM JUROS </span></p>
+	<p id = "bagleft"> <span class= "tw">FRETE GRÁTIS</span> NAS COMPRAS ACIMA DE R$ 300 <span class="tw">|</span> PARCELE EM ATÉ <span class="tw">6X SEM JUROS |</span></p>
 	<a href="carrinho.html"><p class = "bagright">SACOLA (0)</p>
 	<img id = "bagimg" src = "img/sacola.png" alt = "imagem da sacola"/></a>
 </header>
@@ -30,7 +75,7 @@ Rita Raad - NºUSP: 8061452
 <nav>
  <div class = "userbar">
 	<ul class = "menuList">
-		<li><a href="calendario.html">AGENDA</a></li>
+		<li><a href="#Agenda">AGENDA</a></li>
 		<li><a href="servicos.html"><span>SERVIÇOS</span></a></li>
 		<li><a class="refLoja" href="petShop.html"><span>LOJA</span></a></li>
 	</ul>
@@ -71,26 +116,53 @@ Rita Raad - NºUSP: 8061452
 </nav>
 </div>
 
-<div id="calendarioPage">
-    
-    <div id = "titlecalendar">
-        <p><span class = "titulo">AGENDE UM SERVIÇO</span><br><span class = "subtitulo">Datas disponíveis sem sombreamento</span></p>
+<div id="serv">
+
+      <p>
+          cadastro de serviços:
+          <p>
+        <div class="w3-panel w3-card-2"><p>
+
+     <div class="container">
+      <label><b>Nome</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>ID</b></label>
+      <input type="text" placeholder="Enter ID" name="uname" required>
+
+      <label><b>Descrição</b></label>
+      <p>
+      <textarea name="message" rows="10" cols="30">
+           aqui.
+        </textarea>
+      </p>
+
+      <label><b>Preço</b></label>
+      <input type="number" placeholder="Enter preco" name="uname" required>
+
+
+	  <label><b>Selecione a foto</b></label>
+		<input type="file" name="user-foto" /><br />
+		<input type="submit" value="Upload" />
+        </p>
+        </p>
+
+
+      <button type="submit">Cadastro</button>
+    </div>
+     <p>
+
     </div>
 
-    <section id = "sectioncalendar">
-        <img id = "calendarioimg" src = "img/calendario.png" alt = "Calendário"/>
 
-        <section class = "overlaycalendar">
-            <img id = "agendaimg" src = "img/agenda.png" alt = "Agenda"/>
-        </section>
-    </section>
+    <footer id="footerS">
+        <p>Trabalho de WEB</p>
 
-    <footer>
+        <p>Adriller, Matheus, Rita, Allan, Hikaro</p>
+
 
     </footer>
-
 </div>
-
 </body>
 
 </html>

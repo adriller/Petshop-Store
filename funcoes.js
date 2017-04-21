@@ -73,7 +73,7 @@ function loadPage(name, idName){
 }
 
 function loadPageDesc(nomeProduto){
-    var path = "descr-prod.html" + " #" + "descr-bg";
+    var path = "ajax/descr-prod.html" + " #" + "descr-bg";
     $( "#success" ).load( "/" + path, function( response, status, xhr ) {
       if ( status == "error" ) {
         var msg = "Sorry but there was an error: ";
