@@ -39,12 +39,11 @@ Rita Raad - NºUSP: 8061452
             <li><a class="refLoja" href="petShop.html"><span>LOJA</span></a></li>
         </ul>
 
-        <ul class = "signInList">
-            <li><a href="cadastro.html">CADASTRE-SE</a></li>
-            <li><a class="divisor">|</a></li>
-            <li><a href="login.html">MEUS DADOS</a></li>
-            <li><a class="divisor">|</a></li>
-            <li><a href="sobrenos.html">SOBRE NÓS</a></li>
+        <ul class="navLoja" onclick="refreshNav()">
+          <li><a class="active" href="#a"  onclick="loadDoc('COMIDA', 'CACHORRO')">Alimentos</a></li>
+          <li><a href="#b" onclick="loadDoc('CASA', 'CACHORRO')">casinha</a></li>
+          <li><a href="#c" onclick="loadDoc('SAUDE', 'CACHORRO')">Saude e higiene</a></li>
+          <li><a href="#d" onclick="loadDoc('OUTRO', 'CACHORRO')">outros</a></li>
         </ul>
 
     </div>
@@ -76,15 +75,13 @@ Rita Raad - NºUSP: 8061452
     </div>
 
     <div id="loja-passaro" >
-        <div class="cao-menu" onclick="refreshNav()">
-        <ul class="nav">
-          <li><a class="active" href="#a"  onclick="loadDoc('COMIDA', 'PASSARO')">alimentos</a></li>
-          <li><a href="#b" onclick="loadDoc('CASA', 'PASSARO')">casinha</a></li>
-          <li><a href="#c" onclick="loadDoc('SAUDE', 'PASSARO')">SAUDE E HIGIENE</a></li>
-          <li><a href="#d" onclick="loadDoc('OUTRO', 'PASSARO')">outros</a></li>
+        <ul class="navLoja" onclick="refreshNav()">
+          <li><a class="active" href="#a"  onclick="loadDoc('COMIDA', 'CACHORRO')">Alimentos</a></li>
+          <li><a href="#b" onclick="loadDoc('CASA', 'CACHORRO')">casinha</a></li>
+          <li><a href="#c" onclick="loadDoc('SAUDE', 'CACHORRO')">Saude e higiene</a></li>
+          <li><a href="#d" onclick="loadDoc('OUTRO', 'CACHORRO')">outros</a></li>
         </ul>
 
-        </div>
 
         <div id="prodContainer">
             <script>window.onload = loadDoc('COMIDA', 'PASSARO');</script>

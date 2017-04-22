@@ -1,8 +1,8 @@
 var inicio = 0;
 
 function refreshNav(){
-    $(".nav a").on("click", function(){
-       $(".nav").find(".active").removeClass("active");
+    $(".navLoja a").on("click", function(){
+       $(".navLoja").find(".active").removeClass("active");
        $(this).addClass("active");
     });
 }
