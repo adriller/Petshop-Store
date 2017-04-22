@@ -943,10 +943,8 @@ image2 {
 }
 
 .cao-menu{
-    left:0;
     position: relative;
-top:175px;
-    height: 200px;
+    height: 100%;
 
 }
 .cao-menu ul {
@@ -1793,4 +1791,32 @@ span.psw {
 
 .menu3 a:hover {
   background-color: rgb(235, 235, 255);
+}
+
+#loja-cao {
+  height:100%;
+  margin-top:10%;
+}
+
+.navMenu {
+
+}
+
+.navLoja {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: lightgray;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.navStore {
+      list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  text-align: center;
 }
