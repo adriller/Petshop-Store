@@ -10,6 +10,7 @@ Rita Raad - NºUSP: 8061452
 <head>
 	<meta charset="UTF-8">
 	<title> Pet Shop </title>
+  <link href="https://fonts.googleapis.com/css?family=Asar|Merriweather" rel="stylesheet">
 	<link rel = "stylesheet" type="text/css" href="petshop.css"/>
 	<link href="https://www.fontify.me/wf/693cf7e024424b9af926089e4e84c6b4" rel="stylesheet" type="text/css"/>
 	<link href="https://www.fontify.me/wf/3b085f452637bd2f779b6cc2db4972cb" rel="stylesheet" type="text/css"/>
@@ -18,7 +19,9 @@ Rita Raad - NºUSP: 8061452
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script type="text/javascript" src="funcoes.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Asar" rel="stylesheet">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -32,17 +35,15 @@ Rita Raad - NºUSP: 8061452
         <nav>
          <div class = "userbar">
             <ul class = "menuList">
-                <li><a href="#calendario" onclick="loadPage('ajax/calendario.html', 'calendarioPage')">AGENDA</a></li>
-                <li><a href="#servico" onclick="loadPage('ajax/servicos.html', 'serv')"><span>SERVIÇOS</span></a></li>
-                <li><a class="refLoja" href="#loja" onclick="loadPage('ajax/petShop.html', 'petShop')"><span>LOJA</span></a></li>
-            </ul>
-
-            <ul class = "signInList">
-                <li><a href="#cadastro" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">CADASTRE-SE</a></li>
-                <li><a class="divisor">|</a></li>
-                <li><a href="#login" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">MEUS DADOS</a></li>
-                <li><a class="divisor">|</a></li>
-                <li><a href="#sobre" onclick="loadPage('sobrenos.html', 'serv')">SOBRE NÓS</a></li>
+                <li class="menu1"><a href="#calendario" onclick="loadPage('ajax/calendario.html', 'calendarioPage')">AGENDA</a></li>
+                <li class="menu1"><a href="#servico" onclick="loadPage('ajax/servicos.html', 'serv')"><span>SERVIÇOS</span></a></li>
+                <li class="menu1"><a href="#loja" onclick="loadPage('ajax/petShop.html', 'petShop')"><span>LOJA</span></a></li>
+                <li id="separator">   </li>
+                <li class="menu2"><a href="#cadastro" onclick="document.getElementById('id01').style.display='block'">CADASTRE-SE </a></li>
+                <li class="menu2"></li>
+                <li class="menu2"><a href="#login" onclick="document.getElementById('id02').style.display='block'" >MEUS DADOS</a></li>
+                <li class="menu2"></li>
+                <li class="menu2"><a href="#sobre" onclick="loadPage('sobrenos.html', 'serv')">SOBRE NÓS</a></li>
             </ul>
 
         </div>
@@ -64,11 +65,12 @@ Rita Raad - NºUSP: 8061452
 
             <div class = "optionbar">
                 <ul>
-                    <li><a href="#Cachorro" onclick="loadProdPage('ajax/loja-cao.html', 'loja-cao', 'COMIDA', 'CACHORRO' )">CACHORROS</a></li>
-                    <li><a href="#Gato" onclick="loadProdPage('ajax/loja-gato.html', 'loja-gato', 'COMIDA', 'GATO' )">GATOS</a></li>
-                    <li><a href="#Passaro" onclick="loadProdPage('ajax/loja-passaro.html', 'loja-passaro', 'COMIDA', 'PASSARO' )">PÁSSAROS</a></li>
-                    <li><a href="#Roedores" onclick="loadProdPage('ajax/loja-roedor.html', 'loja-roedor', 'COMIDA', 'ROEDOR' )">ROEDORES</a></li>
-                    <li><a href="#Outros" onclick="loadProdPage('ajax/loja-outro.html', 'loja-outro', 'COMIDA', 'OUTRO' )">OUTROS</a></li>
+                  <li id="separatorMenu3"> .</li>
+                  <li class="menu3"><a href="#Cachorro" onclick="loadProdPage('ajax/loja-cao.html', 'loja-cao', 'COMIDA', 'CACHORRO' )">CACHORROS</a></li>
+                    <li class="menu3"><a href="#Gato" onclick="loadProdPage('ajax/loja-gato.html', 'loja-gato', 'COMIDA', 'GATO' )">GATOS</a></li>
+                    <li class="menu3"><a href="#Passaro" onclick="loadProdPage('ajax/loja-passaro.html', 'loja-passaro', 'COMIDA', 'PASSARO' )">PÁSSAROS</a></li>
+                    <li class="menu3"><a href="#Roedores" onclick="loadProdPage('ajax/loja-roedor.html', 'loja-roedor', 'COMIDA', 'ROEDOR' )">ROEDORES</a></li>
+                    <li class="menu3"><a href="#Outros" onclick="loadProdPage('ajax/loja-outro.html', 'loja-outro', 'COMIDA', 'OUTRO' )">OUTROS</a></li>
                 </ul>
 
             </div>

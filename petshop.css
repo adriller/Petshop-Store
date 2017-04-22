@@ -9,9 +9,8 @@
 }
 
 #bagbar{
-    position: absolute;
-    top:-5px;
-    padding-bottom: 3px;
+    position: relative;
+    padding-bottom: 1.6%;
 	width: 100%;
 	height: 15%;
 	background-color: rgb(53, 53, 53);
@@ -20,23 +19,24 @@
 	font-size: 12px;
     margin-bottom: 0;
     z-index: 1;
+  overflow: hidden;
 }
 
 #bagleft{
 	display: inline-block;
     float:left;
 	padding-left: 30px;
-	line-height: 100%;
+	line-height: 5px;
     word-spacing: 0.1em;
 }
 
 .bagright{
 	display: inline-block;
 	float: right;
-	padding-right: 30px;
-	line-height: 100%;
+  color: rgba(255, 255, 255, 0.85);
+  margin-right: 1%;
+	line-height: 60%;
     text-decoration: none;
-    color:white;
 }
 
 #bagimg{
@@ -53,12 +53,13 @@ p.bagright:hover{
 }
 
 .userbar{
-	position: absolute;
+	position: relative;
     left:0;
-    top:12%;
+    margin-top:0%;
 	width: 100%;
 	height: 20%;
 	background-color: rgb(235, 235, 255);
+  overflow: hidden;
 
 }
 
@@ -68,17 +69,13 @@ div.userbar > ul{
 }
 
 ul.menuList > li{
-	float: left;
-    margin:0;
-    height: 40px;
 }
 
 ul.signInList{
-  margin-left: 72%;
   height: 100%;
-  position: absolute;
+  position: relative;
   top:-45%;
-  width:50%;
+  width:100%;
   display: block;
 }
 
@@ -98,19 +95,9 @@ div.userbar > ul > li a:not(.divisor){
 	font-family: font83056;
 }
 
-div.userbar > ul > li a.divisor{
-	display: inline-block;
-    position: absolute;
-	padding-top: 1.5%;
-}
 
-div.userbar > ul.menuList > li a:hover{
-	/*background-image: url("Pets.svg");
-	background-size: 130px 130px;
-	background-repeat: no-repeat;
-	background-position: 0% 150%;*/
-	background-color: white;
-}
+
+
 
 div.userbar > ul.signInList > li a:not(.divisor):hover{
 	text-decoration: underline;
@@ -118,18 +105,17 @@ div.userbar > ul.signInList > li a:not(.divisor):hover{
 
 .majorbar{
 	position: relative;
-    top:55px;
 	width: 100%;
-    height:120px;
+    height:65%;
 	background-image: url("img/Pets.svg");
 	background-size: 130px 130px;
 	background-repeat: repeat-x;
 	background-position: 0% 0%;
     z-index: -1;
+  overflow: hidden;
 }
 
 .logobar{
-    position: absolute;
 	position: relative;
 	text-align: center;
 	width: 100%;
@@ -137,36 +123,39 @@ div.userbar > ul.signInList > li a:not(.divisor):hover{
 }
 
 .optionbar{
-	position: absolute;
-    top:83%;
+	position: relative;
+    bottom:0%;
     left:0;
 	width: 100%;
+  text-align: center;
+  overflow: hidden;
+
 }
 
 #logoimg{
     position:absolute;
-	width: 120px;
-	height: 65;
+	width: 8%;
+	height: 90%;
     margin-left:46%;
+  margin-top: -0.4%;
     display: block;
 }
 
 #formbusca{
-	position:absolute;
+	position:relative;
 	display: inline-block;
+  height:32%;
 	float: right;
-	right: 40px;
-	top: 80px;
+	top: 45%;
+  right:1%;
 }
 
 #searchimg{
-	position:absolute;
-	display: inline-block;
-	float: right;
+  position: absolute;
+    top:18%;
+  right:1%;
 	width: 20px;
 	height: 20px;
-	right: 10px;
-	top: 20px;
 }
 
 input{
@@ -174,36 +163,21 @@ input{
 }
 
 div.optionbar > ul{
-    list-style-type: none;
+  position: relative;
     width:100%;
-    margin-left: 30%;
-    margin-top: 0;
     margin-bottom: 0;
-    padding: 0;
     overflow: hidden;
+  text-align: center;
+  list-style-type: none;
 }
 
 div.optionbar > ul > li{
     float: left;
 }
 
-div.optionbar > ul > li a{
-    display: inline-block;
-    color: #2c2c2c;
-    text-align: center;
-    height: 5%;
-    padding: 8.5px 35px;
-    text-decoration: none;
-    font-size: 13px;
-	font-family: font83056;
-	text-decoration: none;
-	background-color: white;
 
-}
 
-div.optionbar > ul > li a:hover{
-	background-color: rgb(235, 235, 255);
-}
+
 
 .cat{
 	position: absolute;
@@ -409,7 +383,7 @@ footer{
     top: 0px;
     left:0px;
     width: 100%;
-    height: 175px;
+    height: 20%;
     z-index: 1;
 }
 
@@ -534,7 +508,7 @@ footer p {
 body {
    margin:0;
    padding:0;
-   min-height:100%;
+   height:100%;
 }
 
 div {
@@ -923,11 +897,12 @@ image2 {
 
 #nome {
     position: absolute;
-    top:68%;
+    top:65%;
     left:44%;
-	width: 200px;
-	height: 70;
+	width: 12%;
+	height: 50%;
     background-color: rgba(255, 255, 255,0.5);
+  z-index: -1;
     /*background-color: rgba(0, 0, 0,0.1);*/
 }
 
@@ -1019,14 +994,7 @@ top:175px;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.menuList a {
-  display: block;
-  line-height: 10px;
-  padding-bottom: 10px;
-  margin:3px;
-  width:100%;
-  height:100%;
-}
+
 
 
 
@@ -1180,12 +1148,15 @@ top:175px;
 }
 
 .menuList {
-  position: absolute;
-  margin-left: -2%;
-  top:-45%;
-  width:50%;
+  position: relative;
+  width:100%;
+  height:20%;
   display: block;
-  height:100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(235, 235, 255);
+  list-style-type: none;
 }
 
 .cao-container2 {
@@ -1521,23 +1492,9 @@ top:175px;
     color: white;
 }
 
-div.userbar > ul.menuList > li a{
-	/*background-image: url("Pets.svg");
-	background-size: 130px 130px;
-	background-repeat: no-repeat;
-	background-position: 0% 150%;*/
-    height:10px;
-}
 
-div.userbar > ul.signInList > li a{
-	/*background-image: url("Pets.svg");
-	background-size: 130px 130px;
-	background-repeat: no-repeat;
-	background-position: 0% 150%;*/
-    line-height:10px;
-    margin-left:10px;
-    margin-right:0px;
-}
+
+
 
 #titlecalendar {
         position: absolute;
@@ -1766,4 +1723,74 @@ span.psw {
   text-align: center;
   width:30%;
   margin-left: 29%;
+}
+
+.menu1 {
+  FLOAT: LEFT;
+}
+
+.menu1:hover {
+  background-color: white;
+}
+
+.menu2 {
+  float:right;
+}
+
+.menu2:hover {
+  background-color: white;
+}
+
+
+
+#separator {
+  padding-left:30%;
+  padding-right:30%;
+}
+
+.menu3 {
+  display: inline-block;
+  margin:0;
+}
+
+.menu3:hover {
+  background-color: rgb(235, 235, 255);
+}
+
+#separatorMenu3 {
+  padding-left: 15%;
+  padding-right: 16%;
+}
+
+.menu3 a {
+  font-family: 'Arvo', serif;
+    display: block;
+    text-align: center;
+    margin:-4%;
+    padding: 5px 5px;
+    text-decoration: none;
+  background-color: white;
+  z-index: 2;
+}
+
+.menuList a {
+    display: block;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    line-height: 100%;
+  font-family: 'Arvo', serif;
+}
+
+.storeOption {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    bottom:0;
+    overflow: hidden;
+  text-align: center;
+}
+
+.menu3 a:hover {
+  background-color: rgb(235, 235, 255);
 }
