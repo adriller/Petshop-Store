@@ -26,55 +26,50 @@ Rita Raad - NºUSP: 8061452
 <body>
 <div class="page">
 <div class="headFixed">
-<header id = "bagbar">
-	<p id = "bagleft"> <span class= "tw">FRETE GRÁTIS</span> NAS COMPRAS ACIMA DE R$ 300 <span class="tw">|</span> PARCELE EM ATÉ <span class="tw">6X SEM JUROS </span></p>
-	<a href="carrinho.html"><p class = "bagright">SACOLA (0)</p>
-	<img id = "bagimg" src = "../img/sacola.png" alt = "imagem da sacola"/></a>
-</header>
+        <header id = "bagbar">
+            <p id = "bagleft"> <span class= "tw">FRETE GRÁTIS</span> NAS COMPRAS ACIMA DE R$ 300 <span class="tw">|</span> PARCELE EM ATÉ <span class="tw">6X SEM JUROS </span></p>
+            <a href="#carrinho" onclick="loadPage('ajax/carrinho.html', 'cartPage')"><p class = "bagright">SACOLA (0)</p>
+            <img id = "bagimg" src = "img/sacola.png" alt = "imagem da sacola"/></a>
+        </header>
 
-<nav>
- <div class = "userbar">
-	<ul class = "menuList">
-		<li><a href="calendario.html">AGENDA</a></li>
-		<li><a href="servicos.html"><span>SERVIÇOS</span></a></li>
-		<li><a class="refLoja" href="petShop.html"><span>LOJA</span></a></li>
-	</ul>
+            <ul class = "menuList">
+                <li class="menu1"><a href="#calendario" onclick="loadPage('ajax/calendario.html', 'calendarioPage')">AGENDA</a></li>
+                <li class="menu1"><a href="#servico" onclick="loadPage('ajax/servicos.html', 'serv')"><span>SERVIÇOS</span></a></li>
+                <li class="menu1"><a href="#loja" onclick="loadPage('ajax/petShop.html', 'petShop')"><span>LOJA</span></a></li>
+                <li id="separator">   </li>
+                <li class="menu2"><a href="#cadastro" onclick="document.getElementById('id01').style.display='block'">CADASTRE-SE </a></li>
+                <li class="menu2"></li>
+                <li class="menu2"><a href="#login" onclick="document.getElementById('id02').style.display='block'" >MEUS DADOS</a></li>
+                <li class="menu2"></li>
+                <li class="menu2"><a href="#sobre" onclick="loadPage('sobrenos.html', 'serv')">SOBRE NÓS</a></li>
+            </ul>
 
-	<ul class = "signInList">
-		<li><a href="cadastro.html">CADASTRE-SE</a></li>
-		<li><a class="divisor">|</a></li>
-		<li><a href="login.html">MEUS DADOS</a></li>
-		<li><a class="divisor">|</a></li>
-		<li><a href="sobrenos.html">SOBRE NÓS</a></li>
-	</ul>
 
-</div>
 
-<div class = "majorbar">
-	<div class = "logobar">
-		<a href="petShop.html"><img id = "logoimg" src = "../img/aa2.png" alt = "logo"/></a>
-        <a href="petShop.html"><img id = "nome" src = "../img/logo.png" alt = "logo"/></a>
+        <div class = "majorbar">
+            <div class = "logobar">
+                <a href="#loja" onclick="loadMainPage()"><img id = "logoimg" src = "img/aa2.png" alt = "logo"/></a>
 
-		<form id = "formbusca">
-			<input type="text" id="busca" name="busca">
-		</form>
+                <a href="#loja" onclick="loadMainPage()"><img id = "nome" src = "img/logo.png" alt = "logo"/></a>
 
-		<img id = "searchimg" src = "img/search.png" alt = "botão de procura"/>
-	</div>
-</div>
+                <form id = "formbusca">
+                    <input type="text" id="busca" name="busca">
+                </form>
 
-	<div class = "optionbar">
-		<ul>
-			<li><a href="loja-cao.html">CACHORROS</a></li>
-			<li><a href="#Gato">GATOS</a></li>
-			<li><a href="#Passaro">PÁSSAROS</a></li>
-			<li><a href="#Roedores">ROEDORES</a></li>
-			<li><a href="#Outros">OUTROS</a></li>
-		</ul>
+                <img id = "searchimg" src = "img/search.png" alt = "botão de procura"/>
+            </div>
 
-	</div>
-</nav>
-</div>
+
+                <ul class="navStore">
+                  <li class="menu3"><a href="#Cachorro" onclick="loadProdPage('ajax/loja-cao.html', 'loja-cao', 'COMIDA', 'CACHORRO' )">CACHORROS</a></li>
+                    <li class="menu3"><a href="#Gato" onclick="loadProdPage('ajax/loja-gato.html', 'loja-gato', 'COMIDA', 'GATO' )">GATOS</a></li>
+                    <li class="menu3"><a href="#Passaro" onclick="loadProdPage('ajax/loja-passaro.html', 'loja-passaro', 'COMIDA', 'PASSARO' )">PÁSSAROS</a></li>
+                    <li class="menu3"><a href="#Roedores" onclick="loadProdPage('ajax/loja-roedor.html', 'loja-roedor', 'COMIDA', 'ROEDOR' )">ROEDORES</a></li>
+                    <li class="menu3"><a href="#Outros" onclick="loadProdPage('ajax/loja-outro.html', 'loja-outro', 'COMIDA', 'OUTRO' )">OUTROS</a></li>
+                </ul>
+          </div>
+
+    </div>
 
 <div id="petShop">
     <div class = "cat">

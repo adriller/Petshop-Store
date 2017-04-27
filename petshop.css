@@ -1,6 +1,7 @@
-/*
-
-*/
+#success {
+  height:100%;
+  overflow: hidden;
+}
 
 .tw{
 	color: white;
@@ -182,11 +183,12 @@ div.optionbar > ul > li{
 .cat{
 	position: absolute;
     left: 0;
+    margin:0;
     background-image: url(img/dog.jpg);
-      background-size: cover;
-  background-attachment: fixed;
-      width: 100%;
-      height: 900px;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 900px;
     z-index: -1;
 }
 
@@ -968,10 +970,11 @@ image2 {
 
 #prodContainer {
     position: relative;
-    left:18%;
-    width: 80%;
+    float:right;
+    width: 85%;
     min-height: 100%;
     text-align: center;
+  overflow: hidden;
 }
 
 .descricao {
@@ -1785,8 +1788,11 @@ span.psw {
 }
 
 #loja-cao {
+  position:absolute;
   height:100%;
-  margin-top:9.8%;
+  width: 100%;
+  margin-top:10%;
+  overflow: hidden;
 }
 
 #loja-gato {
@@ -1869,3 +1875,5 @@ span.psw {
     height:100%;
   margin-top:9.8%;
 }
+
+
