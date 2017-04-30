@@ -51,6 +51,7 @@
 
 p.bagright:hover{
 	color: white;
+  padding:0;
 }
 
 .userbar{
@@ -134,12 +135,8 @@ div.userbar > ul.signInList > li a:not(.divisor):hover{
 }
 
 #logoimg{
-    position:absolute;
-	width: 8%;
-	height: 90%;
-    margin-left:46%;
-  margin-top: -0.4%;
-    display: block;
+	width: 7%;
+	height: 100%;
 }
 
 #formbusca{
@@ -152,11 +149,8 @@ div.userbar > ul.signInList > li a:not(.divisor):hover{
 }
 
 #searchimg{
-  position: absolute;
-    top:18%;
-  right:1%;
-	width: 20px;
-	height: 20px;
+	width: 25px;
+	height: 25px;
 }
 
 input{
@@ -539,6 +533,7 @@ h1, h2, a {
 
 p {
   font-family: Helvetica, Arial, sans-serif;
+  padding:0px;
 }
 
 .container {
@@ -898,14 +893,12 @@ image2 {
 }
 
 #nome {
-    position: absolute;
-    top:65%;
-    left:44%;
-	width: 12%;
-	height: 50%;
+    min-height: 10px;
+  min-width: 20px;
+	max-width: 10%;
+
     background-color: rgba(255, 255, 255,0.5);
-  z-index: -1;
-    /*background-color: rgba(0, 0, 0,0.1);*/
+    z-index: -1;
 }
 
 .cao-produto {
@@ -969,12 +962,7 @@ image2 {
 }
 
 #prodContainer {
-    position: relative;
-    float:right;
-    width: 85%;
-    min-height: 100%;
-    text-align: center;
-  overflow: hidden;
+
 }
 
 .descricao {
@@ -1850,8 +1838,7 @@ span.psw {
 
 .navLoja a:hover:not(.active) {
     background-color: #555;
-    color: white; {
-
+    color: white;
 }
 
 
@@ -1877,3 +1864,32 @@ span.psw {
 }
 
 
+
+.imgSacola {
+  width: 1%;
+  max-width:10px;
+}
+
+.contPad0 {
+  padding:;
+}
+
+.paragraph {
+  font-size: 1.5vmin;
+}
+
+.mainBG {
+  background-image: url("img/Pets.svg");
+  background-size: 130px 130px;
+  background-repeat: repeat-x;
+}
+
+
+
+#nome2 {
+  width:35%;
+}
+
+.footer {
+  z-index:1;
+}

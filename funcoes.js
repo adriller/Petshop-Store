@@ -33,6 +33,8 @@ function myFunction(xml, tipo, animal) {
   var i;
   var xmlDoc = xml.responseXML;
   var prod= "";
+  prod+= '  <br><br><br><br><br><div class="w3-ontainer w3-padding-32 w3-hide-small"></div><button class="w3-button w3-teal w3-xlarge w3-hide-large  w3-black" id="openNav" onclick="w3_open()">&#9776;</button><div class="w3-sidebar w3-bar-block w3-collapse w3-card-2 w3-animate-left w3-light-gray" style="width:250px;display:none;" id="mySidebar" onclick="w3_close()"><button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button><a href="#" class="w3-bar-item w3-button w3-hover-teal" onclick="loadDoc(\'COMIDA\', \'' + animal.toUpperCase() + '\')">Alimentos</a><a href="#" class="w3-bar-item w3-button w3-hover-teal" onclick="loadDoc(\'CASA\', \'' + animal.toUpperCase() + '\')">Casinha</a><a href="#" class="w3-bar-item w3-button w3-hover-teal" onclick="loadDoc(\'SAUDE\', \'' + animal.toUpperCase() + '\')">Saude e Higiene</a><a href="#" class="w3-bar-item w3-button w3-hover-teal" onclick="loadDoc(\'OUTRO\',  \'' + animal.toUpperCase() + '\')">Outros</a></div>'
+  prod+='<div class="w3-main" id="prodContainer">';
   var show = false, show2 = false;;
   var x = xmlDoc.getElementsByTagName("PRODUTO");
   var y = xmlDoc.getElementsByTagName("PARA");
@@ -60,7 +62,10 @@ function myFunction(xml, tipo, animal) {
     }
 
   }
-  document.getElementById("prodContainer").innerHTML = prod;
+  prod+= '</div>'
+  document.getElementById("success").innerHTML = prod;
+  w3_open();
+  hideMenuEffect();
 }
 
 
@@ -183,4 +188,43 @@ function loadMainPage(){
       }
     });
   loadMaisVendidos("next");
+}
+
+function w3_open() {
+    document.getElementById("prodContainer").style.marginLeft = "27%";
+    document.getElementById("mySidebar").style.width = "25%";
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("openNav").style.display = 'none';
+  }
+  function w3_close() {
+    document.getElementById("prodContainer").style.marginLeft = "0%";
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("openNav").style.display = "inline-block";
+  }
+function showMenu2Mobile() {
+  var x = document.getElementById("menu2Mobile");
+  if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+  } else {
+      x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function closeMenu2Mobile() {
+  var x = document.getElementById("menu2Mobile");
+  if (x.className.indexOf("w3-show") > -1) {
+      x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function hideMenuEffect(){
+
+  var x = document.getElementById("mySidebar");
+  if ( $(window).width() > 739 && x.className.indexOf("w3-animate-left") > -1) {
+    x.className = x.className.replace("w3-animate-left", "");
+  }
+  else {
+    x.className += "w3-animate-left";
+  }
+
 }
