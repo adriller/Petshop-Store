@@ -143,11 +143,12 @@ function loadMaisVendidos(prevOrNext) {
 function myFunctionVendidos(xml, prevOrNext) {
   var i, count = 4;
   var xmlDoc = xml.responseXML;
-  var prod= '<a href="#prev" onclick=\'loadMaisVendidos("prev")\'><img class = "arrow" src = "../img/back.png" alt = "Seta apontando para antes"/></a>';
+  var prod = ' <div class="w3-row w3-center" id = "selection"> <div class="w3-container w3-col seta" ><a href="#prev" onclick=\'loadMaisVendidos("prev")\'><img class = "w3-image imgSeta" src = "img/back.png" alt = "Seta apontando para antes"/></a></div>';
   var x = xmlDoc.getElementsByTagName("PRODUTO");
   if(prevOrNext.toUpperCase() == "PREV"){
       inicio -= 8;
   }
+
   if(inicio > x.length){
     inicio = inicio % x.length;
   }
@@ -161,7 +162,19 @@ function myFunctionVendidos(xml, prevOrNext) {
     else if(i < 0){
       i = x.length - i;
     }
-    prod += '\n<a href="#prod" onclick=\'loadPageDesc("' + x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue + '")\'>' +
+
+    prod+= '  <div class = " w3-container w3-col ';
+    if(prevOrNext.toUpperCase() == "NEXT") prod+= 'w3-animate-left'; else prod+= 'w3-animate-right';
+    prod+= ' w3-card-4 w3-white  prodMaisVendido">'+
+    '<a href="#produto" onclick=\'loadPageDesc("' + x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue + '")\'>' +
+      '<img class = "w3-image imagemMaisVendido" src = "img/' + x[i].getElementsByTagName("FOTO")[0].childNodes[0].nodeValue + '" alt = "Ração"/>'+
+        '<div class="w3-container">' +
+          x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue +
+          '<br><b>R$' + x[i].getElementsByTagName("PRECO")[0].childNodes[0].nodeValue + ' </b>'+
+        '</div>'+
+    '</a></div>';
+
+    /*prod += '\n<a href="#prod" onclick=\'loadPageDesc("' + x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue + '")\'>' +
                 '<div class = "produto ';
                 if(prevOrNext.toUpperCase() == "NEXT") prod+= 'w3-animate-left'; else prod+= 'w3-animate-right';
                 prod+= '  ">\n' +
@@ -172,11 +185,13 @@ function myFunctionVendidos(xml, prevOrNext) {
                             '</p>\n' +
                         '</div>\n' +
                 '</div>' +
-            '</a>\n' ;
+            '</a>\n' ;*/
 
   }
-  prod += '<a href="#next" onclick=\'loadMaisVendidos("next")\'><img class = "arrow" src = "../img/next.png" alt = "Seta apontando para antes"/></a>';
-  document.getElementById("selection").innerHTML = prod;
+  //prod += '<a href="#next" onclick=\'loadMaisVendidos("next")\'><img class = "arrow" src = "../img/next.png" alt = "Seta apontando para antes"/></a>';
+  prod+= '<div class="w3-container w3-col  w3-image seta"><a href="#next" onclick=\'loadMaisVendidos("next")\'><img class = "w3-image imgSeta" src = "img/next.png" alt = "Seta apontando para antes"/></a></div></div>';
+  document.getElementById("loadMaisVendidos").innerHTML = prod;
+  setMobileImgSize();
 }
 
 function loadMainPage(){
@@ -218,7 +233,6 @@ function closeMenu2Mobile() {
 }
 
 function hideMenuEffect(){
-
   var x = document.getElementById("mySidebar");
   if ( $(window).width() > 739 && x.className.indexOf("w3-animate-left") > -1) {
     x.className = x.className.replace("w3-animate-left", "");
@@ -226,5 +240,16 @@ function hideMenuEffect(){
   else {
     x.className += "w3-animate-left";
   }
+}
 
+function setMobileImgSize(){
+  if ( $(window).width() < 739) {
+    $(".imagemMaisVendido").height(50);
+    $(".imgSeta").height(30);
+    $(".imgSeta").width(150);
+  }
+  else{
+    $(".imagemMaisVendido").height(300);
+
+  }
 }

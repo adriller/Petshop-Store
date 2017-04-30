@@ -24,52 +24,70 @@ Rita Raad - NºUSP: 8061452
 </head>
 
 <body>
-<div class="page">
-<div class="headFixed">
-        <header id = "bagbar">
-            <p id = "bagleft"> <span class= "tw">FRETE GRÁTIS</span> NAS COMPRAS ACIMA DE R$ 300 <span class="tw">|</span> PARCELE EM ATÉ <span class="tw">6X SEM JUROS </span></p>
-            <a href="#carrinho" onclick="loadPage('ajax/carrinho.html', 'cartPage')"><p class = "bagright">SACOLA (0)</p>
-            <img id = "bagimg" src = "img/sacola.png" alt = "imagem da sacola"/></a>
-        </header>
+<div class="w3-top">
+    <header class = "w3-row w3-gray">
+      <div class="w3-left">
+        <div class="paragraph"><b>FRETE GRÁTIS</b> NAS COMPRAS ACIMA DE R$ 300 | PARCELE EM ATÉ <b>6X SEM JUROS</b></div>
+      </div>
+        <a href="#carrinho" onclick="loadPage('ajax/carrinho.html', 'cartPage')">
+          <div class="w3-right paragraph">SACOLA (0)</div>
+          <img class="w3-image imgSacola w3-right" src = "../img/sacola.png" alt ="imagem da sacola"/>
+        </a>
+    </header>
 
-            <ul class = "menuList">
-                <li class="menu1"><a href="#calendario" onclick="loadPage('ajax/calendario.html', 'calendarioPage')">AGENDA</a></li>
-                <li class="menu1"><a href="#servico" onclick="loadPage('ajax/servicos.html', 'serv')"><span>SERVIÇOS</span></a></li>
-                <li class="menu1"><a href="#loja" onclick="loadPage('ajax/petShop.html', 'petShop')"><span>LOJA</span></a></li>
-                <li id="separator">   </li>
-                <li class="menu2"><a href="#cadastro" onclick="document.getElementById('id01').style.display='block'">CADASTRE-SE </a></li>
-                <li class="menu2"></li>
-                <li class="menu2"><a href="#login" onclick="document.getElementById('id02').style.display='block'" >MEUS DADOS</a></li>
-                <li class="menu2"></li>
-                <li class="menu2"><a href="#sobre" onclick="loadPage('sobrenos.html', 'serv')">SOBRE NÓS</a></li>
-            </ul>
-
-
-
-        <div class = "majorbar">
-            <div class = "logobar">
-                <a href="#loja" onclick="loadMainPage()"><img id = "logoimg" src = "img/aa2.png" alt = "logo"/></a>
-
-                <a href="#loja" onclick="loadMainPage()"><img id = "nome" src = "img/logo.png" alt = "logo"/></a>
-
-                <form id = "formbusca">
-                    <input type="text" id="busca" name="busca">
-                </form>
-
-                <img id = "searchimg" src = "img/search.png" alt = "botão de procura"/>
-            </div>
-
-
-                <ul class="navStore">
-                  <li class="menu3"><a href="#Cachorro" onclick="loadProdPage('ajax/loja-cao.html', 'loja-cao', 'COMIDA', 'CACHORRO' )">CACHORROS</a></li>
-                    <li class="menu3"><a href="#Gato" onclick="loadProdPage('ajax/loja-gato.html', 'loja-gato', 'COMIDA', 'GATO' )">GATOS</a></li>
-                    <li class="menu3"><a href="#Passaro" onclick="loadProdPage('ajax/loja-passaro.html', 'loja-passaro', 'COMIDA', 'PASSARO' )">PÁSSAROS</a></li>
-                    <li class="menu3"><a href="#Roedores" onclick="loadProdPage('ajax/loja-roedor.html', 'loja-roedor', 'COMIDA', 'ROEDOR' )">ROEDORES</a></li>
-                    <li class="menu3"><a href="#Outros" onclick="loadProdPage('ajax/loja-outro.html', 'loja-outro', 'COMIDA', 'OUTRO' )">OUTROS</a></li>
-                </ul>
-          </div>
-
+    <div class="w3-bar w3-black ">
+      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small" onclick="loadPage('ajax/calendario.html', 'calendarioPage')">AGENDA</a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="loadPage('ajax/servicos.html', 'serv')"><span>SERVIÇOS</span></a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="loadPage('ajax/petShop.html', 'petShop')"><span>LOJA</span></a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small r w3-hover-teal w3-padding-small w3-right"  onclick="document.getElementById('id02').style.display='block'">CADASTRE-SE </a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small r w3-hover-teal w3-padding-small w3-right" onclick="document.getElementById('id01').style.display='block'" >MEUS DADOS</a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-right"  onclick="loadPage('ajax/sobrenos.html', 'serv')">SOBRE NÓS</a>
     </div>
+    <div class="w3-bar w3-black">
+      <a href="#" class="w3-hide-large  w3-bar-item w3-button   w3-hover-teal w3-padding-small" onclick="loadPage('ajax/calendario.html', 'calendarioPage')"><i class="fa fa-calendar-plus-o"></i></a>
+      <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small"  onclick="loadPage('ajax/servicos.html', 'serv')"><span><i class="fa fa-calendar"></i></span></a>
+      <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small"  onclick="loadPage('ajax/petShop.html', 'petShop')"><span><i class="fa fa-home"></i></span></a>
+      <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small w3-right"  onclick="document.getElementById('id02').style.display='block'"><i class="fa fa-plus-square-o"></i> </a>
+      <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small w3-right" onclick="document.getElementById('id01').style.display='block'" ><i class="fa fa-user-circle"></i></a>
+      <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small w3-right"  onclick="loadPage('ajax/sobrenos.html', 'serv')"> <i class="fa fa-info-circle"></i></a>
+    </div>
+    <div class="w3-display-container w3-animate-opacity mainBG">
+      <div class="w3-center w3-hide-small">
+        <a href="#loja" onclick="loadMainPage()"><img id = "logoimg" src = "../img/aa2.png" alt = "logo"/></a>
+      </div>
+      <div class="w3-center w3-hide-small">
+        <a href="#loja" onclick="loadMainPage()"><img id = "nome" src = "../img/logo.png" alt = "logo"/></a>
+      </div>
+      <div class="w3-center w3-hide-large w3-hide-medium">
+        <a href="#loja" onclick="loadMainPage()"><img id = "nome2" src = "../img/logo.png" alt = "logo"/></a>
+      </div>
+
+      <div class="w3-bar w3-center">
+        <a href="#" class="w3-center centerMenu2 w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-center w3-white" onclick="loadProdPage('ajax/loja-cao.html', 'loja-cao', 'COMIDA', 'CACHORRO' ); w3_open();">CACHORROS</a>
+        <a href="#" class="w3-center w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-white" onclick="loadProdPage('ajax/loja-gato.html', 'loja-gato', 'COMIDA', 'GATO' )">GATOS</a>
+        <a href="#" class="w3-center w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-white" onclick="loadProdPage('ajax/loja-passaro.html', 'loja-passaro', 'COMIDA', 'PASSARO' )">PÁSSAROS</a>
+        <a href="#" class="w3-center w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-white" onclick="loadProdPage('ajax/loja-roedor.html', 'loja-roedor', 'COMIDA', 'ROEDOR' )">ROEDORES</a>
+        <a href="#" class="w3-center w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-white" onclick="loadProdPage('ajax/loja-outro.html', 'loja-outro', 'COMIDA', 'OUTRO' )">OUTROS</a>
+        <input type="text" class="w3-bar w3-input w3-padding-small  w3-hide-small" placeholder="Procurar..">
+        <a href="#" class=" w3-button w3-teal w3-padding-small w3-center w3-hide-small"><i class=" fa fa-search"></i></a>
+        <a href="javascript:void(0)" class="w3-hover-teal w3-padding-small w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium w3-black" onclick="showMenu2Mobile()">&#9776;</a>
+      </div>
+
+      <div id="menu2Mobile" class="w3-bar-block w3-light-gray w3-hide w3-hide-large w3-hide-medium">
+
+        <a href="#" class="w3-bar-item w3-button  w3-hover-teal w3-padding-small" onclick="loadProdPage('ajax/loja-cao.html', 'loja-cao', 'COMIDA', 'CACHORRO' ); w3_open();">CACHORROS</a>
+        <a href="#" class="w3-bar-item w3-button  w3-hover-teal w3-padding-small " onclick="loadProdPage('ajax/loja-gato.html', 'loja-gato', 'COMIDA', 'GATO' )">GATOS</a>
+        <a href="#" class="w3-bar-item w3-button  w3-hover-teal w3-padding-small" onclick="loadProdPage('ajax/loja-passaro.html', 'loja-passaro', 'COMIDA', 'PASSARO' )">PÁSSAROS</a>
+        <a href="#" class="w3-bar-item w3-button  w3-hover-teal w3-padding-small" onclick="loadProdPage('ajax/loja-roedor.html', 'loja-roedor', 'COMIDA', 'ROEDOR' )">ROEDORES</a>
+        <a href="#" class="w3-bar-item w3-button  w3-hover-teal w3-padding-small" onclick="loadProdPage('ajax/loja-outro.html', 'loja-outro', 'COMIDA', 'OUTRO' )">OUTROS</a>
+        <a href="#" class=" w3-bar-item w3-button w3-padding-small w3-right ">
+        <input type="text" class="w3-left w3-input w3-padding-small" placeholder="Procurar..">
+        Buscar<i class="fa fa-search w3-margin-left" ></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
 
 <div id="petShop">
     <div class = "cat">
@@ -79,39 +97,65 @@ Rita Raad - NºUSP: 8061452
     <div id = "maisvendidos">
         <h3 class = "titulo"><span>MAIS BUSCADOS</span></h3>
 
+<div id="loadMaisVendidos">
 
-    <section id = "selection">
-   <!-- /*<a href="#prev" onclick='loadMaisVendidos("prev")'><img class = "arrow" src = "../img/back.png" alt = "Seta apontando para antes"/></a>
-        <a href="#produto" onclick="loadPageDesc('Royal Canin')"><div class = "produto w3-animate-right">
-            <img class = "image" src = "../img/racao.jpg" alt = "Ração"/>
-            <div class="container">
-                <p class = "descricao">ROYAL CANIN<br><span class = "descricao">Ração</span><br><span class = "preco">R$ 79,80</span><p>
-            </div>
-        </div></a>
 
-        <a href="#produto" onclick="loadPageDesc('casinha grande')"><div class = "produto w3-animate-right">
-            <img class = "image"src = "../img/casa-aquario.jpg" alt = "Ração de gato"/>
-            <div class="container">
-                <p class = "descricao">Casa Aquario<br><span class = "descricao">Casinha</span><br><span class = "preco">R$ 332,50</span><p>
-            </div>
-        </div></a>
+  <div class="w3-row w3-center" id = "selection">
+  <div class="w3-container w3-col seta" >
+    <a href="#prev" onclick='loadMaisVendidos("prev")'>
+      <img class = "w3-image imgSeta" src = "../img/back.png" alt = "Seta apontando para antes"/>
+    </a>
+  </div>
 
-        <div class = "produto w3-animate-right">
-            <img class = "image"src = "../img/pote.jpg" alt = "Pote para ração"/>
-            <div class="container">
-                <p class = "descricao">PETZ<br><span class = "descricao">Vasilha para pets</span><br><span class = "preco">R$ 10,50</span><p>
-            </div>
+  <div class = " w3-container w3-col w3-animate-right w3-card-4 w3-white  prodMaisVendido">
+    <a href="#produto" onclick="loadPageDesc('Royal Canin')">
+        <img class = "w3-image imagemMaisVendido" src = "../img/racao.jpg" alt = "Ração"/>
+          <div class="w3-container">
+          bolinha com bigode<br>
+          Variedades<br>
+          <b>R$ 1,80</b>
+          </div>
+
+    </a>
+  </div>
+
+<div class = "w3-container w3-col w3-animate-right w3-card-4 w3-white  prodMaisVendido">
+    <a href="#produto" onclick="loadPageDesc('casinha grande')">
+      <img class = "w3-image imagemMaisVendido"src = "../img/casa-aquario.jpg" alt = "Ração de gato"/>
+        <div class="w3-container">
+          bolinha com bigode<br>
+          Variedades<br>
+          <b>R$ 1,80</b>
         </div>
 
-        <div class = "produto w3-animate-right">
-            <img class = "image"src = "../img/bigode.jpg" alt = "Sache para cães"/>
-            <div class="container">
-                <p class = "descricao">bolinha com bigode<br><span class = "descricao">Variedades</span><br><span class = "preco">R$ 1,80</span><p>
-            </div>
-        </div>
-    <a href="#next" onclick='loadMaisVendidos("next")'><img class = "arrow" src = "../img/next.png" alt = "Seta apontando para antes"/></a>-->
+  </a>
+</div>
 
-    </section>
+<div class = "w3-container w3-col w3-animate-right w3-card-4 w3-white  prodMaisVendido">
+  <img class = "w3-image imagemMaisVendido"src = "../img/pote.jpg" alt = "Pote para ração"/>
+  <div class="w3-container">
+  bolinha com bigode<br>
+  Variedades<br>
+  <b>R$ 1,80</b>
+  </div>
+</div>
+
+<div class = "w3-container w3-col  w3-animate-right w3-card-4 w3-white  prodMaisVendido">
+  <img class = "w3-image imagemMaisVendido"src = "../img/bigode.jpg" alt = "Sache para cães"/>
+  <div class="w3-container">
+  bolinha com bigode<br>
+  Variedades<br>
+  <b>R$ 1,80</b>
+  </div>
+</div>
+
+<div class="w3-container w3-col  w3-image seta">
+  <a href="#next" onclick='loadMaisVendidos("next")'>
+    <img class = "w3-image imgSeta" src = "../img/next.png" alt = "Seta apontando para antes"/>
+  </a>
+</div>
+</div>
+  </div>
 
     <div id = "linedivider"></div>
 
@@ -207,7 +251,7 @@ Rita Raad - NºUSP: 8061452
     </footer>
     </div>
 </div>
-</div>
+
 
 </body>
 
