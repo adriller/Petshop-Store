@@ -94,7 +94,7 @@ Rita Raad - NºUSP: 8061452
     </div>
 
 
-    <div id = "maisvendidos">
+    <div id = "maisvendidos" class="w3-center w3-container">
         <h3 class = "titulo"><span>MAIS BUSCADOS</span></h3>
 
 <div id="loadMaisVendidos">
@@ -110,7 +110,7 @@ Rita Raad - NºUSP: 8061452
   <div class = " w3-container w3-col w3-animate-right w3-card-4 w3-white  prodMaisVendido">
     <a href="#produto" onclick="loadPageDesc('Royal Canin')">
         <img class = "w3-image imagemMaisVendido" src = "../img/racao.jpg" alt = "Ração"/>
-          <div class="w3-container">
+          <div class="w3-display-container w3-black w3-hover-teal contDescr">
           bolinha com bigode<br>
           Variedades<br>
           <b>R$ 1,80</b>
@@ -132,7 +132,7 @@ Rita Raad - NºUSP: 8061452
 </div>
 
 <div class = "w3-container w3-col w3-animate-right w3-card-4 w3-white  prodMaisVendido">
-  <img class = "w3-image imagemMaisVendido"src = "../img/pote.jpg" alt = "Pote para ração"/>
+  <img class = "w3-image imagemMaisVEendido"src = "../img/pote.jpg" alt = "Pote para ração"/>
   <div class="w3-container">
   bolinha com bigode<br>
   Variedades<br>
@@ -159,88 +159,89 @@ Rita Raad - NºUSP: 8061452
 
     <div id = "linedivider"></div>
 
-
-    <section id = "grid">
-        <div class = "gridvertical">
-            <a class="destaques"><img id = "imggrid1" src = "../img/cat.jpg" alt = "Gato mostrando a patinha"/>
-              <div class="center">Ofertas</div></a>
+    <div class="w3-center w3-container " id="centerGrid">
+    <div class=" w3-container w3-center w3-row-padding gridCentral" id = "grid">
+        <div class = "w3-hover-teal w3-black w3-half w3-display-container w3-mobile w3-card-4 w3-teal  w3-margin-bottom">
+            <a class="destaques">
+              <img id = "imggrid1" class="w3-image" src = "../img/rabbitpng.png" alt = "Gato mostrando a patinha"/>
+              <div class="w3-display-topmiddle displayMiddle">Ofertas</div>
+            </a>
         </div>
 
-        <div class = "gridvertical">
-            <div class = "gridhorizontal">
-                <a class="destaques"><img class = "imggrid2" src = "../img/bird.jpg" alt = "Três passaros"/>
-                  <div class="center2">Novidades</div></a>
+        <div class = "w3-half w3-center ">
+            <div class = "w3-card-4   w3-display-container w3-mobile w3-hover-teal w3-black">
+                <a class=""><img class = "imggrid2 w3-image" src = "../img/birdpng.png" alt = "Três passaros"/>
+                  <div class="w3-display-topmiddle displayMiddle">Novidades</div></a>
             </div>
 
-            <div class = "gridhorizontal">
-                <a class="destaques"><img class = "imggrid2" src = "../img/racaocachorro.jpg" alt = "Cachorro comendo"/>
-                <div class="center3">Recomendados</div></a>
-            </div>
-        </div>
-
-    </section>
-
-    <section id = "selection2">
-        <h1 id="ClientsPets">Ultimos PETs cadastrados:</h1>
-
-        <img class = "arrow2" src = "../img/back.png" alt = "Seta apontando para antes"/>
-
-        <div class = "produto2">
-            <img class = "image2" src = "../img/meme2.jpg" alt = "Ração"/>
-            <div class="container">
-                <p class = "descricao">Abigail<p>
+            <div class = "w3-card-4 w3-hover-teal w3-black w3-display-container w3-mobile w3-teal w3-margin-top">
+                <a class=""><img class = "imggrid2 w3-image" src = "../img/fishpng.png" alt = "Cachorro comendo"/>
+                <div class="w3-display-topmiddle displayMiddle2">Recomendados</div></a>
             </div>
         </div>
 
-            <div class = "produto2">
+    </div>
+    </div>
+
+      <h1 id="ClientsPets">Ultimos PETs cadastrados:</h1>
+    <section class= "w3-row w3-center" id = "selection2">
+
+
+        <div class = "w3-col produto2">
+            <img class = "image2 w3-image" src = "../img/meme2.jpg" alt = "Ração"/>
+            <div class="container w3-teal">
+                Abigail
+            </div>
+        </div>
+
+            <div class = "produto2 w3-col">
             <img class = "image2" src = "../img/meme10.jpg" alt = "Ração"/>
-            <div class="container">
-                <p class = "descricao">Abelardo<p>
+            <div class="container w3-teal">
+                Abelardo
             </div>
         </div>
 
-            <div class = "produto2">
+            <div class = "produto2 w3-col">
             <img class = "image2" src = "../img/meme4.jpg" alt = "Ração"/>
-            <div class="container">
-                <p class = "descricao">Onix<p>
+            <div class="container w3-teal">
+                Onix
             </div>
         </div>
 
-            <div class = "produto2">
+            <div class = "produto2 w3-col">
             <img class = "image2" src = "../img/meme5.jpg" alt = "Ração"/>
-            <div class="container">
-                <p class = "descricao">Floquinho<p>
+            <div class="container w3-teal">
+                Floquinho
             </div>
         </div>
 
-        <div class = "produto2">
+        <div class = "produto2 w3-col">
             <img class = "image2"src = "../img/meme6.jpg" alt = "Ração de gato"/>
-            <div class="container">
-                <p class = "descricao">Bugão<p>
+            <div class="container w3-teal">
+                Bugao
             </div>
         </div>
 
-        <div class = "produto2">
+        <div class = "produto2 w3-col">
             <img class = "image2"src = "../img/meme7.jpg" alt = "Pote para ração"/>
-            <div class="container">
-                <p class = "descricao">K-9<p>
+            <div class="container w3-teal">
+                K-9
             </div>
         </div>
 
-        <div class = "produto2">
+        <div class = "produto2 w3-col">
             <img class = "image2"src = "../img/meme8.jpg" alt = "Sache para cães"/>
-            <div class="container">
-                <p class = "descricao">Totó <p>
+            <div class="container w3-teal">
+                Toto
             </div>
         </div>
 
-        <img class = "arrow2" src = "../img/next.png" alt = "Seta apontando para depois"/>
-        <div class="container-PET">
-          <h3>Quer seu pet aqui?</h3>
-          <a id="btnMain" href="#cadpet" onclick="document.getElementById('id03').style.display='block'">Cadastre</a>
-        </div>
-    </section>
 
+    </section>
+        <div class="w3-container w3-center  w3-margin-bottom">
+          <h3>Quer seu pet aqui?</h3>
+          <a id="btnMain" class="w3-hover-teal" href="#cadpet" onclick="document.getElementById('id03').style.display='block'">Cadastre</a>
+        </div>
 
     <footer>
         <p>Trabalho de WEB</p>

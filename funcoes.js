@@ -1,4 +1,5 @@
 var inicio = 0;
+var bgImgIndex = 1;
 
 function refreshNav(){
     $(".navLoja a").on("click", function(){
@@ -168,7 +169,7 @@ function myFunctionVendidos(xml, prevOrNext) {
     prod+= ' w3-card-4 w3-white  prodMaisVendido">'+
     '<a href="#produto" onclick=\'loadPageDesc("' + x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue + '")\'>' +
       '<img class = "w3-image imagemMaisVendido" src = "img/' + x[i].getElementsByTagName("FOTO")[0].childNodes[0].nodeValue + '" alt = "Ração"/>'+
-        '<div class="w3-container">' +
+        '<div class="w3-container w3-black  contDescr">' +
           x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue +
           '<br><b>R$' + x[i].getElementsByTagName("PRECO")[0].childNodes[0].nodeValue + ' </b>'+
         '</div>'+
@@ -244,12 +245,18 @@ function hideMenuEffect(){
 
 function setMobileImgSize(){
   if ( $(window).width() < 739) {
-    $(".imagemMaisVendido").height(50);
-    $(".imgSeta").height(30);
-    $(".imgSeta").width(150);
+    $(".prodMaisVendido").height(70);
   }
   else{
-    $(".imagemMaisVendido").height(300);
 
   }
+}
+
+function changebg(){
+  $(".cat").css("background-image", "url(img/bg" + bgImgIndex + ".jpg)");
+  bgImgIndex++;
+  if(bgImgIndex > 3)
+    bgImgIndex = 1;
+
+  setTimeout(changebg, 5000);
 }
