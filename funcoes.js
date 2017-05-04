@@ -52,7 +52,7 @@ function myFunction(xml, tipo, animal) {
     if(show1 & show2){
         prod += '\n<a href="#prod" onclick=\'loadPageDesc("' + x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue + '")\'>' +
                     '<div class = "cao-produto">\n' +
-                        '<img class = "cao-image" src = "img/' + x[i].getElementsByTagName("FOTO")[0].childNodes[0].nodeValue + '" alt = "Ração"/>\n' +
+                        '<img class = "w3-image cao-image" src = "img/' + x[i].getElementsByTagName("FOTO")[0].childNodes[0].nodeValue + '" alt = "Ração"/>\n' +
                             '<div class="cao-container">\n' +
                                 '<p class = "descricao">' + x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue +
                                     '<br><span class = "descricao">'  + x[i].getElementsByTagName("TIPO")[0].childNodes[0].nodeValue + '</span><br><span class = "preco">R$' + x[i].getElementsByTagName("PRECO")[0].childNodes[0].nodeValue +'</span>' +
@@ -81,13 +81,13 @@ function loadPage(name, idName){
 }
 
 function loadPageDesc(nomeProduto){
-    var path = "ajax/descr-prod.html" + " #" + "descr-bg";
+    /*var path = "ajax/descr-prod.html" + " #" + "descr-bg";
     $( "#success" ).load( "/" + path, function( response, status, xhr ) {
       if ( status == "error" ) {
         var msg = "Sorry but there was an error: ";
         $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
       }
-    });
+    });*/
     loadProd(nomeProduto);
 }
 
@@ -107,26 +107,84 @@ function loadProd(nome) {
 function myFunctionP(xml, nome) {
   var i;
   var xmlDoc = xml.responseXML;
-  var prod= "";
+  var prod= '<div id="descr-bg">'+
+      '<div class="w3-ontainer w3-padding-32 w3-hide-small"></div>'+
+      '<br><br><br><br><br>'+
+      '<div class=" produtoHeader w3-cell-row ">'+
+       '<div class="w3-container w3-cell w3-center w3-mobile w3-margin-bottom">'+
+            '<img class = "cao-image" src = "../img/';
   var x = xmlDoc.getElementsByTagName("PRODUTO");
   for (i = 0; i <x.length; i++) {
     if(x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue.toUpperCase() == nome.toUpperCase()){
-        prod += "<div class=\"drecr-img\"><img class = \"cao-image\" src = \"img/" +
-        x[i].getElementsByTagName("FOTO")[0].childNodes[0].nodeValue +
-        "\" alt = \"Ração\"/> </div><div class=\"descr-item\"><h1>" +
-        x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue +
-        "<br></h1><h3>Tipo: " +
-        x[i].getElementsByTagName("TIPO")[0].childNodes[0].nodeValue +
-        "</h3><h3>Preço: R$" +
-        x[i].getElementsByTagName("PRECO")[0].childNodes[0].nodeValue +
-        "</h3><a id=\"btnDesc\" href=\"#\">Comprar</a></div><div class=\"descr-item2\"><h2>Descrição</h2><p>" +
+        prod+= x[i].getElementsByTagName("FOTO")[0].childNodes[0].nodeValue;
+        prod+= '"alt = "Ração"/>'+
+        '</div>'+
+          '<div class="w3-cell descHeader w3-center w3-black w3-padding w3-mobile">'+
+            '<br>'+
+              '<h1>'+
+                x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue +
+                '<br></h1>'+
+            '<h3>Tipo: '+
+              x[i].getElementsByTagName("TIPO")[0].childNodes[0].nodeValue +
+            '</h3>'+
+            '<h3>Preço: R$'+
+            x[i].getElementsByTagName("PRECO")[0].childNodes[0].nodeValue +
+            '</h3><br><br>'+
+            '<a id="btnDesc"  class="w3-hover-white w3-teal" href="#">Comprar</a>'+
+            '</div>'+
+            '</div>'+
+            '<div class="w3-container descr-item2 w3-light-gray">'+
+                '<h2>Descrição</h2>'+
+                '<p>'+
         x[i].getElementsByTagName("DESCRICAO")[0].childNodes[0].nodeValue +
-        "</p></div><div class=\"relIA\"><h2>Quem viu esse, tambem comprou:</h2><div class=\"row-recomend\"><div class=\"prod-recomend\"><img class = \"image-recomend\"src = \"img/guarda.jpg\" alt = \"Pote para ração\"/><div class=\"recomend-container\"><p class = \"descricao\">Guarda chuva PET edition<br><span class = \"descricao\">Variedades</span><br><span class = \"preco\">R$ 49,80</span><p></div><div class=\"cao-container2\"><p class = \"ver\">Ver<br></p></div></div><div class=\"prod-recomend\"><img class = \"image-recomend\"src = \"img/bocasorriso.jpg\" alt = \"Pote para ração\"/><div class=\"recomend-container\"><p class = \"descricao\">Boca-Sorriso<br><span class = \"descricao\">Variedades</span><br><span class = \"preco\">R$ 19,80</span><p></div><div class=\"cao-container2\"><p class = \"ver\">Ver<br></p></div></div><div class=\"prod-recomend\"><img class = \"image-recomend\"src = \"img/areia.jpg\" alt = \"Pote para ração\"/><div class=\"recomend-container\"><p class = \"descricao\">Areia Higienica<br><span class = \"descricao\">Outros</span><br><span class = \"preco\">R$ 29,80</span><p></div><div class=\"cao-container2\"><p class = \"ver\">Ver<br></p></div></div><div class=\"prod-recomend\"><img class = \"image-recomend\"src = \"img/vaso.jpg\" alt = \"Pote para ração\"/><div class=\"recomend-container\"><p class = \"descricao\">vaso sanitario para gatos<br><span class = \"descricao\">Variedades</span><br><span class = \"preco\">R$ 179,80</span><p></div><div class=\"cao-container2\"><p class = \"ver\">Ver<br></p> </div></div></div></div>" + "<script> window.onload = loadProd(" + nome + ");</script>";
-
+        ' </p>' +
+        '</div>'+
+        '<div class="w3-container  w3-center relIA w3-black">'+
+        '<h2>Quem viu esse, tambem comprou:</h2>'+
+        '    <div class="w3-row">'+
+        '        <div class="w3-col prodRec w3-hover-teal">'+
+        '            <img class = " w3-image image-recomend" src = "../img/guarda.jpg" alt = "Pote para ração"/>'+
+        '            <div class="w3-container recomend-container w3-center w3-white ">'+
+        '                Guarda chuva PET edition<br>Variedades<br>R$ 49,80'+
+        '            </div>'+
+        '            <div class="w3-container cao-container2 w3-center">'+
+        '                <p class = "ver">Ver<br></p>'+
+        '            </div>'+
+        '        </div>'+
+        '        <div class="w3-col prodRec w3-hover-teal">'+
+        '            <img class = " w3-image image-recomend" src = "../img/bocasorriso.jpg" alt = "Pote para ração"/>'+
+        '            <div class="w3-container recomend-container w3-center w3-white ">'+
+        '                Guarda chuva PET edition<br>Variedades<br>R$ 49,80'+
+        '            </div>'+
+        '            <div class="w3-container cao-container2 w3-center">'+
+        '                <p class = "ver">Ver<br></p>'+
+        '            </div>'+
+        '        </div>'+
+        '        <div class="w3-col prodRec w3-hover-teal">'+
+        '            <img class = " w3-image image-recomend" src = "../img/areia.jpg" alt = "Pote para ração"/>'+
+        '            <div class="w3-container recomend-container w3-center w3-white ">'+
+        '                Guarda chuva PET edition<br>Variedades<br>R$ 49,80'+
+        '            </div>'+
+        '            <div class="w3-container cao-container2 w3-center">'+
+        '                <p class = "ver">Ver<br></p>'+
+        '            </div>'+
+        '        </div>'+
+'                <div class="w3-col prodRec w3-hover-teal">'+
+'                    <img class = " w3-image image-recomend" src = "../img/vaso.jpg" alt = "Pote para ração"/>'+
+'                    <div class="w3-container recomend-container w3-center w3-white ">'+
+'                        Guarda chuva PET edition<br>Variedades<br>R$ 49,80'+
+'                    </div>'+
+'                    <div class="w3-container cao-container2 w3-center">'+
+'                       <p class = "ver">Ver<br></p>'+
+'                    </div>'+
+'                </div>'+
+'                </div>'+
+'            </div>'+
+'    </div>'
     }
 
   }
-  document.getElementById("descprodContainer").innerHTML = prod;
+  document.getElementById("success").innerHTML = prod;
   return prod;
 }
 
@@ -245,7 +303,7 @@ function hideMenuEffect(){
 
 function setMobileImgSize(){
   if ( $(window).width() < 739) {
-    $(".prodMaisVendido").height(70);
+    $(".prodMaisVendido").height(90);
   }
   else{
 
@@ -253,10 +311,14 @@ function setMobileImgSize(){
 }
 
 function changebg(){
-  $(".cat").css("background-image", "url(img/bg" + bgImgIndex + ".jpg)");
-  bgImgIndex++;
-  if(bgImgIndex > 3)
-    bgImgIndex = 1;
+  if( $(window).width() > 739){
+    $(".cat").css("background-image", "url(img/bg" + bgImgIndex + ".jpg)");
+    bgImgIndex++;
+    if(bgImgIndex > 3)
+      bgImgIndex = 1;
 
-  setTimeout(changebg, 5000);
+    setTimeout(changebg, 8000);
+  }
+  else{
+  }
 }
