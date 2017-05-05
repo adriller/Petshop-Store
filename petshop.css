@@ -1086,22 +1086,11 @@ height: 10%;
 }
 
 #cartPage {
-    position: relative;
-    top:178px;
-    width: 100%;
-    height:auto;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.2);
-    text-align: center;
+
 }
 
 .cartCenter {
-    position: relative;
-    width:80%;
-    height: auto;
-    overflow: auto;
-    left:10%;
-    background-color: white;
+
 }
 
 .cartCenter h2 {
@@ -1114,21 +1103,18 @@ height: 10%;
 }
 
 .cartContent {
-    position: relative;
     width:80%;
-    left:10%;
-    top:150px;
-    height:auto;
+    margin: 2% 10%;
     border: 2px solid black;
+    padding:0;
 
 }
 
 .cartContentHeader {
-    position: absolute;
     width: 100%;
-    height:35px;
-    background-color: black;
-    display: block;
+    height:5vmin;
+  color:white;
+  font-size: 2vmin;
 }
 
 
@@ -1167,12 +1153,12 @@ height: 10%;
 }
 
 .cartItem {
-    position: relative;
+    padding:0;
     width:100%;
-    height:120px;
+    height:13vmin;
     border:1px solid black;
     background-color: rgba(0, 0, 0, 0.01);
-    display: block;
+  font-size: 2vmin;
 }
 
 #cartHeaderSpace {
@@ -1183,17 +1169,16 @@ height: 10%;
 }
 
 .cartProdImg {
-    position: absolute;
+  padding:0;
     width:15%;
     height:82%;
-    margin:1% 2.5%;
-    float:left;
+  margin: 0.5%;
 }
 
 .cartImg {
-    max-width:100%;
-    max-height: 100%;
-    margin:0;
+    width:40vmin;
+    height: 10vmin;
+    margin:2%;
     object-fit: contain;
 }
 
@@ -1203,21 +1188,20 @@ height: 10%;
 }
 
 .cartDescr {
-    position: absolute;
-    width:43%;
+  padding:0;
+    width:40%;
     height:82%;
     margin-top: 1%;
-    margin-left: 18%;
     text-align: center;
-    vertical-align: middle;
+  overflow: hidden;
 }
 
 .cartPreco {
-    position: absolute;
-    width:10%;
+  padding:0;
+    width:15%;
     height:50%;
     margin-top: 3%;
-    margin-left: 83.5%;
+  margin-left: 12%;
     text-align: center;
 }
 
@@ -1234,20 +1218,20 @@ height: 10%;
 }
 
 .cartQtd {
-    position: absolute;
+    padding:0;
     width:10%;
     height:50%;
     margin-top: 3%;
-    margin-left: 63%;
+  margin-left: 1%;
     text-align: center;
+  overflow: hidden;
 }
 
 .cartX {
-        position: absolute;
+    padding:0;
     width:3%;
     height:40%;
-    margin-top: 3.5%;
-    margin-left: 95.5%;
+    margin-top: 3%;
     text-align: center;
 
 }
@@ -1267,12 +1251,7 @@ height: 10%;
 }
 
 .cartSumPrice {
-     position: relative;
-    width:80%;
-    left:10%;
-    top:150px;
-    height:35px;
-    background-color:black;
+    height:5vmin;
     border: 2px solid black;
 }
 
@@ -1359,10 +1338,10 @@ height: 10%;
 }
 
 #FinPay {
-    position: absolute;
-    font-size: 25px;
-    margin-left: 43%;
-    margin-top:1%;
+    font-size: 3vmin;
+    margin:3%;
+  padding:2%;
+  border-radius: 50px;
 }
 
 .ver {
@@ -1953,4 +1932,43 @@ span.psw {
 .banhotxt {
     font-size: 13vmin;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.KartHead {
+  padding:7px;
+    color:white;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 50px;
+  font-size: 5vmin;
+}
+
+.descKart {
+  width:25%;
+  margin-top: 1vmin;
+}
+
+.Xis {
+  padding:0% 9%;
+
+  border-radius: 50px;
+}
+
+.totalPrice {
+  font-size: 3vmin;
+  margin-right: 2%;
+}
+
+.KartHead2 {
+  border-radius: 50px;
+  padding: 7px;
+  font-size: 4vmin;
+}
+
+.payIn {
+  width:60%;
+}
+
+.contPay {
+  border-radius: 50px;
+  font-size: 2.4vmin;
 }
