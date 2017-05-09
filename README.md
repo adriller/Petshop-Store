@@ -4,6 +4,9 @@ O objetivo do projeto é criar uma página web, no estilo single page applicatio
 A loja fornece serviços (tosa, banho, vacina, etc), bem como produtos para sua clientela. 
 A aplicação gerenciará tanto os produtos e serviços envolvidos, quanto os clientes que agendam idas à loja com seus animais de estimação.
 
+## Acesso
+O website pode ser acessado via http://valedospets.co.nf/
+
 ## Pré-requisitos
 
 --
