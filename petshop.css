@@ -172,7 +172,6 @@ div.optionbar > ul > li{
 
 
 .cat{
-	position: absolute;
     left: 0;
     margin:0;
     background-image: url(img/bg-teal2.jpg);
@@ -181,7 +180,6 @@ div.optionbar > ul > li{
     background-attachment: fixed;
     width: 100vw;
     height: 720px;
-  margin-top: 11%;
     z-index: -1;
 }
 

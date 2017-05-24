@@ -9,7 +9,7 @@
   $qtdV = $_POST["qtdV"];
   $foto = $_POST["foto"];
 
-  $servername = "localhost";
+  $servername = "fdb17.biz.nf";
   $username = "2344925_valedospets";
   $password = "Adriller123@";
   $dbname = "2344925_valedospets";

@@ -1,6 +1,6 @@
 <?php
 
-  $servername = "localhost";
+  $servername = "fdb17.biz.nf";
   $username = "2344925_valedospets";
   $password = "Adriller123@";
   $dbname = "2344925_valedospets";
@@ -12,16 +12,17 @@
       die("Connection failed: " . $conn->connect_error);
   }
 
-  $sql = "SELECT AUTO_INCREMENT as compraid
-          FROM  INFORMATION_SCHEMA.TABLES
-          WHERE TABLE_SCHEMA = '2344925_valedospets'
-          AND   TABLE_NAME   = 'compras';";
+
+  $sql = "SELECT * FROM compras ORDER BY compraID LIMIT 1";
   $result = $conn->query($sql);
+
+  $lastID = -1;
+
 
   if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    echo $row["compraid"];
-
+    $lastID = $row["compraID"];
+    echo $lastID;
   } else {
       echo "<p id='alert'>Erro: Nao foi posivel conectar ao BD</p>";
   }

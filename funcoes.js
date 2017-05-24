@@ -561,7 +561,7 @@ function changebg(){
           .done(function(data){
            vendaID =  data;
           });
-    //alert(vendaID);
+    alert(vendaID);
     $.post( "serv/cadastrarVenda.php", "vendaid=" + vendaID + "&email=" + usuarioLogado.UserEmail)
           .done(function(data){
             //alert(data);
