@@ -89,8 +89,21 @@ Rita Raad - NºUSP: 8061452
   </div>
 
 
-<div id="petShop">
-    <div class = "cat">
+<div id="petShop" >
+    <div class = "cat w3-container">
+
+      <div class="w3-content w3-display-container slides">
+        <img class="mySlides" src="../img/bg6.jpg" >
+        <img class="mySlides" src="../img/bg5.jpg" >
+        <img class="mySlides" src="../img/bg8.jpg" >
+        <img class="mySlides" src="../img/bg4.jpg" >
+        <img class="mySlides" src="../img/bg9.jpg" >
+        <img class="mySlides" src="../img/bg10.jpg" >
+
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+      </div>
+
     </div>
 
 
@@ -101,9 +114,9 @@ Rita Raad - NºUSP: 8061452
 
 
   <div class="w3-row w3-center" id = "selection">
-  <div class="w3-container w3-col seta" >
-    <a href="#prev" onclick='loadMaisVendidos("prev")'>
-      <img class = "w3-image imgSeta" src = "../img/back.png" alt = "Seta apontando para antes"/>
+  <div class="w3-container w3-col seta " >
+    <a href="#prev" class="aSeta" onclick='loadMaisVendidos("prev")'>
+      <span class="spanSeta"><img class = "w3-image imgSeta " src = "../img/back.png" alt = "Seta apontando para antes"/></span>
     </a>
   </div>
 
@@ -161,7 +174,7 @@ Rita Raad - NºUSP: 8061452
 
     <div class="w3-center w3-container " id="centerGrid">
     <div class=" w3-container w3-center w3-row-padding gridCentral" id = "grid">
-        <div class = "w3-hover-teal w3-black w3-half w3-display-container w3-mobile w3-card-4 w3-teal  w3-margin-bottom">
+        <div class = "w3-hover-teal w3-black w3-half w3-display-container w3-mobile w3-card-4 w3-teal  w3-margin-bottom dest1">
             <a class="destaques">
               <img id = "imggrid1" class="w3-image" src = "../img/rabbitpng.png" alt = "Gato mostrando a patinha"/>
               <div class="w3-display-topmiddle displayMiddle">Ofertas</div>

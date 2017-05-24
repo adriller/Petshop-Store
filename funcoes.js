@@ -1,5 +1,10 @@
 var inicio = 0;
-var bgImgIndex = 1;
+var bgImgIndex = 0;
+var usuarioLogado;
+var carrinho = '{"produtos":[]}';
+var precototal = 0;
+var horario = -1;
+var petID = -1;
 
 function refreshNav(){
     $(".navLoja a").on("click", function(){
@@ -34,9 +39,9 @@ function myFunction(xml, tipo, animal) {
   var i;
   var xmlDoc = xml.responseXML;
   var prod= "";
-  prod+= '  <br><br><br><br><br><div class="w3-ontainer w3-padding-32 w3-hide-small"></div><button class="w3-button w3-teal w3-xlarge w3-hide-large  w3-black" id="openNav" onclick="w3_open()">&#9776;</button><div class="w3-sidebar w3-bar-block w3-collapse w3-card-2 w3-animate-left w3-light-gray" style="width:250px;display:none;" id="mySidebar" onclick="w3_close()"><button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button><a href="#" class="w3-bar-item w3-button w3-hover-teal" onclick="loadDoc(\'COMIDA\', \'' + animal.toUpperCase() + '\')">Alimentos</a><a href="#" class="w3-bar-item w3-button w3-hover-teal" onclick="loadDoc(\'CASA\', \'' + animal.toUpperCase() + '\')">Casinha</a><a href="#" class="w3-bar-item w3-button w3-hover-teal" onclick="loadDoc(\'SAUDE\', \'' + animal.toUpperCase() + '\')">Saude e Higiene</a><a href="#" class="w3-bar-item w3-button w3-hover-teal" onclick="loadDoc(\'OUTRO\',  \'' + animal.toUpperCase() + '\')">Outros</a></div>'
+  prod+= '  <br><br><br><br><br><div class="w3-ontainer w3-padding-32 w3-hide-small"></div><button class="w3-button w3-teal w3-xlarge w3-hide-large  w3-black" id="openNav" onclick="w3_open()">&#9776;</button><div class="w3-sidebar w3-bar-block w3-collapse w3-card-2 w3-animate-left w3-light-gray" style="width:250px;display:none;" id="mySidebar" onclick="w3_close()"><button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button><a href="#" class="w3-bar-item w3-button w3-hover-teal" onclick="loadDoc(\'COMIDA\', \'' + animal.toUpperCase() + '\')">Alimentos</a><a href="#" class="w3-bar-item w3-button w3-hover-teal" onclick="loadDoc(\'CASA\', \'' + animal.toUpperCase() + '\')">Casinha</a><a href="#" class="w3-bar-item w3-button w3-hover-teal" onclick="loadDoc(\'SAUDE\', \'' + animal.toUpperCase() + '\')">Saude e Higiene</a><a href="#" class="w3-bar-item w3-button w3-hover-teal" onclick="loadDoc(\'OUTRO\',  \'' + animal.toUpperCase() + '\')">Outros</a></div>';
   prod+='<div class="w3-main" id="prodContainer">';
-  var show = false, show2 = false;;
+  var show = false, show2 = false;
   var x = xmlDoc.getElementsByTagName("PRODUTO");
   var y = xmlDoc.getElementsByTagName("PARA");
   for (i = 0; i <x.length; i++) {
@@ -262,13 +267,16 @@ function loadMainPage(){
       }
     });
   loadMaisVendidos("next");
+  plusDivs(1);
 }
 
 function w3_open() {
-    document.getElementById("prodContainer").style.marginLeft = "27%";
-    document.getElementById("mySidebar").style.width = "25%";
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("openNav").style.display = 'none';
+    if($(window).width() < 739){
+      document.getElementById("prodContainer").style.marginLeft = "27%";
+      document.getElementById("mySidebar").style.width = "25%";
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("openNav").style.display = 'none';
+    }
   }
   function w3_close() {
     document.getElementById("prodContainer").style.marginLeft = "0%";
@@ -310,15 +318,340 @@ function setMobileImgSize(){
   }
 }
 
-function changebg(){
-  if( $(window).width() > 739){
-    $(".cat").css("background-image", "url(img/bg" + bgImgIndex + ".jpg)");
-    bgImgIndex++;
-    if(bgImgIndex > 3)
-      bgImgIndex = 1;
+function initDivs(){
+  plusDivs(1);
+  setTimeout(initDivs, 8000);
+}
 
-    setTimeout(changebg, 8000);
+function plusDivs(n){
+  bgImgIndex += n;
+
+  changebg();
+
+
+}
+
+function changebg(){
+
+  /*$(".cat").css("background-image", "url(img/bg" + bgImgIndex + ".jpg)");*/
+
+  var x = document.getElementsByClassName("mySlides");
+
+  if(bgImgIndex >= x.length)
+    bgImgIndex = 0;
+  if(bgImgIndex < 0)
+    bgImgIndex = x.length-1;
+
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[bgImgIndex].style.display = "block";
+
+}
+
+/*Database*/
+
+  function regClient(){
+    var foto = $('#fotoUser')[0].files[0].name;
+    //alert(foto);
+    var sendData = $("#register").serialize() + "&foto=" + foto;
+    //alert($("#register").serialize());
+    //alert(sendData);
+      $.post( "serv/serv.php", sendData )
+          .done(function(data){
+            document.getElementById("confReg").innerHTML = data + ' <button onclick="document.getElementById(\'id02\').style.display=\'none\'" type="button" class="w3-button w3-green">Ok</button>';
+          });
+  }
+
+  function regProd(){
+    var foto = $('#fotoProd')[0].files[0].name;
+    //alert(foto);
+    var sendData = $("#registerProd").serialize() + "&foto=" + foto;
+    //alert($("#register").serialize());
+    alert(sendData);
+      $.post( "serv/cadProd.php", sendData )
+          .done(function(data){
+            if(data.search("Erro") < 0 ){
+                document.getElementById('id05').style.display='none';
+              }else{
+                document.getElementById("confRegP").innerHTML = data;
+                $("#alert").fadeOut(3000);
+              }
+          });
+  }
+
+  function regServ(){
+    var foto = $('#fotoServ')[0].files[0].name;
+    //alert(foto);
+    var sendData = $("#registerServ").serialize() + "&foto=" + foto;
+    //alert($("#register").serialize());
+    //alert(sendData);
+      $.post( "serv/cadServ.php", sendData )
+          .done(function(data){
+              if(data.search("Erro") < 0 ){
+                document.getElementById('id06').style.display='none';
+              }else{
+                document.getElementById("confRegS").innerHTML = data;
+                $("#alert").fadeOut(3000);
+              }
+          });
+  }
+
+  function regPet(){
+    var foto = $('#fotoPet')[0].files[0].name;
+    //alert(foto);
+    var sendData = $("#registerPet").serialize() + "&foto=" + foto + "&donoEmail=" + usuarioLogado.UserEmail;
+    //alert($("#register").serialize());
+    //alert(sendData);
+      $.post( "serv/cadPet.php", sendData )
+          .done(function(data){
+
+          notify(data);
+          document.getElementById('id03').style.display='none';
+          });
+  }
+
+  function logIn(){
+    var sendData = $("#formLogIn").serialize();
+    //alert($("#register").serialize());
+      $.post( "serv/logIn.php", sendData )
+          .done(function(data){
+          if(data.search("Erro") < 0 ){
+            usuarioLogado = JSON.parse(data);
+            loadheader();
+            document.getElementById('id01').style.display='none';
+          }else{
+            document.getElementById("confRegLogIn").innerHTML = data;
+            $("#alert").fadeOut(3000);
+          }
+          });
+
+  }
+
+  function loadheader(){
+      $.post( "serv/makeHeaderMenu.php", "admin=" + usuarioLogado.UserAdmin + "&nome=" + usuarioLogado.UserName )
+          .done(function(data){
+           document.getElementById("headerMenu").innerHTML = data;
+          });
+  }
+  function loadMain(){
+      $.post( "serv/makeMainPage.php" )
+          .done(function(data){
+           document.getElementById("success").innerHTML = data;
+          });
+      loadMaisVendidos("next");
+      plusDivs(1);
+  }
+  function loadSobreNos(){
+      $.post( "serv/makeSobreNos.php" )
+          .done(function(data){
+           document.getElementById("success").innerHTML = data;
+          });
+  }
+
+  function loadShop(animal, tipo){
+    //alert("loadShop");
+    $.post( "serv/makeLoja.php",  "animal=" + animal + "&tipo=" + tipo)
+          .done(function(data){
+           document.getElementById("success").innerHTML = data;
+          });
+  w3_open();
+  hideMenuEffect();
+  }
+
+  function loadProdDescription(id){
+      $.post( "serv/makeProdDescr.php", "id=" + id )
+          .done(function(data){
+           document.getElementById("success").innerHTML = data;
+          });
+  }
+
+  function notify(message){
+    document.getElementById('id04').style.display='block';
+    document.getElementById("notification").innerHTML = message;
+  }
+
+  function cadastrarPET(){
+    if(usuarioLogado == null){
+      notify("Voce deve efetuar login antes");
+    }else{
+      document.getElementById('id03').style.display='block';
+    }
+  }
+
+  function Comprar(id, foto, desc, preco){
+    if(usuarioLogado == null){
+      notify("Voce deve efetuar login antes");
+    }else{
+      notify("Produto adicionado ao carrinho!");
+      var obj = JSON.parse(carrinho);
+      obj["produtos"].push({"produtoID":id, "foto":foto, "desc":desc, "preco":preco});
+      carrinho = JSON.stringify(obj);
+
+    }
+  }
+
+  function loadCarrinho(){
+    var compras = JSON.parse(carrinho);
+    var i;
+    var page = '<div id="cartPage" class="w3-center w3-light-gray">'+
+      '<br><br><br><br><br>'+
+      '<div class="w3-ontainer w3-padding-32 w3-hide-small"></div>'+
+      '<div class="w3-center w3-container ">'+
+      '<h2 class="KartHead">Carrinho</h2>'+
+      '</div>'+
+            '<div class="w3-container cartContent w3-center w3-white">'+
+                '<div class="cartContentHeader w3-black w3-row">'+
+                  '<div class = "descKart w3-col	">Item</div>'+
+                  '<div class = "descKart w3-col	">Descricao</div>'+
+                  '<div class = "descKart w3-col	">Quantidade</div>'+
+                  '<div class = "descKart w3-col	">Preco</div>'+
+                '</div>';
+        for(i = 0 ; i < compras.produtos.length ; i++){
+          page += '<div class="cartItem w3-container w3-row">'+
+                    '<div class="cartProdImg w3-container w3-col">'+
+                        '<img class = "cartImg w3-image" src = "img/'+ compras.produtos[i].foto +'" alt = "Ração"/>'+
+                    '</div>'+
+
+                  '<div class="cartDescr w3-col w3-container">'+ compras.produtos[i].desc +'</div>'+
+                    '<div  class="cartQtd w3-container w3-col"><input onclick="updatePreco()"  type=\'number\' size=\'10\' id=\'qtd'+ compras.produtos[i].produtoID + '\' name=\'mynumber\' value=\'1\' /> </div>'+
+                    '<div class="cartPreco w3-container w3-col">R$'+ compras.produtos[i].preco +'</div>'+
+                    /*'<div class="cartX w3-container w3-col "><span class="w3-hover-black Xis"><a href="#" onclick="removerDoCarrinho('+ compras.produtos[i].produtoID +')">X</a></span></div>'+*/
+                '</div>';
+          precototal += parseFloat(compras.produtos[i].preco);
+        }
+
+
+               page += '<div class="cartSumPrice w3-black"><span class="w3-right totalPrice" id="precoTotal">Total: R$ '+ precototal +'</span></div>'+
+            '</div>'+
+      '<div class="w3-container w3-row">'+
+        '<div class="w3-container w3-half w3-center w3-white contPay w3-border">'+
+          '<h2 class="KartHead2 w3-teal">Pagamento</h2>'+
+          'Numero do Cartão:<br>'+
+          '<input type=text class="payIn" pattern="[0-9]{13,16}"><br>'+
+          'Senha:<br>'+
+          '<input type="password" class="payIn"><br>'+
+
+          '<img class = "cartImg" src = "img/Logos-Cart%C3%B5es-de-Cr%C3%A9dito-com-Logo-Pagseguro.jpg" alt = "Ração"/>'+
+        '</div>'+
+
+        '<div class="w3-container w3-half w3-center w3-white contPay w3-border">'+
+          '<h2 class="KartHead2 w3-teal">Endereco</h2>'+
+          'Endereco:<br>'+
+          '<input type=text class="payIn"><br>'+
+          'CEP:<br>'+
+          '<input type=text class="payIn" pattern="[0-9]{13,16}"><br>'+
+          'Telefone:<br>'+
+          '<input type=text class="payIn" pattern="[0-9]{13,16}"><br>'+
+          '<div class="w3-container fimKart">'+
+                '<a href="#" onclick="realizarVenda()"><span id="FinPay" class="w3-black w3-hover-teal">Finalizar</span></a>'+
+          '</div>'+
+        '</div>'+
+      '</div>'+
+    '</div>';
+    document.getElementById("success").innerHTML = page;
+    updatePreco();
+  }
+
+  function realizarVenda(){
+    var i;
+    var vendaID;
+    var compras = JSON.parse(carrinho);
+     $.post( "serv/pegarVendaID.php")
+          .done(function(data){
+           vendaID =  data;
+          });
+    //alert(vendaID);
+    $.post( "serv/cadastrarVenda.php", "vendaid=" + vendaID + "&email=" + usuarioLogado.UserEmail)
+          .done(function(data){
+            //alert(data);
+          });
+    //alert("length=" + compras.produtos.length);
+     for(i = 0 ; i < compras.produtos.length ; i++){
+       var qtd= document.getElementById("qtd" + compras.produtos[i].produtoID).value;
+       //alert(qtd);
+        $.post( "serv/cadastrarVendaProdutos.php", "vendaid=" + vendaID + "&produtoid=" + compras.produtos[i].produtoID + "&qtd=" + qtd)
+          .done(function(data){
+            //alert(data);
+          });
+     }
+    notify("Venda realizada com Sucesso!<br>Numero do pedido: " + vendaID + "<br>Voce pode acessar seus pedidos na aba Meus Dados");
+    carrinho = '{"produtos":[]}';
+  }
+
+function loadMinhaConta(){
+  $.post( "serv/makeMinhaConta.php", "email=" + usuarioLogado.UserEmail)
+          .done(function(data){
+            document.getElementById("success").innerHTML = data;
+          });
+}
+
+function updatePreco(){
+  var i;
+  precototal = 0;
+  var compras = JSON.parse(carrinho);
+  for(i = 0 ; i < compras.produtos.length ; i++){
+    var qtd = document.getElementById("qtd" + compras.produtos[i].produtoID).value;
+    var preco = compras.produtos[i].preco;
+    precototal += qtd * preco;
+  }
+  document.getElementById("precoTotal").innerHTML = "Total: R$ " + precototal;
+}
+
+function loadAgendamento(){
+   $.post( "serv/makeAgendamento.php", "email="+ usuarioLogado.UserEmail)
+          .done(function(data){
+            document.getElementById("success").innerHTML = data;
+          });
+}
+
+function mostrarHorarios(){
+  var dataS = document.getElementById("servData").value;
+  var servico = $("#formEscolherServico").serialize();
+  if(dataS == "" || servico == "servico="){
+    notify("Selecione uma data e um servico");
   }
   else{
+    $.post( "serv/pegarHorarios.php", "data=" + dataS)
+          .done(function(data){
+            document.getElementById("horariosServ").innerHTML = data;
+          });
   }
+}
+function selectHorario(hora){
+  $( "#horario" + horario ).removeClass( "w3-gray" );
+  $( "#horario" + horario ).addClass( "w3-green" );
+  horario = hora;
+  $( "#horario" + hora ).removeClass( "w3-green" );
+  $( "#horario" + hora ).addClass( "w3-gray" );
+}
+
+function selectPet(id){
+  $( "#pet" + petID ).removeClass( "w3-grayscale-max" );
+  petID = id;
+  $( "#pet" + id ).addClass( "w3-grayscale-max" );
+}
+
+function agendar(){
+  var dataS = document.getElementById("servData").value;
+  var servico = $("#formEscolherServico").serialize();
+  if(horario == -1 || petID == -1){
+    notify("Selecione um pet e um horario disponivel")
+  }
+  else{
+    $.post( "serv/agendar.php", servico + "&data=" + dataS + "&horario=" + horario + "&petID=" + petID + "&email=" + usuarioLogado.UserEmail)
+          .done(function(data){
+            notify(data);
+            mostrarHorarios();
+            petID = -1;
+            horario = -1;
+          });
+  }
+}
+
+function loadVendas(){
+  $.post( "serv/makeVendas.php")
+          .done(function(data){
+            document.getElementById("success").innerHTML = data;
+          });
 }

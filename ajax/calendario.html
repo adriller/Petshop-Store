@@ -98,9 +98,75 @@ Rita Raad - NºUSP: 8061452
   </div>
   <div class= " w3-container w3-center subtitCalend w3-black" >
     <br>Escolha uma data e hora:<br>
-    <input id="servData" class="dataSelect" type="datetime-local"/><br><br>
+    <input id="servData" class="dataSelect" type="date"/><br><br>
     Qual serviço deseja:
-    <div class="w3-row-padding">
+  <form id="formEscolherServico">
+    <input class="dataSelect" list="servicos" name="servico">
+    <datalist id="servicos">
+      <option value="Veterinario">
+      <option value="Hotel">
+      <option value="Banho/Tosa">
+    </datalist>
+    <br>
+  </form>
+  <button class="w3-light-gray w3-hover-teal w3-margin btnSelectServ" onclick="mostrarHorarios()">Consultar Horarios</button>
+
+    <div id="horariosServ" class="w3-container w3-margin ">
+      <a href="#" onclick="selectHorario(horario)"><div class="w3-container w3-red w3-margin">
+        <div class=" w3-quarter">
+          <img class="w3-image offCalend" src="../img/meme2.jpg" />
+        </div>
+        <div class="w3-threequarter">
+          <span class="horarioBlock" >Nome: Luluzinha <br>Servico: Tosa <br> Horario: 9h</span>
+        </div>
+      </div></a>
+
+      <div class="w3-container w3-red w3-margin">
+        <div class=" w3-quarter">
+          <img class="w3-image offCalend" src="../img/meme1.jpg" />
+        </div>
+        <div class="w3-threequarter">
+          <span class="horarioBlock" >Nome: Zezinho <br>Servico: Spa <br> Horario: 10h</span>
+        </div>
+      </div>
+
+      <div class="w3-container w3-green w3-margin">
+        <div class=" w3-quarter">
+          <img class="w3-image offCalend" src="../img/patapng.png" />
+        </div>
+        <div class="w3-threequarter">
+          <span class="horarioBlock" > <br>Livre<br>Horario: 11h</span>
+        </div>
+      </div>
+    </div>
+
+    Qual PET sera atendido?
+
+    <div class="w3-container">
+      <div class="escolherPet w3-margin">
+        <a href="#" onclick="selectPet(id)"><img class="w3-image offCalend" src="../img/meme11.jpg" /></a>
+      </div>
+      <div class="escolherPet w3-margin">
+        <img class="w3-image offCalend" src="../img/meme17.jpg" />
+      </div>
+      <div class="escolherPet w3-margin">
+        <img class="w3-image offCalend" src="../img/meme12.jpg" />
+      </div>
+      <div class="escolherPet w3-margin">
+        <img class="w3-image offCalend" src="../img/meme13.jpg" />
+      </div>
+      <div class="escolherPet w3-margin">
+        <img class="w3-image offCalend" src="../img/meme14.jpg" />
+      </div>
+      <div class="escolherPet w3-margin">
+        <img class="w3-image offCalend" src="../img/meme15.jpg" />
+      </div>
+      <div class="escolherPet w3-margin">
+        <img class="w3-image offCalend" src="../img/meme16.jpg" />
+      </div>
+    </div>
+
+    <!--<div class="w3-row-padding">
       <div class="w3-col s4 divCalend">
         <img class="w3-image offCalend w3-opacity w3-hover-opacity-off" src="../img/veterinario.jpg" />
          <input class="w3-radio w3-margin-left " type="radio" name="tipoServ" value="vet" checked>
@@ -116,7 +182,7 @@ Rita Raad - NºUSP: 8061452
         <input class="w3-radio w3-margin-left " type="radio" name="tipoServ" value="vet" >
         <label class="ckboxCalend" >Hotel</label>
       </div>
-    </div><br><br>
+    </div>--><br><br>
     <a id="btnMain" class="w3-hover-teal w3-gray" href="#cadpet" onclick="document.getElementById('id04').style.display='block'">Finalizar</a><br><br>
   </div>
   </div>

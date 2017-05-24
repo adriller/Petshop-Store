@@ -175,7 +175,7 @@ div.optionbar > ul > li{
 	position: absolute;
     left: 0;
     margin:0;
-    background-image: url(img/dog.jpg);
+    background-image: url(img/bg-teal2.jpg);
     background-size:cover;
   background-repeat: no-repeat;
     background-attachment: fixed;
@@ -317,9 +317,10 @@ span.preco{
 }
 
 #imggrid1{
-	width:450px;
-	height: 600px;
+	width:400px;
+	height: 500px;
 	left: 0;
+
 }
 .imggrid2{
 	width:400px;
@@ -1176,7 +1177,7 @@ height: 10%;
 }
 
 .cartImg {
-    width:40vmin;
+    width:10vmin;
     height: 10vmin;
     margin:2%;
     object-fit: contain;
@@ -1190,7 +1191,7 @@ height: 10%;
 .cartDescr {
   padding:0;
     width:40%;
-    height:82%;
+    height:72%;
     margin-top: 1%;
     text-align: center;
   overflow: hidden;
@@ -1201,7 +1202,7 @@ height: 10%;
     width:15%;
     height:50%;
     margin-top: 3%;
-  margin-left: 12%;
+  margin-left: 6%;
     text-align: center;
 }
 
@@ -1219,7 +1220,7 @@ height: 10%;
 
 .cartQtd {
     padding:0;
-    width:10%;
+    width:15%;
     height:50%;
     margin-top: 3%;
   margin-left: 1%;
@@ -1416,7 +1417,7 @@ height: 10%;
         position: relative;
 	width: 100%;
 	left: 0;
-	height: 80px;
+	height: 86px;
     padding-top: 5px;
 	background-color: rgb(53, 53, 53);
     text-align: center;
@@ -1732,7 +1733,8 @@ span.psw {
 
 .imgSacola {
   width: 1%;
-  max-width:10px;
+  width:2vmin;
+  margin-right:0.5%;
 }
 
 .contPad0 {
@@ -1760,13 +1762,13 @@ span.psw {
 }
 
 .seta {
-  width: 10%;
+  width: 11%;
   margin-top: 7.5%;
   vertical-align: middle;
 }
 
 .prodMaisVendido {
-  width:18%;
+  width:17.1%;
   height:45vmin;
   font-size: 1.8vmin;
   padding:0;
@@ -1789,9 +1791,10 @@ span.psw {
 }
 
 .imgSeta {
-  height:10vmin;
-  width: 12vmin;
-  padding:5%;
+  height:12vmin;
+  width: 20vmin;
+  padding: 0%;
+  border-radius: 70px;
 }
 
 .header {
@@ -1887,8 +1890,8 @@ span.psw {
 }
 
 .offCalend {
-  height: 80%;
-  width: 100%;
+  height: 15vmin;
+  width: 15vmin;
 }
 
 .divCalend {
@@ -1971,4 +1974,93 @@ span.psw {
 .contPay {
   border-radius: 50px;
   font-size: 2.4vmin;
+}
+
+.aSeta {
+
+}
+
+.spanSeta {
+   background:teal;
+  border-radius: 50px;
+}
+
+.mySlides {
+  width: 100%;
+  height:100%;
+}
+
+.slides {
+  width:90vmin;
+  height: 50vmin;
+  top: 9%;
+}
+
+.dest1 {
+  margin-top: 5%;
+}
+
+.minhaConta {
+  width: 70%;
+  margin: 2% 15%;
+  border-radius: 50px;
+}
+
+.titleConta {
+  font-size: 5vmin;
+}
+
+.ContaHist {
+  font-size: 3vmin;
+}
+
+.contentHist {
+  font-size: 2vmin;
+  border-radius: 50px;
+  margin: 2% 0%;
+}
+
+.histItem {
+    padding:0;
+    width:100%;
+    height:13vmin;
+}
+#alert {
+  color: red;
+  text-align: center;
+}
+
+.a {
+
+}
+
+.btnSelectServ {
+  font-size: 2.5vmin;
+}
+
+.horarioBlock {
+
+}
+
+.imgHorario {
+  width: 20%;
+}
+
+.petHorario {
+  width: 80%;
+}
+
+#horariosServ {
+  font-size: 2.6vmin;
+}
+
+.escolherPet {
+  width: 15%;
+  float:left;
+}
+
+.sizeHist {
+  width: 20%;
+  height: 100%;
+  overflow: hidden;
 }
