@@ -5,7 +5,7 @@ $validextensions = array("jpeg", "jpg", "png");
 $temporary = explode(".", $_FILES["foto"]["name"]);
 $file_extension = end($temporary);
 if ((($_FILES["foto"]["type"] == "image/png") || ($_FILES["foto"]["type"] == "image/jpg") || ($_FILES["foto"]["type"] == "image/jpeg")
-) && ($_FILES["foto"]["size"] < 100000)//Approx. 100kb files can be uploaded.
+) && ($_FILES["foto"]["size"] < 200000)//Approx. 100kb files can be uploaded.
 && in_array($file_extension, $validextensions)) {
 if ($_FILES["foto"]["error"] > 0)
 {

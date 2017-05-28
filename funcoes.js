@@ -464,12 +464,18 @@ $(document).ready(function (e) {
 
           notify(data);
           document.getElementById('id03').style.display='none';
+
           if(goToAgendamento == 1){
-            loadAgendamento();
+            setTimeout(function(){
+                loadAgendamento();
+            }, 2000);
+
             goToAgendamento = -1;
           }
           if(goToMinhaConta == 1){
-            loadMinhaConta();
+            setTimeout(function(){
+                loadMinhaConta();
+            }, 2000);
             goToMinhaConta = -1;
           }
           });
