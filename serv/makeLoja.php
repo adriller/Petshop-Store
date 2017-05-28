@@ -43,11 +43,14 @@
         }
     }
 
-    echo $page . '</div>';
+    $page .= '</div>';
   } else {
-      echo "<p id='alert'>Erro: Nao foi possivel caregar</p>".$conn->error;
+      $page .= 'Ainda nao Ha itens dessa categoria';
   }
+
+  echo $page;
   $conn->close();
+
 
 
 

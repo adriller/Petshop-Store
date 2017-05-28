@@ -9,7 +9,7 @@
   $qtdV = $_POST["qtdV"];
   $foto = $_POST["foto"];
 
-  $servername = "fdb17.biz.nf";
+  $servername = "localhost";
   $username = "2344925_valedospets";
   $password = "Adriller123@";
   $dbname = "2344925_valedospets";
@@ -21,6 +21,8 @@
   }
 
   $data = date("Y-m-d");
+
+
 
   $sql = "INSERT INTO produtos (nome, descricao, tipo, animal, preco, dataCadastro, qtdE, qtdV, foto)
 VALUES ('" .$nome. "', '" .$descricao. "', '" .$tipo. "', '" .$animal. "', '" .$preco. "', '" .$data. "', '" .$qtdE. "', '" .$qtdV. "', '" .$foto. "')";

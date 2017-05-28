@@ -1,7 +1,8 @@
 
 <?php
-echo '<div id="petShop" >
-      <br><br><br><br>
+$page = '
+<div id="petShop" >
+  <div class="w3-ontainer w3-padding-16 w3-hide-small"></div>
   <div class="w3-ontainer w3-padding-32 w3-hide-small"></div>
     <div class = "cat w3-container">
 
@@ -90,26 +91,26 @@ echo '<div id="petShop" >
         <div class = "w3-hover-teal w3-black w3-half w3-display-container w3-mobile w3-card-4 w3-teal  w3-margin-bottom dest1">
             <a class="destaques">
               <img id = "imggrid1" class="w3-image" src = " img/rabbitpng.png" alt = "Gato mostrando a patinha"/>
-              <div class="w3-display-topmiddle displayMiddle">Ofertas</div>
+              <div class="w3-display-topmiddle displayMiddle">ECONOMIA</div>
             </a>
         </div>
 
         <div class = "w3-half w3-center ">
             <div class = "w3-card-4   w3-display-container w3-mobile w3-hover-teal w3-black">
                 <a class=""><img class = "imggrid2 w3-image" src = " img/birdpng.png" alt = "Três passaros"/>
-                  <div class="w3-display-topmiddle displayMiddle">Novidades</div></a>
+                  <div class="w3-display-topmiddle displayMiddle">QUALIDADE</div></a>
             </div>
 
             <div class = "w3-card-4 w3-hover-teal w3-black w3-display-container w3-mobile w3-teal w3-margin-top">
                 <a class=""><img class = "imggrid2 w3-image" src = " img/fishpng.png" alt = "Cachorro comendo"/>
-                <div class="w3-display-topmiddle displayMiddle2">Recomendados</div></a>
+                <div class="w3-display-topmiddle displayMiddle2">DIVERSAO</div></a>
             </div>
         </div>
 
     </div>
-    </div>
+    </div>';
 
-      <h1 id="ClientsPets">Ultimos PETs cadastrados:</h1>
+    /*  '<h1 id="ClientsPets">Ultimos PETs cadastrados:</h1>
     <section class= "w3-row w3-center" id = "selection2">
 
 
@@ -167,9 +168,9 @@ echo '<div id="petShop" >
         <div class="w3-container w3-center  w3-margin-bottom">
           <h3>Quer seu pet aqui?</h3>
           <a id="btnMain" class="w3-hover-teal" href="#cadpet" onclick="cadastrarPET()">Cadastre</a>
-        </div>
+        </div>';*/
 
-    <footer>
+    $page .= '<footer>
         <p>Trabalho de WEB</p>
 
         <p>Adriller, Matheus, Rita, Allan, Hikaro</p>
@@ -178,5 +179,7 @@ echo '<div id="petShop" >
     </footer>
     </div>
 </div>';
+
+echo $page;
 
   ?>

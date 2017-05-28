@@ -5,6 +5,8 @@ var carrinho = '{"produtos":[]}';
 var precototal = 0;
 var horario = -1;
 var petID = -1;
+var goToAgendamento = -1;
+var goToMinhaConta = -1;
 
 function refreshNav(){
     $(".navLoja a").on("click", function(){
@@ -230,13 +232,12 @@ function myFunctionVendidos(xml, prevOrNext) {
     prod+= '  <div class = " w3-container w3-col ';
     if(prevOrNext.toUpperCase() == "NEXT") prod+= 'w3-animate-left'; else prod+= 'w3-animate-right';
     prod+= ' w3-card-4 w3-white  prodMaisVendido">'+
-    '<a href="#produto" onclick=\'loadPageDesc("' + x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue + '")\'>' +
       '<img class = "w3-image imagemMaisVendido" src = "img/' + x[i].getElementsByTagName("FOTO")[0].childNodes[0].nodeValue + '" alt = "Ração"/>'+
         '<div class="w3-container w3-black  contDescr">' +
           x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue +
           '<br><b>R$' + x[i].getElementsByTagName("PRECO")[0].childNodes[0].nodeValue + ' </b>'+
         '</div>'+
-    '</a></div>';
+    '</div>';
 
     /*prod += '\n<a href="#prod" onclick=\'loadPageDesc("' + x[i].getElementsByTagName("NOME")[0].childNodes[0].nodeValue + '")\'>' +
                 '<div class = "produto ';
@@ -380,6 +381,61 @@ function changebg(){
           });
   }
 
+$(document).ready(function (e) {
+  $("#registerProd").on('submit',(function(e) {
+    e.preventDefault();
+    $.ajax({
+    url: "serv/upload.php", // Url to which the request is send
+    type: "POST",             // Type of request to be send, called as method
+    data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+    contentType: false,       // The content type used when sending data to the server.
+    cache: false,             // To unable request pages to be cached
+    processData:false,        // To send DOMDocument or non processed data file it is set to false
+    success: function(data)   // A function to be called if request succeeds
+    {
+    document.getElementById("confRegP").innerHTML = data;
+    }
+    });
+  }));
+});
+
+$(document).ready(function (e) {
+  $("#registerPet").on('submit',(function(e) {
+    e.preventDefault();
+    $.ajax({
+    url: "serv/upload.php", // Url to which the request is send
+    type: "POST",             // Type of request to be send, called as method
+    data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+    contentType: false,       // The content type used when sending data to the server.
+    cache: false,             // To unable request pages to be cached
+    processData:false,        // To send DOMDocument or non processed data file it is set to false
+    success: function(data)   // A function to be called if request succeeds
+    {
+    document.getElementById("confRegPet").innerHTML = data;
+    }
+    });
+  }));
+});
+
+$(document).ready(function (e) {
+  $("#registerServ").on('submit',(function(e) {
+    e.preventDefault();
+    $.ajax({
+    url: "serv/upload.php", // Url to which the request is send
+    type: "POST",             // Type of request to be send, called as method
+    data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+    contentType: false,       // The content type used when sending data to the server.
+    cache: false,             // To unable request pages to be cached
+    processData:false,        // To send DOMDocument or non processed data file it is set to false
+    success: function(data)   // A function to be called if request succeeds
+    {
+    document.getElementById("confRegS").innerHTML = data;
+    }
+    });
+  }));
+});
+
+
   function regServ(){
     var foto = $('#fotoServ')[0].files[0].name;
     //alert(foto);
@@ -408,6 +464,14 @@ function changebg(){
 
           notify(data);
           document.getElementById('id03').style.display='none';
+          if(goToAgendamento == 1){
+            loadAgendamento();
+            goToAgendamento = -1;
+          }
+          if(goToMinhaConta == 1){
+            loadMinhaConta();
+            goToMinhaConta = -1;
+          }
           });
   }
 
@@ -514,7 +578,7 @@ function changebg(){
                     '</div>'+
 
                   '<div class="cartDescr w3-col w3-container">'+ compras.produtos[i].desc +'</div>'+
-                    '<div  class="cartQtd w3-container w3-col"><input onclick="updatePreco()"  type=\'number\' size=\'10\' id=\'qtd'+ compras.produtos[i].produtoID + '\' name=\'mynumber\' value=\'1\' /> </div>'+
+                    '<div  class="cartQtd w3-container w3-col"><input onclick="updatePreco()"  type=\'number\' min="0" id=\'qtd'+ compras.produtos[i].produtoID + '\' name=\'mynumber\' value=\'1\' /> </div>'+
                     '<div class="cartPreco w3-container w3-col">R$'+ compras.produtos[i].preco +'</div>'+
                     /*'<div class="cartX w3-container w3-col "><span class="w3-hover-black Xis"><a href="#" onclick="removerDoCarrinho('+ compras.produtos[i].produtoID +')">X</a></span></div>'+*/
                 '</div>';
@@ -561,7 +625,8 @@ function changebg(){
           .done(function(data){
            vendaID =  data;
           });
-    alert(vendaID);
+    vendaID = vendaID.substring(285);
+    //alert(vendaID);
     $.post( "serv/cadastrarVenda.php", "vendaid=" + vendaID + "&email=" + usuarioLogado.UserEmail)
           .done(function(data){
             //alert(data);
@@ -643,8 +708,10 @@ function agendar(){
           .done(function(data){
             notify(data);
             mostrarHorarios();
+            $( "#pet" + petID ).removeClass( "w3-grayscale-max" );
             petID = -1;
             horario = -1;
+
           });
   }
 }
@@ -654,4 +721,21 @@ function loadVendas(){
           .done(function(data){
             document.getElementById("success").innerHTML = data;
           });
+}
+
+function cadastrarNovoPET(){
+  cadastrarPET();
+  goToAgendamento = 1;
+}
+
+function cadastrarContaPET(){
+  cadastrarPET();
+  goToMinhaConta = 1;
+}
+
+function getfolder(e) {
+    var files = e.target.files;
+    var path = files[0].webkitRelativePath;
+    var Folder = path.split("/");
+    alert(Folder[0]);
 }

@@ -3,7 +3,7 @@
   $email = $_POST["email"];
   //$email = 'adriller_gf@hotmail.com';
 
-  $servername = "fdb17.biz.nf";
+  $servername = "localhost";
   $username = "2344925_valedospets";
   $password = "Adriller123@";
   $dbname = "2344925_valedospets";
@@ -74,13 +74,13 @@ $page = '<div id="calendarioPage">
 
     }
   } else {
-      $page .=  "Vocë ainda nao possui PETs cadastrados. Por favor, cadastre.";
+      $page .=  "Voce ainda nao possui PETs cadastrados. Por favor, cadastre.";
   }
 
 
 
     $page .='</div>
-
+    <br> <a id="btnMain" class="w3-hover-gray w3-teal" href="#cadpet" onclick="cadastrarNovoPET()"> Cadastrar novo PET</a>
     <br><br>
     <a id="btnMain" class="w3-hover-teal w3-gray" href="#cadpet" onclick="agendar();return false;">Finalizar</a><br><br>
   </div>

@@ -3,7 +3,7 @@
   $vendaid = $_POST["vendaid"];
   $email = $_POST["email"];
 
-  $servername = "fdb17.biz.nf";
+  $servername = "localhost";
   $username = "2344925_valedospets";
   $password = "Adriller123@";
   $dbname = "2344925_valedospets";

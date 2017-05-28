@@ -5,7 +5,7 @@
   //$email = "adriller_gf@hotmail.com";
 
 
-  $servername = "fdb17.biz.nf";
+  $servername = "localhost";
   $username = "2344925_valedospets";
   $password = "Adriller123@";
   $dbname = "2344925_valedospets";
@@ -59,15 +59,40 @@
          $page .=  '</div>';
     }
 
-    $page .= '</div>
+  }
+  else{
+     $page .= '<br>Nenhuma compra efetuada';
+  }
+  $page .= '</div>';
 
+
+ $page .= '<span style="font-size:4vmin;text-align:center">Meus Pets</span>
+
+    <div class="w3-container">';
+
+  $sql = "SELECT * FROM pets WHERE donoEmail = '" .$email. "'";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      $page .='<div class="escolherPet w3-margin">
+        <a href="#" id="selection" onclick="return false;"><img class="w3-image offCalend" id="pet'.$row["petID"].'" src="img/'.$row["foto"].'" /></a>
+      </div>';
+
+    }
+  } else {
+      $page .=  '<span style="font-size:2vmin">Voce ainda nao possui PETs cadastrados. Por favor, cadastre.</span>';
+  }
+
+
+    $page .='
+        </div>
+         <br><a id="btnMain" class="w3-hover-gray w3-teal w3-center" href="#cadpet" onclick="cadastrarContaPET()"> Cadastrar novo PET</a> <br><br><br>
       </div>
 
     </div>';
+
     echo $page;
-  } else {
-      echo "<p id='alert'>Erro: Nao foi possivel caregar</p>".$conn->error;
-  }
   $conn->close();
 
 

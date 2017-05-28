@@ -9,15 +9,15 @@
         <div class="paragraph"><b>FRETE GRÁTIS</b> NAS COMPRAS ACIMA DE R$ 300 | PARCELE EM ATÉ <b>6X SEM JUROS</b></div>
       </div>
         <a href="#carrinho" onclick="loadCarrinho()">
-          <div class="w3-right paragraph">SACOLA (0)</div>
+          <div class="w3-right paragraph">CARRINHO</div>
           <img class="w3-image imgSacola w3-right" src = "img/sacola.png" alt ="imagem da sacola"/>
         </a>
     </header>
 
     <div class="w3-bar w3-black">
-      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small" onclick="loadAgendamento()">AGENDA</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="loadPage(\'ajax/servicos.html\', \'serv\')"><span>BLOG</span></a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="loadPage(\'ajax/minhaconta.html\', \'calendarioPage\')"><span>LOJA</span></a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small" onclick="loadAgendamento()">AGENDAMENTO</a>
+
+      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="loadMain()"><span>LOJA</span></a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small w3-teal w3-padding-small w3-right"  >Bem Vindo ' .$nome. '</a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-right" onclick="loadMinhaConta()" >MEUS DADOS</a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-right"  onclick="loadSobreNos()">SOBRE NÓS</a>
@@ -71,14 +71,14 @@
         <div class="paragraph"><b>FRETE GRÁTIS</b> NAS COMPRAS ACIMA DE R$ 300 | PARCELE EM ATÉ <b>6X SEM JUROS</b></div>
       </div>
         <a href="#carr" onclick="loadCarrinho()">
-          <div class="w3-right paragraph">SACOLA (0)</div>
+          <div class="w3-right paragraph">CARRINHO</div>
           <img class="w3-image imgSacola w3-right" src = "img/sacola.png" alt ="imagem da sacola"/>
         </a>
     </header>
 
     <div class="w3-bar w3-black">
-      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small" onclick="loadAgendamento()">AGENDA</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="loadPage(\'ajax/servicos.html\', \'serv\')"><span>BLOG</span></a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small" onclick="loadAgendamento()">AGENDAMENTO</a>
+
       <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="loadMain()"><span>LOJA</span></a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="document.getElementById(\'id05\').style.display=\'block\'"><span>CADASTRAR PRODUTO</span>
       </a>

@@ -20,55 +20,59 @@ Rita Raad - NºUSP: 8061452
 	<script type="text/javascript" src="funcoes.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel = "stylesheet" type="text/css" href="petshop.css"/>
+    <link rel = "stylesheet" type="text/css" href="../petshop.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <div class="w3-top" id="headerMenu">
+  <div class="w3-top">
     <header class = "w3-row w3-gray">
       <div class="w3-left">
         <div class="paragraph"><b>FRETE GRÁTIS</b> NAS COMPRAS ACIMA DE R$ 300 | PARCELE EM ATÉ <b>6X SEM JUROS</b></div>
       </div>
-        <a href="#carrinho" onclick="notify('Efetue Login antes')">
-          <div class="w3-right paragraph">CARRINHO</div>
-          <img class="w3-image imgSacola w3-right" src = "img/sacola.png" alt ="imagem da sacola"/>
+        <a href="#carrinho" onclick="loadPage('ajax/carrinho.html', 'cartPage')">
+          <div class="w3-right paragraph">SACOLA (0)</div>
+          <img class="w3-image imgSacola w3-right" src = "../img/sacola.png" alt ="imagem da sacola"/>
         </a>
     </header>
 
     <div class="w3-bar w3-black">
-      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small" onclick="notify('Efetue Login para agendar um servico!')">AGENDAMENTO</a>
-      <!--<a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="loadPage('ajax/servicos.html', 'serv')"><span>BLOG</span></a>-->
-      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="loadMain()"><span>LOJA</span></a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-right"  onclick="document.getElementById('id02').style.display='block'">CADASTRE-SE </a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-right" onclick="document.getElementById('id01').style.display='block'" >ENTRAR</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-right"  onclick="loadSobreNos()">SOBRE NÓS</a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small" onclick="loadPage('ajax/calendario.html', 'calendarioPage')">AGENDA</a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="loadPage('ajax/servicos.html', 'serv')"><span>SERVIÇOS</span></a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="loadMainPage()"><span>LOJA</span></a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="document.getElementById('id05').style.display='block'"><span>CADASTRAR PRODUTO</span>
+      </a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="document.getElementById('id06').style.display='block'"><span>CADASTRAR SERVICO</span></a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="loadMainPage()"><span>VENDAS</span></a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small r w3-hover-teal w3-padding-small w3-right"  onclick="document.getElementById('id02').style.display='block'">CADASTRE-SE </a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small r w3-hover-teal w3-padding-small w3-right" onclick="document.getElementById('id01').style.display='block'" >MEUS DADOS</a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-right"  onclick="loadPage('ajax/sobrenos.html', 'serv')">SOBRE NÓS</a>
     </div>
     <div class="w3-bar w3-black">
-      <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button   w3-hover-teal w3-padding-small" onclick="notify('Efetue Login para agendar um servico!')"><i class="fa fa-calendar-plus-o"></i></a>
-      <!--<a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small"  onclick="loadPage('ajax/servicos.html', 'serv')"><span><i class="fa fa-calendar"></i></span></a>-->
-      <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small"  onclick="loadMain()"><span><i class="fa fa-home"></i></span></a>
+      <a href="#" class="w3-hide-large  w3-bar-item w3-button   w3-hover-teal w3-padding-small" onclick="loadPage('ajax/calendario.html', 'calendarioPage')"><i class="fa fa-calendar-plus-o"></i></a>
+      <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small"  onclick="loadPage('ajax/servicos.html', 'serv')"><span><i class="fa fa-calendar"></i></span></a>
+      <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small"  onclick="loadMainPage()"><span><i class="fa fa-home"></i></span></a>
       <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small w3-right"  onclick="document.getElementById('id02').style.display='block'"><i class="fa fa-plus-square-o"></i> </a>
       <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small w3-right" onclick="document.getElementById('id01').style.display='block'" ><i class="fa fa-user-circle"></i></a>
-      <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small w3-right"  onclick="loadSobreNos()"> <i class="fa fa-info-circle"></i></a>
+      <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small w3-right"  onclick="loadPage('ajax/sobrenos.html', 'serv')"> <i class="fa fa-info-circle"></i></a>
     </div>
     <div class="w3-display-container w3-animate-opacity mainBG">
       <div class="w3-center w3-hide-small">
-        <a href="#loja" onclick="loadMain()"><img id = "logoimg" src = "img/aa2.png" alt = "logo"/></a>
+        <a href="#loja" onclick="loadMainPage()"><img id = "logoimg" src = "../img/aa2.png" alt = "logo"/></a>
       </div>
       <div class="w3-center w3-hide-small">
-        <a href="#loja" onclick="loadMain()"><img id = "nome" src = "img/logo.png" alt = "logo"/></a>
+        <a href="#loja" onclick="loadMainPage()"><img id = "nome" src = "../img/logo.png" alt = "logo"/></a>
       </div>
       <div class="w3-center w3-hide-large w3-hide-medium">
-        <a href="#loja" onclick="loadMain()"><img id = "nome2" src = "img/logo.png" alt = "logo"/></a>
+        <a href="#loja" onclick="loadMainPage()"><img id = "nome2" src = "../img/logo.png" alt = "logo"/></a>
       </div>
 
       <div class="w3-bar w3-center">
-        <a href="#" class="w3-center centerMenu2 w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-center a w3-white" onclick="loadShop('cachorro', 'alimento')">CACHORROS</a>
-        <a href="#" class="w3-center w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-white" onclick="loadShop('gato', 'alimento')">GATOS</a>
-        <a href="#" class="w3-center w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-white" onclick="loadShop('passaro', 'alimento')">PÁSSAROS</a>
-        <a href="#" class="w3-center w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-white" onclick="loadShop('roedor', 'alimento')">ROEDORES</a>
-        <a href="#" class="w3-center w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-white" onclick="loadShop('outro', 'alimento')">OUTROS</a>
+        <a href="#" class="w3-center centerMenu2 w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-center w3-white" onclick="loadProdPage('ajax/loja-cao.html', 'loja-cao', 'COMIDA', 'CACHORRO' ); w3_open();">CACHORROS</a>
+        <a href="#" class="w3-center w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-white" onclick="loadProdPage('ajax/loja-gato.html', 'loja-gato', 'COMIDA', 'GATO' )">GATOS</a>
+        <a href="#" class="w3-center w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-white" onclick="loadProdPage('ajax/loja-passaro.html', 'loja-passaro', 'COMIDA', 'PASSARO' )">PÁSSAROS</a>
+        <a href="#" class="w3-center w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-white" onclick="loadProdPage('ajax/loja-roedor.html', 'loja-roedor', 'COMIDA', 'ROEDOR' )">ROEDORES</a>
+        <a href="#" class="w3-center w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-white" onclick="loadProdPage('ajax/loja-outro.html', 'loja-outro', 'COMIDA', 'OUTRO' )">OUTROS</a>
         <input type="text" class="w3-bar w3-input w3-padding-small  w3-hide-small" placeholder="Procurar..">
         <a href="#" class=" w3-button w3-teal w3-padding-small w3-center w3-hide-small"><i class=" fa fa-search"></i></a>
         <a href="javascript:void(0)" class="w3-hover-teal w3-padding-small w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium w3-black" onclick="showMenu2Mobile()">&#9776;</a>
@@ -76,11 +80,11 @@ Rita Raad - NºUSP: 8061452
 
       <div id="menu2Mobile" class="w3-bar-block w3-light-gray w3-hide w3-hide-large w3-hide-medium">
 
-        <a href="#" class="w3-bar-item w3-button  w3-hover-teal w3-padding-small" onclick="loadShop('cachorro', 'alimento'); w3_open();">CACHORROS</a>
-        <a href="#" class="w3-bar-item w3-button  w3-hover-teal w3-padding-small " onclick="loadShop('gato', 'alimento')">GATOS</a>
-        <a href="#" class="w3-bar-item w3-button  w3-hover-teal w3-padding-small" onclick="loadShop('passaro', 'alimento')">PÁSSAROS</a>
-        <a href="#" class="w3-bar-item w3-button  w3-hover-teal w3-padding-small" onclick="loadShop('roedor', 'alimento')">ROEDORES</a>
-        <a href="#" class="w3-bar-item w3-button  w3-hover-teal w3-padding-small" onclick="loadShop('outro', 'alimento')">OUTROS</a>
+        <a href="#" class="w3-bar-item w3-button  w3-hover-teal w3-padding-small" onclick="loadProdPage('ajax/loja-cao.html', 'loja-cao', 'COMIDA', 'CACHORRO' ); w3_open();">CACHORROS</a>
+        <a href="#" class="w3-bar-item w3-button  w3-hover-teal w3-padding-small " onclick="loadProdPage('ajax/loja-gato.html', 'loja-gato', 'COMIDA', 'GATO' )">GATOS</a>
+        <a href="#" class="w3-bar-item w3-button  w3-hover-teal w3-padding-small" onclick="loadProdPage('ajax/loja-passaro.html', 'loja-passaro', 'COMIDA', 'PASSARO' )">PÁSSAROS</a>
+        <a href="#" class="w3-bar-item w3-button  w3-hover-teal w3-padding-small" onclick="loadProdPage('ajax/loja-roedor.html', 'loja-roedor', 'COMIDA', 'ROEDOR' )">ROEDORES</a>
+        <a href="#" class="w3-bar-item w3-button  w3-hover-teal w3-padding-small" onclick="loadProdPage('ajax/loja-outro.html', 'loja-outro', 'COMIDA', 'OUTRO' )">OUTROS</a>
         <a href="#" class=" w3-bar-item w3-button w3-padding-small w3-right ">
         <input type="text" class="w3-left w3-input w3-padding-small" placeholder="Procurar..">
         Buscar<i class="fa fa-search w3-margin-left" ></i>
@@ -92,7 +96,7 @@ Rita Raad - NºUSP: 8061452
     <div id="success"></div>
 
 
-    <div id="erro"></div>
+    <div id="error"></div>
 
     <!--/*form login*/-->
     <div id="id01" class="w3-modal">
@@ -104,20 +108,18 @@ Rita Raad - NºUSP: 8061452
           <img src="img/logo.png" alt="Avatar" style="width:40%" class="w3-margin-top">
         </div>
 
-        <form class="w3-container" action="" id="formLogIn">
+        <form class="w3-container" action="/action_page.php">
           <div class="w3-section">
             <label><b>Email</b></label>
             <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="entre com seu email" name="usrname" required>
             <label><b>Senha</b></label>
             <input class="w3-input w3-border" type="password" placeholder="Entre com sua senha" name="psw" required>
-            <button class="w3-button w3-block w3-teal w3-section w3-padding" type="button"
- onclick="logIn()">Login</button>
+            <button class="w3-button w3-block w3-teal w3-section w3-padding" type="submit">Login</button>
             <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Lembrar-me
           </div>
         </form>
 
         <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-          <div class="w3-container" id="confRegLogIn"></div>
           <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancelar</button>
           <span class="w3-right w3-padding w3-hide-small">Esqueceu sua <a href="#">senha?</a></span>
         </div>
@@ -125,12 +127,12 @@ Rita Raad - NºUSP: 8061452
       </div>
     </div>
 
-    <!--/*form cadastro User*/-->
+    <!--/*form cadastro*/-->
     <div id="id02" class="w3-modal">
       <div class="w3-modal-content w3-card-4 w3-animate-zoom w3-light-gray" style="max-width:600px">
 
         <div class="w3-center "><br>
-          <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+          <span onclick="document.getElementById('id04').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
           <img src="img/logo.png" alt="Avatar" style="width:40%" class="w3-margin-top">
         </div>
 
@@ -206,13 +208,13 @@ Rita Raad - NºUSP: 8061452
           <img src="img/logo.png" alt="Avatar" style="width:40%" class="w3-margin-top">
         </div>
 
-        <form action="" method="post"  enctype="multipart/form-data" class="w3-container" id="registerPet">
+        <form action="/action_page.php" class="w3-container">
 
 
           <div class="w3-row w3-section">
             <div class="w3-col " style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
               <div class="w3-rest">
-                <input class="w3-input w3-border" name="nome" type="text" placeholder="Nome" required>
+                <input class="w3-input w3-border" name="first" type="text" placeholder="Nome" required>
               </div>
           </div>
 
@@ -220,14 +222,14 @@ Rita Raad - NºUSP: 8061452
           <div class="w3-row w3-section">
             <div class="w3-col" style="width:50px"><i class="material-icons" style="font-size:36px">pets</i></div>
               <div class="w3-rest">
-                <input class="w3-input w3-border" name="raca" type="text" placeholder="Raça" required>
+                <input class="w3-input w3-border" name="phone" type="text" placeholder="Raça" required>
               </div>
           </div>
 
           <div class="w3-row w3-section">
             <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-birthday-cake"></i></div>
             <div class="w3-rest">
-                <input class="w3-input w3-border" name="idade" type="text" placeholder="Idade" required>
+                <input class="w3-input w3-border" name="message" type="text" placeholder="Idade" required>
             </div>
           </div>
 
@@ -235,9 +237,9 @@ Rita Raad - NºUSP: 8061452
             <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-share-alt"></i></div>
             <div class="w3-rest">
               <label>Permito meu PET ser visto publicamente<br></label>
-              <input class="w3-radio w3-margin-left" type="radio" name="permissao" value="Sim" checked>
+              <input class="w3-radio w3-margin-left" type="radio" name="permission" value="Sim" checked>
             <label>Sim</label>
-            <input class="w3-radio w3-margin-left" type="radio" name="permissao" value="Nao">
+            <input class="w3-radio w3-margin-left" type="radio" name="permission" value="Nao">
             <label>Nao</label>
             </div>
           </div>
@@ -247,24 +249,23 @@ Rita Raad - NºUSP: 8061452
             <label>Foto</label></div>
               <div class="w3-rest">
 
-                <input class="w3-input w3-border" name="foto" type="file" placeholder="foto" required id="fotoPet">
+                <input class="w3-input w3-border" name="user-foto" type="file" placeholder="foto" required>
               </div>
           </div>
 
-          <button class="w3-button w3-block w3-section w3-teal w3-ripple w3-padding" type="submit" onclick="regPet()">Cadastrar</button>
+          <button class="w3-button w3-block w3-section w3-teal w3-ripple w3-padding">Cadastrar</button>
 
           </form>
 
         <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-          <div class="w3-container" id="confRegPet"></div>
-          <button onclick="document.getElementById('id03').style.display='none'" type="button" class="w3-button w3-red" >Cancel</button>
+          <button onclick="document.getElementById('id03').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
         </div>
 
       </div>
     </div>
 
-
     <!--Confirmacao de servico-->
+    <!--/*form login*/-->
     <div id="id04" class="w3-modal">
 
       <div class="w3-modal-content w3-card-4 w3-animate-zoom w3-light-gray" style="max-width:600px">
@@ -274,15 +275,15 @@ Rita Raad - NºUSP: 8061452
           <img src="img/logo.png" alt="Avatar" style="width:40%" class="w3-margin-top">
         </div>
 
-        <div  class="w3-container w3-border-top w3-padding-16 w3-light-grey w3-center">
-          <div id="notification" >AGENDADO AMORE</div><br><br>
+        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey w3-center">
+          AGENDADO AMORE<br><br>
           <button onclick="document.getElementById('id04').style.display='none'" type="button" class="w3-button w3-green">Ok</button>
         </div>
 
       </div>
     </div>
 
-    <!--/*form cadastro PRODUTO*/-->
+  <!--/*form cadastro PRODUTO*/-->
     <div id="id05" class="w3-modal">
       <div class="w3-modal-content w3-card-4 w3-animate-zoom w3-light-gray" style="max-width:600px">
 
@@ -291,8 +292,8 @@ Rita Raad - NºUSP: 8061452
           <img src="img/logo.png" alt="Avatar" style="width:40%" class="w3-margin-top">
         </div>
 
-        <form id="registerProd" action=""  method="post"  enctype="multipart/form-data" class="w3-container">
-        <!--<form id="uploadimage" action="" method="post" enctype="multipart/form-data">-->
+        <form id="registerProd" action="" class="w3-container">
+
 
           <div class="w3-row w3-section">
             <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-font"></i></div>
@@ -306,21 +307,7 @@ Rita Raad - NºUSP: 8061452
           <div class="w3-row w3-section">
             <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-align-justify"></i></div>
               <div class="w3-rest">
-                <input class="w3-input w3-border" name="descricao" placeholder="Descricao" type="tex" rows="10" cols="200"  required>
-              </div>
-          </div>
-
-          <div class="w3-row w3-section">
-            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-align-justify"></i></div>
-              <div class="w3-rest">
-                <input class="w3-input w3-border" name="tipo" placeholder="Tipo (alimento, saude, casa, outro)" type="tex" rows="10" cols="200" placeholder="Email" required>
-              </div>
-          </div>
-
-          <div class="w3-row w3-section">
-            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-align-justify"></i></div>
-              <div class="w3-rest">
-                <input class="w3-input w3-border" name="animal" placeholder="Para qual animal? (cachorro, gato, roedor, outro)" type="tex" rows="10" cols="200" placeholder="Email" required>
+                <input class="w3-input w3-border" name="descricao" placeholder="Descricao" type="tex" rows="10" cols="200" placeholder="Email" required>
               </div>
           </div>
 
@@ -349,12 +336,11 @@ Rita Raad - NºUSP: 8061452
             <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-paperclip"></i>
             <label>Foto</label></div>
               <div class="w3-rest">
-                <input class="w3-input w3-border" id="fotoProd" name="foto" type="file" msdirectory odirectory directory placeholder="foto" required>
-                <!--<input type="file" name="file" id="file" required />-->
+                <input class="w3-input w3-border" id="fotoProd" name="foto" type="file" placeholder="foto" required>
               </div>
           </div>
-          <!--<input type="submit" value="Upload" class="submit" />-->
-          <button id="btnRegister" type="submit" class="w3-button w3-block w3-section w3-teal w3-ripple w3-padding" onclick="regProd()">Registrar </button>
+
+          <button id="btnRegister" type="button" class="w3-button w3-block w3-section w3-teal w3-ripple w3-padding" onclick="regProd()">Registrar </button>
 
           </form>
 
@@ -375,7 +361,7 @@ Rita Raad - NºUSP: 8061452
           <img src="img/logo.png" alt="Avatar" style="width:40%" class="w3-margin-top">
         </div>
 
-        <form id="registerServ" method="post"  enctype="multipart/form-data" action="" class="w3-container">
+        <form id="registerServ" action="" class="w3-container">
 
 
           <div class="w3-row w3-section">
@@ -409,7 +395,7 @@ Rita Raad - NºUSP: 8061452
               </div>
           </div>
 
-          <button id="btnRegister" type="submit" class="w3-button w3-block w3-section w3-teal w3-ripple w3-padding" onclick="regServ()">Registrar </button>
+          <button id="btnRegister" type="button" class="w3-button w3-block w3-section w3-teal w3-ripple w3-padding" onclick="regServ()">Registrar </button>
 
           </form>
 
@@ -420,6 +406,7 @@ Rita Raad - NºUSP: 8061452
 
       </div>
     </div>
+
   <!--
   <footer class="w3-container footer w3-display-bottom">
     <p>Trabalho de WEB</p>
@@ -428,12 +415,9 @@ Rita Raad - NºUSP: 8061452
   <script>
     jQuery.ajaxSetup({async:false});
 
-    $( "#success" ).load = loadMain();
-    //$( "#success" ).load = checkUser();
+    $( "#success" ).load = loadMainPage();
 
     $(".slides").load = initDivs();
-
-
 
   </script>
 </body>
