@@ -24,7 +24,6 @@
     </div>
     <div class="w3-bar w3-black">
       <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button   w3-hover-teal w3-padding-small" onclick="loadAgendamento()"><i class="fa fa-calendar-plus-o"></i></a>
-      <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small"  onclick="loadPage(\'ajax/servicos.html\', \'serv\')"><span><i class="fa fa-calendar"></i></span></a>
       <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small"  onclick="loadMain()"><span><i class="fa fa-home"></i></span></a>
       <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button w3-teal w3-padding-small w3-right"> ' .$nome. '</a>
       <a href="#" class="w3-hide-large w3-hide-medium w3-bar-item w3-button  w3-hover-teal w3-padding-small w3-right" onclick="loadMinhaConta()" ><i class="fa fa-user-circle"></i></a>

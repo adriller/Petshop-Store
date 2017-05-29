@@ -21,7 +21,7 @@
   $sql = "SELECT * FROM compras  WHERE clienteEmail = '" .$email. "'";
   $result = $conn->query($sql);
 
-  $page = '<br><br><br><br>
+  $page = '<br><br>
   <div class="w3-ontainer w3-padding-32 w3-hide-small"></div>
 
   <div id=\'containerConta\' class="w3-light-gray w3-container ">

@@ -18,7 +18,7 @@
 
   $page = "";
 
-  $horariosIndisponiveis = array(0, 1, 2, 3, 4, 5, 6, 7, 12, 13, 18, 19, 20, 21, 22, 23);
+  $horariosIndisponiveis = array(0, 1, 2, 3, 4, 5, 6, 12, 18, 19, 20, 21, 22, 23);
 
 
 if ($result->num_rows > 0) {

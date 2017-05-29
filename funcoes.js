@@ -7,6 +7,8 @@ var horario = -1;
 var petID = -1;
 var goToAgendamento = -1;
 var goToMinhaConta = -1;
+var editProdId = 0;
+var numVendas = 15;
 
 function refreshNav(){
     $(".navLoja a").on("click", function(){
@@ -196,14 +198,15 @@ function myFunctionP(xml, nome) {
 }
 
 function loadMaisVendidos(prevOrNext) {
-  var xhttp = new XMLHttpRequest();
+  loadMain();
+  /*var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       myFunctionVendidos(this, prevOrNext);
     }
   };
   xhttp.open("GET", "maisvendidos.xml", true);
-  xhttp.send();
+  xhttp.send();*/
 }
 
 function myFunctionVendidos(xml, prevOrNext) {
@@ -268,6 +271,7 @@ function loadMainPage(){
       }
     });
   loadMaisVendidos("next");
+
   plusDivs(1);
 }
 
@@ -313,9 +317,6 @@ function hideMenuEffect(){
 function setMobileImgSize(){
   if ( $(window).width() < 739) {
     $(".prodMaisVendido").height(90);
-  }
-  else{
-
   }
 }
 
@@ -369,7 +370,7 @@ function changebg(){
     //alert(foto);
     var sendData = $("#registerProd").serialize() + "&foto=" + foto;
     //alert($("#register").serialize());
-    alert(sendData);
+    //alert(sendData);
       $.post( "serv/cadProd.php", sendData )
           .done(function(data){
             if(data.search("Erro") < 0 ){
@@ -430,6 +431,24 @@ $(document).ready(function (e) {
     success: function(data)   // A function to be called if request succeeds
     {
     document.getElementById("confRegS").innerHTML = data;
+    }
+    });
+  }));
+});
+
+$(document).ready(function (e) {
+  $("#registerProd2").on('submit',(function(e) {
+    e.preventDefault();
+    $.ajax({
+    url: "serv/upload.php", // Url to which the request is send
+    type: "POST",             // Type of request to be send, called as method
+    data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+    contentType: false,       // The content type used when sending data to the server.
+    cache: false,             // To unable request pages to be cached
+    processData:false,        // To send DOMDocument or non processed data file it is set to false
+    success: function(data)   // A function to be called if request succeeds
+    {
+    document.getElementById("confRegP2").innerHTML = data;
     }
     });
   }));
@@ -505,14 +524,28 @@ $(document).ready(function (e) {
           });
   }
   function loadMain(){
-      $.post( "serv/makeMainPage.php" )
-          .done(function(data){
-           document.getElementById("success").innerHTML = data;
-          });
-      loadMaisVendidos("next");
-      plusDivs(1);
+    $.post( "serv/makeMainPage.php", "numVendas=" + numVendas )
+        .done(function(data){
+         document.getElementById("success").innerHTML = data;
+        });
+    //loadMaisVendidos("next");
+    initDivs();
+
   }
+
+function pegarNumVendas(){
+   var vendaID;
+   $.post( "serv/pegarVendaID.php")
+        .done(function(data){
+         vendaID =  data;
+        });
+  vendaID = vendaID.substring(285);
+  //alert(vendaID);
+  numVendas = vendaID;
+}
+
   function loadSobreNos(){
+    //alert(numVendas);
       $.post( "serv/makeSobreNos.php" )
           .done(function(data){
            document.getElementById("success").innerHTML = data;
@@ -527,13 +560,26 @@ $(document).ready(function (e) {
           });
   w3_open();
   hideMenuEffect();
+  showMenu2Mobile();
   }
 
   function loadProdDescription(id){
-      $.post( "serv/makeProdDescr.php", "id=" + id )
+    //alert(id);
+    if(usuarioLogado == null){
+      $.post( "serv/makeProdDescr.php", "id=" + id + "&eAdmin=0&numVendas=" + numVendas )
+          .done(function(data){
+        //alert(data);
+           document.getElementById("success").innerHTML = data;
+          });
+    }
+    else{
+      //alert(usuarioLogado.UserAdmin);
+       $.post( "serv/makeProdDescr.php", "id=" + id + "&eAdmin=" + usuarioLogado.UserAdmin+"&numVendas=" + numVendas )
           .done(function(data){
            document.getElementById("success").innerHTML = data;
           });
+    }
+    //alert("ok");
   }
 
   function notify(message){
@@ -549,13 +595,13 @@ $(document).ready(function (e) {
     }
   }
 
-  function Comprar(id, foto, desc, preco){
+  function Comprar(id, foto, desc, preco, qtdE){
     if(usuarioLogado == null){
       notify("Voce deve efetuar login antes");
     }else{
       notify("Produto adicionado ao carrinho!");
       var obj = JSON.parse(carrinho);
-      obj["produtos"].push({"produtoID":id, "foto":foto, "desc":desc, "preco":preco});
+      obj["produtos"].push({"produtoID":id, "foto":foto, "desc":desc, "preco":preco, "qtdE": qtdE});
       carrinho = JSON.stringify(obj);
 
     }
@@ -584,7 +630,7 @@ $(document).ready(function (e) {
                     '</div>'+
 
                   '<div class="cartDescr w3-col w3-container">'+ compras.produtos[i].desc +'</div>'+
-                    '<div  class="cartQtd w3-container w3-col"><input onclick="updatePreco()"  type=\'number\' min="0" id=\'qtd'+ compras.produtos[i].produtoID + '\' name=\'mynumber\' value=\'1\' /> </div>'+
+                    '<div  class="cartQtd w3-container w3-col"><input onkeydown="return false;" onclick="updatePreco()"  type=\'number\' min="0" max=\''+compras.produtos[i].qtdE+ '\' id=\'qtd'+ compras.produtos[i].produtoID + '\' name=\'mynumber\' value=\'1\' /> </div>'+
                     '<div class="cartPreco w3-container w3-col">R$'+ compras.produtos[i].preco +'</div>'+
                     /*'<div class="cartX w3-container w3-col "><span class="w3-hover-black Xis"><a href="#" onclick="removerDoCarrinho('+ compras.produtos[i].produtoID +')">X</a></span></div>'+*/
                 '</div>';
@@ -614,7 +660,7 @@ $(document).ready(function (e) {
           'Telefone:<br>'+
           '<input type=text class="payIn" pattern="[0-9]{13,16}"><br>'+
           '<div class="w3-container fimKart">'+
-                '<a href="#" onclick="realizarVenda()"><span id="FinPay" class="w3-black w3-hover-teal">Finalizar</span></a>'+
+                '<a href="#" onclick="realizarVenda()"><div id="FinPay" type="button" class="w3-black w3-hover-teal">Finalizar</div></a>'+
           '</div>'+
         '</div>'+
       '</div>'+
@@ -633,6 +679,7 @@ $(document).ready(function (e) {
           });
     vendaID = vendaID.substring(285);
     //alert(vendaID);
+    numVendas = vendaID;
     $.post( "serv/cadastrarVenda.php", "vendaid=" + vendaID + "&email=" + usuarioLogado.UserEmail)
           .done(function(data){
             //alert(data);
@@ -670,6 +717,8 @@ function updatePreco(){
 }
 
 function loadAgendamento(){
+  //alert("a");
+  //alert(usuarioLogado.UserEmail);
    $.post( "serv/makeAgendamento.php", "email="+ usuarioLogado.UserEmail)
           .done(function(data){
             document.getElementById("success").innerHTML = data;
@@ -689,6 +738,23 @@ function mostrarHorarios(){
           });
   }
 }
+
+
+
+function mostrarSobreServico(){
+  var servico = $("#formEscolherServico").serialize();
+  //alert(servico);
+  if(servico == "servico="){
+    notify("Selecione um servico");
+  }
+  else{
+    $.post( "serv/sobreServico.php", servico)
+          .done(function(data){
+            document.getElementById("sobreServico").innerHTML = data;
+          });
+  }
+}
+
 function selectHorario(hora){
   $( "#horario" + horario ).removeClass( "w3-gray" );
   $( "#horario" + horario ).addClass( "w3-green" );
@@ -739,9 +805,51 @@ function cadastrarContaPET(){
   goToMinhaConta = 1;
 }
 
-function getfolder(e) {
-    var files = e.target.files;
-    var path = files[0].webkitRelativePath;
-    var Folder = path.split("/");
-    alert(Folder[0]);
+
+function editarProd(id, nome, desc, tipo, animal, preco, qtdE, qtdV, foto){
+  //alert("aa");
+  document.getElementById('id07').style.display='block';
+  $("#Edit-Nome").val(nome);
+  $("#Edit-Desc").val(desc);
+  $("#Edit-Tipo").val(tipo);
+  $("#Edit-Animal").val(animal);
+  $("#Edit-Preco").val(preco);
+  $("#Edit-qtdE").val(parseInt(qtdE));
+  $("#Edit-qtdV").val(parseInt(qtdV))
+  editProdId = id;
+  }
+
+function editProd(){
+  var foto = $('#fotoProd2')[0].files[0].name;
+  //alert(foto);
+  var sendData = $("#registerProd2").serialize() + "&foto=" + foto + "&produtoID=" + editProdId;
+  //alert($("#register").serialize());
+  //alert(sendData);
+    $.post( "serv/editProd.php", sendData )
+        .done(function(data){
+          if(data.search("Erro") < 0 ){
+              alert(data);
+              document.getElementById('id07').style.display='none';
+              setTimeout(function(){
+                  loadProdDescription(editProdId);
+              }, 500);
+            }else{
+              alert(data);
+              //alert("bb");
+              document.getElementById("confRegP2").innerHTML = data;
+              $("#alert").fadeOut(3000);
+            }
+        });
+  //alert("what");
+}
+
+$("[type='number']").keypress(function (evt) {
+    evt.preventDefault();
+});
+
+function loadDestaques(categoria, ordem){
+   $.post( "serv/novidades.php", "categoria=" + categoria + "&ordem=" + ordem)
+          .done(function(data){
+            document.getElementById("success").innerHTML = data;
+          });
 }

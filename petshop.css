@@ -179,7 +179,7 @@ div.optionbar > ul > li{
   background-repeat: no-repeat;
     background-attachment: fixed;
     width: 100vw;
-    height: 720px;
+    height: 820px;
     z-index: -1;
 }
 
@@ -207,9 +207,8 @@ img.catimg:hover{
 div > h3.titulo{
 	width: 100%;
 	height: 100%;
-	top: 0;
-	margin-top: 0;
-    margin-bottom: 40px;
+	margin-top: 5%;
+    margin-bottom: 2%;
 	text-align: center;
 	font-size:30px;
 	box-sizing: border-box;
@@ -296,7 +295,6 @@ span.preco{
 	/*background-size: 130px 130px;*/
 	background-repeat: no-repeat;
 	background-position: 50% 0%;
-
 }
 
 
@@ -1175,8 +1173,8 @@ height: 10%;
 }
 
 .cartImg {
-    width:10vmin;
-    height: 10vmin;
+    width:50vmin;
+    height: 11.2vmin;
     margin:2%;
     object-fit: contain;
 }
@@ -1338,8 +1336,8 @@ height: 10%;
 
 #FinPay {
     font-size: 3vmin;
-    margin:3%;
-  padding:2%;
+    margin:1%;
+  padding:1%;
   border-radius: 50px;
 }
 
@@ -1859,6 +1857,7 @@ span.psw {
 
 .descHeader {
   height:100%;
+  width: 50%;
 }
 
 #btnDesc {
@@ -1873,6 +1872,7 @@ span.psw {
 
 .recomend-container {
   height: 30%;
+  overflow: hidden;
 }
 
 .tituloCalend {
@@ -1989,9 +1989,9 @@ span.psw {
 }
 
 .slides {
-  width:90vmin;
   height: 50vmin;
-  top: 9%;
+  top: 11%;
+  margin-bottom: 5%;
 }
 
 .dest1 {
@@ -2061,4 +2061,36 @@ span.psw {
   width: 20%;
   height: 100%;
   overflow: hidden;
+}
+
+.imgServico {
+  height: 30vmin;
+  width: 30vmin;
+}
+
+#descrServico {
+  font-size: 4vmin;
+}
+
+#imgDestaque1 {
+  height: 30vmin;
+  width: 30vmin;
+}
+
+.destaquesText {
+  text-shadow:1px 1px 0 #444;
+  font-size: 7vmin;
+  margin-top: 5%;
+}
+
+
+
+.fraseFinal {
+  width:70%;
+}
+
+.frase {
+    text-shadow:1px 1px 0 #444;
+  font-size: 3vmin;
+  margin-top: 6%;
 }

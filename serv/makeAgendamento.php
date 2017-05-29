@@ -26,8 +26,8 @@ $page = '<div id="calendarioPage">
     <input id="servData" class="dataSelect" type="date"/><br><br>
     Qual serviço deseja:
   <form id="formEscolherServico">
-    <input id="selectServico" class="dataSelect" list="servicos" name="servico">
-    <datalist id="servicos">';
+    <input id="selectServico" class="dataSelect" list="servicos" onchange="mostrarSobreServico()" name="servico">
+    <datalist id="servicos" >';
 
   $sql = "SELECT * FROM servicos";
   $result = $conn->query($sql);
@@ -44,6 +44,9 @@ $page = '<div id="calendarioPage">
     <br>
   </form>
   <button class="w3-light-gray w3-hover-teal w3-margin btnSelectServ" onclick="mostrarHorarios()">Consultar Horarios</button>
+
+   <div class="w3-container w3-teal w3-margin" id="sobreServico">
+   </div>
 
     <div id="horariosServ" class="w3-container w3-margin ">';
 

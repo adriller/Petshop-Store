@@ -1,18 +1,34 @@
 
 <?php
+  $numVendas = $_POST["numVendas"];
+  //$numVendas = 12;
+
+
+
+  $servername = "fdb17.biz.nf";
+  $username = "2344925_valedospets";
+  $password = "Adriller123@";
+  $dbname = "2344925_valedospets";
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+
 $page = '
 <div id="petShop" >
-  <div class="w3-ontainer w3-padding-16 w3-hide-small"></div>
+  <div class="w3-ontainer w3-padding-32 w3-hide-small"></div>
   <div class="w3-ontainer w3-padding-32 w3-hide-small"></div>
     <div class = "cat w3-container">
 
       <div class="w3-content w3-display-container slides">
-        <img class="mySlides" src="img/bg6.jpg" >
-        <img class="mySlides" src="img/bg5.jpg" >
-        <img class="mySlides" src="img/bg8.jpg" >
-        <img class="mySlides" src="img/bg4.jpg" >
-        <img class="mySlides" src="img/bg9.jpg" >
-        <img class="mySlides" src="img/bg10.jpg" >
+        <img class="mySlides" src="img/banner2.jpg" >
+        <img class="mySlides" src="img/banner13.jpg" >
+        <img class="mySlides" src="img/banner12.jpg" >
+        <img class="mySlides" src="img/banner11.jpg" >
+        <img class="mySlides" src="img/banner7.jpg" >
+        <img class="mySlides" src="img/banner10.jpg" >
 
         <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
         <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
@@ -28,25 +44,41 @@ $page = '
 
 
   <div class="w3-row w3-center" id = "selection">
-  <div class="w3-container w3-col seta " >
-    <a href="#prev" class="aSeta" onclick=\'loadMaisVendidos("prev")\'>
-      <span class="spanSeta"><img class = "w3-image imgSeta " src = " img/back.png" alt = "Seta apontando para antes"/></span>
-    </a>
-  </div>
+  <div class="w3-row w3-center" id = "selection"> <div class="w3-container w3-col seta" ><a href="#prev" onclick=\'loadMaisVendidos("prev")\'><img class = "w3-image imgSeta" src = "img/back.png" alt = "Seta apontando para antes"/></a></div>';
 
-  <div class = " w3-container w3-col w3-animate-right w3-card-4 w3-white  prodMaisVendido">
-    <a href="#produto" onclick="loadPageDesc(\'Royal Canin\')">
-        <img class = "w3-image imagemMaisVendido" src = " img/racao.jpg" alt = "Ração"/>
+  $random = rand ( 1, $numVendas );
+  $produtosEscolhidos = array(0);
+  for($x = 0 ; $x < 4 ; $x++){
+    while(in_array($random, $produtosEscolhidos))
+      $random = rand ( 1, $numVendas );
+    array_push($produtosEscolhidos, $random);
+    $sql2 = "SELECT * FROM produtos  WHERE produtoID = " .$random. "";
+    $result2 = $conn->query($sql2);
+    $row2 = $result2->fetch_assoc();
+    echo $sql2. "<br";
+
+    while(strlen($row2["animal"]) < 4){
+      while(in_array($random, $produtosEscolhidos))
+        $random = rand ( 1, $numVendas );
+      array_push($produtosEscolhidos, $random);
+      $sql2 = "SELECT * FROM produtos  WHERE produtoID = " .$random. "";
+      $result2 = $conn->query($sql2);
+      $row2 = $result2->fetch_assoc();
+    }
+
+  $page .= '<div class = " w3-container w3-col w3-animate-right w3-card-4 w3-white  prodMaisVendido">
+    <a href="#prod" onclick=\'loadProdDescription(' .$row2["produtoID"]. ')\'>
+        <img class = "w3-image imagemMaisVendido" src = " img/' .$row2["foto"]. '" alt = "Ração"/>
           <div class="w3-display-container w3-black w3-hover-teal contDescr">
-          bolinha com bigode<br>
-          Variedades<br>
-          <b>R$ 1,80</b>
+          ' .$row2["nome"]. '<br>
+          <b>R$ ' .$row2["preco"]. '</b>
           </div>
 
     </a>
-  </div>
+  </div>';
+}
 
-<div class = "w3-container w3-col w3-animate-right w3-card-4 w3-white  prodMaisVendido">
+/*$page .= '<div class = "w3-container w3-col w3-animate-right w3-card-4 w3-white  prodMaisVendido">
     <a href="#produto" onclick="loadPageDesc(\'casinha grande\')">
       <img class = "w3-image imagemMaisVendido"src = " img/casa-aquario.jpg" alt = "Ração de gato"/>
         <div class="w3-container">
@@ -74,9 +106,9 @@ $page = '
   Variedades<br>
   <b>R$ 1,80</b>
   </div>
-</div>
+</div>';*/
 
-<div class="w3-container w3-col  w3-image seta">
+$page .= '<div class="w3-container w3-col  w3-image seta">
   <a href="#next" onclick=\'loadMaisVendidos("next")\'>
     <img class = "w3-image imgSeta" src = " img/next.png" alt = "Seta apontando para antes"/>
   </a>
@@ -86,29 +118,54 @@ $page = '
 
     <div id = "linedivider"></div>
 
-    <div class="w3-center w3-container " id="centerGrid">
-    <div class=" w3-container w3-center w3-row-padding gridCentral" id = "grid">
-        <div class = "w3-hover-teal w3-black w3-half w3-display-container w3-mobile w3-card-4 w3-teal  w3-margin-bottom dest1">
-            <a class="destaques">
-              <img id = "imggrid1" class="w3-image" src = " img/rabbitpng.png" alt = "Gato mostrando a patinha"/>
-              <div class="w3-display-topmiddle displayMiddle">ECONOMIA</div>
-            </a>
-        </div>
+    <h3 class = "titulo"><span>CONFIRA TAMBEM:</span></h3>
 
-        <div class = "w3-half w3-center ">
-            <div class = "w3-card-4   w3-display-container w3-mobile w3-hover-teal w3-black">
-                <a class=""><img class = "imggrid2 w3-image" src = " img/birdpng.png" alt = "Três passaros"/>
-                  <div class="w3-display-topmiddle displayMiddle">QUALIDADE</div></a>
-            </div>
-
-            <div class = "w3-card-4 w3-hover-teal w3-black w3-display-container w3-mobile w3-teal w3-margin-top">
-                <a class=""><img class = "imggrid2 w3-image" src = " img/fishpng.png" alt = "Cachorro comendo"/>
-                <div class="w3-display-topmiddle displayMiddle2">DIVERSAO</div></a>
-            </div>
-        </div>
-
+    <a href="#" onclick=\'loadDestaques("dataCadastro", "DESC")\' class="destaques">
+    <div class="w3-container w3-margin w3-black w3-padding w3-hover-teal" >
+      <div class="w3-quarter w3-container">
+        <img id = "imgDestaque1" class="w3-image" src = "img/rabbitpng.png" alt = "Gato mostrando a patinha"/>
+      </div>
+      <div class="w3-panel w3-rest w3-text-white destaquesText" >
+          <b>Novidades</b>
+      </div>
     </div>
-    </div>';
+    </a>
+
+    <a href="#" onclick=\'loadDestaques("preco", "ASC")\' class="">
+    <div class="w3-container w3-margin w3-black w3-padding w3-hover-teal" >
+      <div class="w3-panel w3-threequarter" >
+        <h1 class="w3-text-white destaquesText">
+          <b>Mais Baratos</b></h1>
+      </div>
+      <div class="w3-quarter w3-container">
+        <img id = "imgDestaque1" class="w3-image" src = "img/birdpng.png" alt = "Gato mostrando a patinha"/>
+      </div>
+    </div>
+    </a>
+
+    <a href="#" onclick=\'loadDestaques("qtdV", "DESC")\' class="">
+    <div class="w3-container w3-margin w3-black w3-padding w3-hover-teal" >
+      <div class="w3-quarter w3-container">
+        <img id = "imgDestaque1" class="w3-image" src = "img/fishpng.png" alt = "Gato mostrando a patinha"/>
+      </div>
+      <div class="w3-panel w3-rest" >
+        <h1 class="w3-text-white destaquesText">
+          <b>Mais Vendidos</b></h1>
+      </div>
+    </div>
+    </a>
+
+    <div class="w3-container w3-padding w3-center">
+      <div class="w3-quarter w3-container">
+        <img id = "imgDestaque1" class="w3-image" src = "img/lovepet.PNG" alt = "Gato mostrando a patinha"/>
+      </div>
+      <div class="w3-panel w3-rest" >
+        <h1 class="w3-text-black frase">
+          <cite>"Se quiser aprender a amar, comece com os animais ... eles são mais sensíveis."</cite></h1>
+      </div>
+    </div>
+
+';
 
     /*  '<h1 id="ClientsPets">Ultimos PETs cadastrados:</h1>
     <section class= "w3-row w3-center" id = "selection2">
