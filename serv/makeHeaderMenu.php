@@ -1,10 +1,10 @@
 
 <?php
-  $admin = $_POST["admin"];
-  $nome = $_POST["nome"];
+$admin = $_POST["admin"];
+$nome = $_POST["nome"];
 
-  if($admin == 0){
-    echo '<header class = "w3-row w3-gray">
+if($admin == 0){
+  echo '<header class = "w3-row w3-gray">
       <div class="w3-left">
         <div class="paragraph"><b>FRETE GRÁTIS</b> NAS COMPRAS ACIMA DE R$ 300 | PARCELE EM ATÉ <b>6X SEM JUROS</b></div>
       </div>
@@ -64,8 +64,8 @@
         </a>
       </div>
     </div>';
-  }else{
-    echo '<header class = "w3-row w3-gray">
+}else{
+  echo '<header class = "w3-row w3-gray">
       <div class="w3-left">
         <div class="paragraph"><b>FRETE GRÁTIS</b> NAS COMPRAS ACIMA DE R$ 300 | PARCELE EM ATÉ <b>6X SEM JUROS</b></div>
       </div>
@@ -82,6 +82,7 @@
       <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="document.getElementById(\'id05\').style.display=\'block\'"><span>CADASTRAR PRODUTO</span>
       </a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="document.getElementById(\'id06\').style.display=\'block\'"><span>CADASTRAR SERVICO</span></a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="document.getElementById(\'id08\').style.display=\'block\'"><span>CADASTRAR ADMIN</span></a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small"  onclick="loadVendas()"><span>VENDAS</span></a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-padding-small w3-teal w3-right"> Bem vindo '.$nome.' </a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small  w3-hover-teal w3-padding-small w3-right" onclick="loadMinhaConta()" >MEUS DADOS</a>
@@ -130,6 +131,6 @@
         </a>
       </div>
     </div>';
-  }
+}
 
 ?>

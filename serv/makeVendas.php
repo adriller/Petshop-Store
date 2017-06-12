@@ -1,46 +1,48 @@
 <?php
 
-  $servername = "fdb17.biz.nf";
-  $username = "2344925_valedospets";
-  $password = "Adriller123@";
-  $dbname = "2344925_valedospets";
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  // Check connection
-  if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-  }
+$servername = "localhost";
+$username = "2344925_valedospets";
+$password = "Adriller123@";
+$dbname = "2344925_valedospets";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$totalProdutos = 0;
+$totalServicos = 0;
+$total = 0;
 
 
-
-
-  $page = '<br><br><br><br>
+$page = '<br><br><br><br>
   <div class="w3-ontainer w3-padding-32 w3-hide-small"></div>
 
   <div id=\'containerConta\' class="w3-light-gray w3-container ">
     <div class="w3-container w3-white minhaConta">
       <label class="titleConta w3-margin-left">Vendas</label>
       <div class="w3-center w3-container ContaHist w3-margin">
-        Historico de Pedidos<br><br>
+        Historico de Vendas<br><br>
         Compras de produtos<br>';
 
 $sql = "SELECT * FROM compras";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-      $page .= '<div class="contentHist w3-container w3-border ">
+  while($row = $result->fetch_assoc()) {
+    $page .= '<div class="contentHist w3-container w3-border ">
           Cliente: '.$row["clienteEmail"].'<br>
           Data: '.$row["dataCadastro"].'<br>
           Codigo:'.$row["compraID"].'<br><br>
           Itens comprados:<br>';
 
 
-       $sql2 = "SELECT produtos.foto as foto, produtos.descricao as descricao, itensComprados.qtd as qtd, produtos.preco as preco FROM itensComprados JOIN compras ON itensComprados.compraID = compras.compraID  JOIN produtos ON itensComprados.produtoID = produtos.produtoID WHERE compras.compraID = " .$row["compraID"]. "";
-      $result2 = $conn->query($sql2);
-      if ($result2->num_rows > 0) {
-        while($row2 = $result2->fetch_assoc()) {
-          $page.='<div class="histItem w3-container w3-row">
+    $sql2 = "SELECT produtos.foto as foto, produtos.descricao as descricao, itensComprados.qtd as qtd, produtos.preco as preco FROM itensComprados JOIN compras ON itensComprados.compraID = compras.compraID  JOIN produtos ON itensComprados.produtoID = produtos.produtoID WHERE compras.compraID = " .$row["compraID"];
+    $result2 = $conn->query($sql2);
+    if ($result2->num_rows > 0) {
+      while($row2 = $result2->fetch_assoc()) {
+        $page.='<div class="histItem w3-container w3-row">
                 <div class="cartProdImg w3-container w3-col">
                     <img class = "cartImg w3-image" src = "img/'.$row2["foto"].'" alt = "Ração"/>
                 </div>
@@ -49,13 +51,13 @@ if ($result->num_rows > 0) {
                 <div class="cartQtd w3-container w3-col">'.$row2["qtd"].' </div>
                 <div class="cartPreco w3-container w3-col">R$'.$row2["preco"].' </div>
             </div>';
-
-        }
-        $page .= '</div>';
-      }else{
-        $page.= 'Sem itens comprados<br>';
-        $page .= '</div>';
+        $totalProdutos += $row2["preco"] * $row2["qtd"];
       }
+      $page .= '</div>';
+    }else{
+      $page.= 'Sem itens comprados<br>';
+      $page .= '</div>';
+    }
   }
 
 }else{
@@ -65,13 +67,13 @@ if ($result->num_rows > 0) {
 
 $page .= 'Compras de Servicos <br>';
 
-$sql = "SELECT agendamentos.donoEmail as donoEmail, agendamentos.dataAgendamento as dataAgendamento, agendamentos.agendamentoID as agendamentoID, agendamentos.horario as horario, agendamentos.nomeServico as nomeServico, pets.foto as foto, pets.nome as nome, pets.raca as raca FROM agendamentos INNER JOIN pets ON agendamentos.petID = pets.petID";
+$sql = "SELECT agendamentos.donoEmail as donoEmail, agendamentos.dataAgendamento as dataAgendamento, agendamentos.agendamentoID as agendamentoID, agendamentos.horario as horario, agendamentos.nomeServico as nomeServico, pets.foto as foto, pets.nome as nome, pets.raca as raca, servicos.preco as preco FROM agendamentos INNER JOIN pets ON agendamentos.petID = pets.petID INNER JOIN servicos ON servicos.nome = agendamentos.nomeServico";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
+  while($row = $result->fetch_assoc()) {
 
-      $page .= ' <div class="contentHist w3-container w3-border ">
+    $page .= ' <div class="contentHist w3-container w3-border ">
           Cliente: '.$row["donoEmail"].'<br>
           Data: '.$row["dataAgendamento"].'<br>
           Codigo:'.$row["agendamentoID"].'<br><br>
@@ -86,14 +88,18 @@ if ($result->num_rows > 0) {
                     <div class="sizeHist w3-container w3-col">Raca<br>'.$row["raca"].' </div>
                 </div>
         </div>';
-
+    $totalServicos += $row["preco"];
   }
 }else{
   $page .='Ainda nao ha vendas de Servicos<br>'. $sql;
 }
 
-
- $page .= '</div>
+$total = $totalProdutos + $totalServicos;
+$page .= '
+        Total em vendas de Produtos = '.$totalProdutos.' <br>
+        Total em vendas de Serviços = '.$totalServicos.'<br>
+        Total = '.$total.'
+      </div>
 
     </div>
 

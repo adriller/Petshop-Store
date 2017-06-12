@@ -6,6 +6,6 @@ $result = "";
 
 
 
-  echo $data[0][0];
+echo $data[0][0];
 
 ?>

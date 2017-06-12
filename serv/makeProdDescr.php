@@ -1,31 +1,31 @@
 
 <?php
 
-  $id = $_POST["id"];
-  $admin = $_POST["eAdmin"];
-  $numVendas = $_POST["numVendas"];
-  //$id = 1;
-  //$admin = 1;
-  //$numVendas = 12;
+$id = $_POST["id"];
+$admin = $_POST["eAdmin"];
+$numVendas = $_POST["numVendas"];
+//$id = 1;
+//$admin = 1;
+//$numVendas = 12;
 
 
-  $servername = "fdb17.biz.nf";
-  $username = "2344925_valedospets";
-  $password = "Adriller123@";
-  $dbname = "2344925_valedospets";
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  // Check connection
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+$servername = "localhost";
+$username = "2344925_valedospets";
+$password = "Adriller123@";
+$dbname = "2344925_valedospets";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
 
 
 
-  $sql = "SELECT * FROM produtos  WHERE produtoID = " .$id. "";
-  $result = $conn->query($sql);
+$sql = "SELECT * FROM produtos  WHERE produtoID = " .$id. "";
+$result = $conn->query($sql);
 
-  $page = '<div id="descr-bg">'.
+$page = '<div id="descr-bg">'.
   '<div class="w3-ontainer w3-padding-32 w3-hide-small"></div>'.
   '<br><br><br><br><br>'.
   '<div class=" produtoHeader w3-cell-row ">'.
@@ -33,11 +33,11 @@
   '<img class = "cao-image" src = " img/';
 
 
-  if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-      /*echo  $row["produtoID"].', \''.$row["nome"].'\', \''.$row["descricao"].'\', \''.$row["tipo"].'\', \''.$row["animal"].'\', '.$row["preco"].', '.$row["qtdE"].', '.$row["qtdV"];*/
-      $page = $page. $row["foto"];
-      $page = $page. '"alt = "Ração"/>'.
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    /*echo  $row["produtoID"].', \''.$row["nome"].'\', \''.$row["descricao"].'\', \''.$row["tipo"].'\', \''.$row["animal"].'\', '.$row["preco"].', '.$row["qtdE"].', '.$row["qtdV"];*/
+    $page = $page. $row["foto"];
+    $page = $page. '"alt = "Ração"/>'.
       '</div>'.
       '<div class="w3-cell descHeader w3-center w3-black w3-padding w3-mobile">'.
       '<br>'.
@@ -54,9 +54,9 @@
       $row["preco"].
       '</h3><br><br>'.
       '<a id="btnDesc" type="button" class="w3-hover-white w3-teal" href="#" onclick=\'Comprar(' .$row["produtoID"].',"'. $row["foto"].'"'. ',"'. $row["descricao"].'",'. $row["preco"].', '. $row["qtdE"].')\'>Comprar</a>';
-      if($admin == 1)
+    if($admin == 1)
       $page .= '<a id="btnDesc" type="button" class="w3-hover-white w3-yellow" href="#" onclick="editarProd(' .$row["produtoID"].', \''.$row["nome"].'\', \''.$row["descricao"].'\', \''.$row["tipo"].'\', \''.$row["animal"].'\', '.$row["preco"].', '.$row["qtdE"].', '.$row["qtdV"].', \''.$row["foto"].'\');return false;">Editar</a>';
-      $page .= '<br>'.
+    $page .= '<br>'.
       '</div>'.
       '</div>'.
       '<div class="w3-container descr-item2 w3-light-gray">'.
@@ -70,27 +70,27 @@
       '    <div class="w3-row">';
 
 
-      $random = rand ( 1, $numVendas );
-      $produtosEscolhidos = array(0, $row["produtoID"]);
-      for($x = 0 ; $x < 4 ; $x++){
-         while(in_array($random, $produtosEscolhidos))
+    $random = rand ( 1, $numVendas );
+    $produtosEscolhidos = array(0, $row["produtoID"]);
+    for($x = 0 ; $x < 4 ; $x++){
+      while(in_array($random, $produtosEscolhidos))
+        $random = rand ( 1, $numVendas );
+      array_push($produtosEscolhidos, $random);
+      $sql2 = "SELECT * FROM produtos  WHERE produtoID = " .$random. "";
+      $result2 = $conn->query($sql2);
+      $row2 = $result2->fetch_assoc();
+      //echo $sql2;
+
+      while(strlen($row2["animal"]) < 4){
+        while(in_array($random, $produtosEscolhidos))
           $random = rand ( 1, $numVendas );
         array_push($produtosEscolhidos, $random);
         $sql2 = "SELECT * FROM produtos  WHERE produtoID = " .$random. "";
         $result2 = $conn->query($sql2);
         $row2 = $result2->fetch_assoc();
-        //echo $sql2;
-
-        while(strlen($row2["animal"]) < 4){
-          while(in_array($random, $produtosEscolhidos))
-            $random = rand ( 1, $numVendas );
-          array_push($produtosEscolhidos, $random);
-          $sql2 = "SELECT * FROM produtos  WHERE produtoID = " .$random. "";
-          $result2 = $conn->query($sql2);
-          $row2 = $result2->fetch_assoc();
-        }
-        //echo $row2["produtoID"]." ";
-        $page .= '<a href="#prod" onclick=\'loadProdDescription(' .$row2["produtoID"]. ')\'>'.
+      }
+      //echo $row2["produtoID"]." ";
+      $page .= '<a href="#prod" onclick=\'loadProdDescription(' .$row2["produtoID"]. ')\'>'.
         '<div class="w3-col prodRec w3-hover-teal">'.
         '            <img class = " w3-image image-recomend" src = " img/'.$row2["foto"].'" alt = "Pote para ração"/>'.
         '            <div class="w3-container recomend-container w3-center w3-white ">'.
@@ -100,8 +100,8 @@
         '                <p class = "ver">Ver<br></p>'.
         '            </div>'.
         '        </div> </a>';
-      }
-      /*$page .= '        <div class="w3-col prodRec w3-hover-teal">'.
+    }
+    /*$page .= '        <div class="w3-col prodRec w3-hover-teal">'.
       '            <img class = " w3-image image-recomend" src = " img/bocasorriso.jpg" alt = "Pote para ração"/>'.
       '            <div class="w3-container recomend-container w3-center w3-white ">'.
       '                Boca Sorriso<br>R$ 49,80'.
@@ -131,17 +131,17 @@
       '                    </div>'.
       '                </div>';*/
 
-      $page .='                </div>'.
+    $page .='                </div>'.
       '            </div>'.
       '    </div>';
 
-    }
-
-    echo $page;
-  } else {
-    echo "<p id='alert'>Erro: Nao foi possivel caregar</p>".$conn->error;
   }
-  $conn->close();
+
+  echo $page;
+} else {
+  echo "<p id='alert'>Erro: Nao foi possivel caregar</p>".$conn->error;
+}
+$conn->close();
 
 
 

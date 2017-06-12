@@ -1,18 +1,18 @@
 <?php
 
-  $email = $_POST["email"];
-  //$email = 'adriller_gf@hotmail.com';
+$email = $_POST["email"];
+//$email = 'adriller_gf@hotmail.com';
 
-  $servername = "fdb17.biz.nf";
-  $username = "2344925_valedospets";
-  $password = "Adriller123@";
-  $dbname = "2344925_valedospets";
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  // Check connection
-  if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-  }
+$servername = "localhost";
+$username = "2344925_valedospets";
+$password = "Adriller123@";
+$dbname = "2344925_valedospets";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
 
 
 $page = '<div id="calendarioPage">
@@ -29,18 +29,18 @@ $page = '<div id="calendarioPage">
     <input id="selectServico" class="dataSelect" list="servicos" onchange="mostrarSobreServico()" name="servico">
     <datalist id="servicos" >';
 
-  $sql = "SELECT * FROM servicos";
-  $result = $conn->query($sql);
+$sql = "SELECT * FROM servicos";
+$result = $conn->query($sql);
 
-  if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-      $page .='<option value="'.$row["nome"].'">';
-    }
-  } else {
-      echo "<p id='alert'>Erro: Nao foi possivel caregar</p>".$conn->error;
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    $page .='<option value="'.$row["nome"].'">';
   }
+} else {
+  echo "<p id='alert'>Erro: Nao foi possivel caregar</p>".$conn->error;
+}
 
-    $page .='</datalist>
+$page .='</datalist>
     <br>
   </form>
   <button class="w3-light-gray w3-hover-teal w3-margin btnSelectServ" onclick="mostrarHorarios()">Consultar Horarios</button>
@@ -51,7 +51,7 @@ $page = '<div id="calendarioPage">
     <div id="horariosServ" class="w3-container w3-margin ">';
 
 
-   /* $page .='<a href="#" onclick="selectHorario(horario)"><div class="w3-container w3-red w3-margin">
+/* $page .='<a href="#" onclick="selectHorario(horario)"><div class="w3-container w3-red w3-margin">
         <div class=" w3-quarter">
           <img class="w3-image offCalend" src="img/meme2.jpg" />
         </div>
@@ -60,34 +60,34 @@ $page = '<div id="calendarioPage">
         </div>
       </div></a>';*/
 
-    $page .='</div>
+$page .='</div>
 
     Qual PET sera atendido?
 
     <div class="w3-container">';
 
-  $sql = "SELECT * FROM pets WHERE donoEmail = '" .$email. "'";
-  $result = $conn->query($sql);
+$sql = "SELECT * FROM pets WHERE donoEmail = '" .$email. "'";
+$result = $conn->query($sql);
 
-  if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-      $page .='<div class="escolherPet w3-margin">
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    $page .='<div class="escolherPet w3-margin">
         <a href="#" id="selection" onclick="selectPet('.$row["petID"].');return false;"><img class="w3-image offCalend" id="pet'.$row["petID"].'" src="img/'.$row["foto"].'" /></a>
       </div>';
 
-    }
-  } else {
-      $page .=  "Voce ainda nao possui PETs cadastrados. Por favor, cadastre.";
   }
+} else {
+  $page .=  "Voce ainda nao possui PETs cadastrados. Por favor, cadastre.";
+}
 
 
 
-    $page .='</div>
-    <br> <a id="btnMain" class="w3-hover-gray w3-teal" href="#cadpet" onclick="cadastrarNovoPET()"> Cadastrar novo PET</a>
+$page .='</div>
+    <br> <a id="btnMain2" class="w3-teal" href="#cadpet" onclick="cadastrarNovoPET()"> Cadastrar novo PET</a>
     <br><br>
-    <a id="btnMain" class="w3-hover-teal w3-gray" href="#cadpet" onclick="agendar();return false;">Finalizar</a><br><br>
+    <a id="btnMain" class="w3-green" href="#cadpet" onclick="pagarServ();return false;">Agendar</a><br><br>
   </div>
   </div>';
 
-  echo $page;
+echo $page;
 ?>
