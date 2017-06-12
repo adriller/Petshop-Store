@@ -1,5 +1,15 @@
 
 <?php
+/*<!--
+Adriller Genova Ferreira - NºUSP: 8922201
+Allan Ribeiro Polachini - NºUSP: 8922347
+Hikaro Augusto de Oliveira - NºUSP: 9066487
+Matheus de França Cabrini - NºUSP: 8937375
+Rita Raad - NºUSP: 8061452
+
+Esta pagina altera um produto no BD
+
+--> */
 
   $id = $_POST["produtoID"];
   $nome = $_POST["nome"];

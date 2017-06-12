@@ -1,5 +1,20 @@
+
+
 <?php
-// This sample uses the Apache HTTP client from HTTP Components (http://hc.apache.org/httpcomponents-client-ga/)
+/*<!--
+
+BONUS - PAGINA SENDO IMPLEMENTADA
+
+Adriller Genova Ferreira - NºUSP: 8922201
+Allan Ribeiro Polachini - NºUSP: 8922347
+Hikaro Augusto de Oliveira - NºUSP: 9066487
+Matheus de França Cabrini - NºUSP: 8937375
+Rita Raad - NºUSP: 8061452
+
+Estamos tentando fazer um blog para gerar noticias sobre PETs automaticamente utilizando o Microsoft Cognitive Services.
+Estamos com algumas dificuldades, mas planejamos finalizar ate a proxima entrega.
+
+-->*/
 require_once 'HTTP/Request2.php';
 
 $request = new Http_Request2('https://api.cognitive.microsoft.com/bing/v5.0/images/search');

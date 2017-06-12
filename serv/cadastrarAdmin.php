@@ -1,5 +1,17 @@
-<?php
 
+
+<?php
+/*<!--
+Adriller Genova Ferreira - NºUSP: 8922201
+Allan Ribeiro Polachini - NºUSP: 8922347
+Hikaro Augusto de Oliveira - NºUSP: 9066487
+Matheus de França Cabrini - NºUSP: 8937375
+Rita Raad - NºUSP: 8061452
+
+Essa pagina faz o cadastro de adminstradores
+O campo eAdmin = 1 indica administrador e eAdmin = 0 indica usuario comum
+
+-->*/
 $nome = $_POST["nome"];
 $email = $_POST["email"];
 $telefone = $_POST["telefone"];

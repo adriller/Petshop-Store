@@ -1,15 +1,43 @@
+/*<!--
+Adriller Genova Ferreira - NºUSP: 8922201
+Allan Ribeiro Polachini - NºUSP: 8922347
+Hikaro Augusto de Oliveira - NºUSP: 9066487
+Matheus de França Cabrini - NºUSP: 8937375
+Rita Raad - NºUSP: 8061452
+
+Esta pagina contem todas as funcoes javascript
+
+-->*/
+
+//variaveis referentes ao slideshow
 var inicio = 0;
 var bgImgIndex = 0;
+
+//info sobre o usuario logado
 var usuarioLogado;
+
+//JSON dos produtos no carrinho
 var carrinho = '{"produtos":[]}';
+
+//total da compra
 var precototal = 0;
+
+//horario escolhido para agendamento
 var horario = -1;
+
+//pet escolhido para o agendamento
 var petID = -1;
+
+//redirecionadores de pagina
 var goToAgendamento = -1;
 var goToMinhaConta = -1;
 var editProdId = 0;
+
+//numero de produtos vendidos (começa com 15, mas é atualizada na funcao pegarNumVendas)
 var numVendas = 15;
 
+
+//e utilizada para marcar qual aba da loja esta atualmente selecionada
 function refreshNav(){
   $(".navLoja a").on("click", function(){
     $(".navLoja").find(".active").removeClass("active");
@@ -17,10 +45,13 @@ function refreshNav(){
   });
 }
 
+//carrega a seção de mais vendidos (os 4 itens na tela inicial)
 function loadMaisVendidos(x){
   loadMain();
 }
 
+
+//abre e fecha os menus mobile da loja
 function w3_open() {
   if($(window).width() < 739){
     document.getElementById("prodContainer").style.marginLeft = "27%";
@@ -60,23 +91,27 @@ function hideMenuEffect(){
   }
 }
 
+//muda o tamanho da secao mais vendidos se for tela pequena
 function setMobileImgSize(){
   if ( $(window).width() < 739) {
     $(".prodMaisVendido").height(90);
   }
 }
 
+//inicia o slideshow de ofertas
 function initDivs(){
   plusDivs(1);
   setTimeout(initDivs, 8000);
 }
 
+//incrementa o indice da imagem mostrada no slideshow
 function plusDivs(n){
   bgImgIndex += n;
 
   changebg();
 }
 
+//muda o slideshow
 function changebg(){
 
   /*$(".cat").css("background-image", "url(img/bg" + bgImgIndex + ".jpg)");*/
@@ -95,12 +130,11 @@ function changebg(){
 
 }
 
-/*Database*/
-
+//envia um pedido para registrar um cliente
 function regClient(){
   var foto = $('#fotoUser')[0].files[0].name;
   //alert(foto);
-  var sendData = $("#register").serialize() + "&foto=" + foto;
+  var sendData = $("#register").serialize() + "&foto=" + foto; //dados inseridos no formulario de cadastro
   //alert($("#register").serialize());
   //alert(sendData);
   $.post( "serv/serv.php", sendData )
@@ -109,6 +143,7 @@ function regClient(){
   });
 }
 
+//envia um pedido para registrar um produto
 function regProd(){
   var foto = $('#fotoProd')[0].files[0].name;
   //alert(foto);
@@ -126,6 +161,7 @@ function regProd(){
   });
 }
 
+//transfere a imagem colocada no formulario de registro de produto para a pasta img
 $(document).ready(function (e) {
   $("#registerProd").on('submit',(function(e) {
     e.preventDefault();
@@ -144,6 +180,7 @@ $(document).ready(function (e) {
   }));
 });
 
+//transfere a imagem colocada no formulario de registro de PET para a pasta img
 $(document).ready(function (e) {
   $("#registerPet").on('submit',(function(e) {
     e.preventDefault();
@@ -162,6 +199,7 @@ $(document).ready(function (e) {
   }));
 });
 
+//transfere a imagem colocada no formulario de registro de servico para a pasta img
 $(document).ready(function (e) {
   $("#registerServ").on('submit',(function(e) {
     e.preventDefault();
@@ -180,6 +218,7 @@ $(document).ready(function (e) {
   }));
 });
 
+//transfere a imagem colocada no formulario de editar produto para a pasta img
 $(document).ready(function (e) {
   $("#registerProd2").on('submit',(function(e) {
     e.preventDefault();
@@ -198,7 +237,7 @@ $(document).ready(function (e) {
   }));
 });
 
-
+//envia as informacoes para registrar um novo servico
 function regServ(){
   var foto = $('#fotoServ')[0].files[0].name;
   //alert(foto);
@@ -216,6 +255,7 @@ function regServ(){
   });
 }
 
+//envia as informacoes para registrar um novo PET
 function regPet(){
   var foto = $('#fotoPet')[0].files[0].name;
   //alert(foto);
@@ -244,6 +284,7 @@ function regPet(){
   });
 }
 
+//envia as informacoes para fazer login, colocando na variavel usuarioLogado seu nome, email e permissao em formato JSON
 function logIn(){
   var sendData = $("#formLogIn").serialize();
   //alert($("#register").serialize());
@@ -261,12 +302,15 @@ function logIn(){
 
 }
 
+//envia as informacoes para obter um header de acordo com o provilegio
 function loadheader(){
   $.post( "serv/makeHeaderMenu.php", "admin=" + usuarioLogado.UserAdmin + "&nome=" + usuarioLogado.UserName )
     .done(function(data){
     document.getElementById("headerMenu").innerHTML = data;
   });
 }
+
+//pede a pagina inicial enviando o numero de vendas para que seja possivel gerar automaticamente os produtos mais buscados
 function loadMain(){
   $.post( "serv/makeMainPage.php", "numVendas=" + numVendas )
     .done(function(data){
@@ -277,9 +321,10 @@ function loadMain(){
   changebg();
 }
 
+//pega o numero de produtos ja cadastrados
 function pegarNumVendas(){
   var vendaID;
-  $.post( "serv/pegarVendaID.php")
+  $.get( "serv/pegarVendaID.php")
     .done(function(data){
     vendaID =  data;
   });
@@ -288,14 +333,16 @@ function pegarNumVendas(){
   numVendas = vendaID;
 }
 
+//recebe a pagina Sobre Nos
 function loadSobreNos(){
   //alert(numVendas);
-  $.post( "serv/makeSobreNos.php" )
+  $.get( "serv/makeSobreNos.php" )
     .done(function(data){
     document.getElementById("success").innerHTML = data;
   });
 }
 
+//envia as informacoes para gerar a pagina da loja
 function loadShop(animal, tipo){
   //alert("loadShop");
   $.post( "serv/makeLoja.php",  "animal=" + animal + "&tipo=" + tipo)
@@ -307,6 +354,7 @@ function loadShop(animal, tipo){
   showMenu2Mobile();
 }
 
+//envia as informacoes para gerar a pagina de descricao de produtos
 function loadProdDescription(id){
   //alert(id);
   if(usuarioLogado == null){
@@ -326,11 +374,13 @@ function loadProdDescription(id){
   //alert("ok");
 }
 
+//exibe uma mensagem na tela com um pop-up
 function notify(message){
   document.getElementById('id04').style.display='block';
   document.getElementById("notification").innerHTML = message;
 }
 
+//Abre o formlario para cadastrar PET
 function cadastrarPET(){
   if(usuarioLogado == null){
     notify("Voce deve efetuar login antes");
@@ -339,6 +389,7 @@ function cadastrarPET(){
   }
 }
 
+//adiciona produtos ao carrinho no formato JSON
 function Comprar(id, foto, desc, preco, qtdE){
   if(usuarioLogado == null){
     notify("Voce deve efetuar login antes");
@@ -351,6 +402,7 @@ function Comprar(id, foto, desc, preco, qtdE){
   }
 }
 
+//gera a pagina de carrinho
 function loadCarrinho(){
   var compras = JSON.parse(carrinho);
   var i;
@@ -413,6 +465,7 @@ function loadCarrinho(){
   updatePreco();
 }
 
+//envia as informacoes para registrar uma venda
 function realizarVenda(){
   var i;
   var vendaID;
@@ -424,7 +477,7 @@ function realizarVenda(){
   //vendaID = vendaID.substring(285);
   //alert(vendaID);
   numVendas = vendaID;
-  $.post( "serv/cadastrarVenda.php", "vendaid=" + vendaID + "&email=" + usuarioLogado.UserEmail)
+  $.post( "serv/cadastrarVenda.php", "vendaid=" + vendaID + "&email=" + usuarioLogado.UserEmail) //registra a venda
     .done(function(data){
     //alert(data);
   });
@@ -432,7 +485,7 @@ function realizarVenda(){
   for(i = 0 ; i < compras.produtos.length ; i++){
     var qtd= document.getElementById("qtd" + compras.produtos[i].produtoID).value;
     //alert(qtd);
-    $.post( "serv/cadastrarVendaProdutos.php", "vendaid=" + vendaID + "&produtoid=" + compras.produtos[i].produtoID + "&qtd=" + qtd)
+    $.post( "serv/cadastrarVendaProdutos.php", "vendaid=" + vendaID + "&produtoid=" + compras.produtos[i].produtoID + "&qtd=" + qtd) //registra produtos vendidos
       .done(function(data){
       //alert(data);
     });
@@ -447,6 +500,7 @@ function realizarVenda(){
   loadCarrinho();
 }
 
+//envia as informacoes para gerar a pagina Minha Conta
 function loadMinhaConta(){
   $.post( "serv/makeMinhaConta.php", "email=" + usuarioLogado.UserEmail)
     .done(function(data){
@@ -454,6 +508,7 @@ function loadMinhaConta(){
   });
 }
 
+//Altera o preco do carrinho ao aumentar ou diminuir a quantidades de itens
 function updatePreco(){
   var i;
   precototal = 0;
@@ -466,6 +521,7 @@ function updatePreco(){
   document.getElementById("precoTotal").innerHTML = "Total: R$ " + precototal;
 }
 
+//envia as informacoes do usuario logado para gerar a pagina de Agendamento já com os PETs que p usuario possui
 function loadAgendamento(){
   //alert("a");
   //alert(usuarioLogado.UserEmail);
@@ -475,6 +531,7 @@ function loadAgendamento(){
   });
 }
 
+//envia as informacoes para gerar os horarios disponiveis em uma data
 function mostrarHorarios(){
   var dataS = document.getElementById("servData").value;
   var servico = $("#formEscolherServico").serialize();
@@ -489,8 +546,7 @@ function mostrarHorarios(){
   }
 }
 
-
-
+//gera indormacoes sobre o servico que o usuario deseja
 function mostrarSobreServico(){
   var servico = $("#formEscolherServico").serialize();
   //alert(servico);
@@ -505,6 +561,7 @@ function mostrarSobreServico(){
   }
 }
 
+//marca o horario desejado pelo usuario em cinza
 function selectHorario(hora){
   $( "#horario" + horario ).removeClass( "w3-gray" );
   $( "#horario" + horario ).addClass( "w3-green" );
@@ -513,12 +570,14 @@ function selectHorario(hora){
   $( "#horario" + hora ).addClass( "w3-gray" );
 }
 
+//marca o pet selecionado pelo usuario em cinza
 function selectPet(id){
   $( "#pet" + petID ).removeClass( "w3-grayscale-max" );
   petID = id;
   $( "#pet" + id ).addClass( "w3-grayscale-max" );
 }
 
+//envia as informacoes para registrar um agendamento
 function agendar(){
   var dataS = document.getElementById("servData").value;
   var servico = $("#formEscolherServico").serialize();
@@ -539,6 +598,7 @@ function agendar(){
   }
 }
 
+//pega todas as vendas ja efetuadas na loja
 function loadVendas(){
   $.get( "serv/makeVendas.php")
     .done(function(data){
@@ -546,17 +606,19 @@ function loadVendas(){
   });
 }
 
+//abre o cadastro de PET voltando pra tela de agendamento quando finalizar o cadastro
 function cadastrarNovoPET(){
   cadastrarPET();
   goToAgendamento = 1;
 }
 
+//abre o cadastro de PET voltando pra tela de Minha Conta quando finalizar o cadastro
 function cadastrarContaPET(){
   cadastrarPET();
   goToMinhaConta = 1;
 }
 
-
+//pega as informacoes do produto que esta sendo editado
 function editarProd(id, nome, desc, tipo, animal, preco, qtdE, qtdV, foto){
   //alert("aa");
   document.getElementById('id07').style.display='block';
@@ -570,6 +632,7 @@ function editarProd(id, nome, desc, tipo, animal, preco, qtdE, qtdV, foto){
   editProdId = id;
 }
 
+//envia as informacoes para alterar um produto no BD
 function editProd(){
   var foto = $('#fotoProd2')[0].files[0].name;
   //alert(foto);
@@ -598,6 +661,7 @@ $("[type='number']").keypress(function (evt) {
   evt.preventDefault();
 });
 
+//Faz query de produtos de acordo com os parametros citados. Por exemplo exibir os mais vendidos, ou mais baratos ou recem cadastrados
 function loadDestaques(categoria, ordem){
   $.post( "serv/novidades.php", "categoria=" + categoria + "&ordem=" + ordem)
     .done(function(data){
@@ -605,6 +669,7 @@ function loadDestaques(categoria, ordem){
   });
 }
 
+//envia as informacoes para registrar um admin
 function regAdmin(){
   var sendData = $("#registerAdmin").serialize();
   var foto = $('#fotoAdmin')[0].files[0].name;
@@ -616,6 +681,7 @@ function regAdmin(){
 
 }
 
+//abre o formulario para pagar um servico
 function pagarServ(){
   if(horario == -1 || petID == -1){
     notify("Selecione um pet e um horario disponivel")

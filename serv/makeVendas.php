@@ -1,5 +1,16 @@
-<?php
 
+
+<?php
+/*<!--
+Adriller Genova Ferreira - NºUSP: 8922201
+Allan Ribeiro Polachini - NºUSP: 8922347
+Hikaro Augusto de Oliveira - NºUSP: 9066487
+Matheus de França Cabrini - NºUSP: 8937375
+Rita Raad - NºUSP: 8061452
+
+Esta pagina retorna o HTML da pagina de Vendas, disponivel no administrador, retornando todas as vendas e agendamentos ja efetuados na loja, bem como o total ganho.
+
+-->*/
 $servername = "localhost";
 $username = "2344925_valedospets";
 $password = "Adriller123@";

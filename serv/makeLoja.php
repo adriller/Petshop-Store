@@ -1,6 +1,15 @@
 
 <?php
+/*<!--
+Adriller Genova Ferreira - NºUSP: 8922201
+Allan Ribeiro Polachini - NºUSP: 8922347
+Hikaro Augusto de Oliveira - NºUSP: 9066487
+Matheus de França Cabrini - NºUSP: 8937375
+Rita Raad - NºUSP: 8061452
 
+Esta pagina retorna o HTML da loja, recebendo o animal e o tipo de produto que se deseja exibir
+
+-->*/
 $tipo = $_POST["tipo"];
 $animal = $_POST["animal"];
 

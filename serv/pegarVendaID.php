@@ -1,5 +1,16 @@
-<?php
 
+
+<?php
+/*<!--
+Adriller Genova Ferreira - NºUSP: 8922201
+Allan Ribeiro Polachini - NºUSP: 8922347
+Hikaro Augusto de Oliveira - NºUSP: 9066487
+Matheus de França Cabrini - NºUSP: 8937375
+Rita Raad - NºUSP: 8061452
+
+Esta pagina retorna o ID do ultimo produto cadastrado. Esse dado e utilizado para saber quantos produtos estão cadastrados no BD
+
+-->*/
 $servername = "localhost";
 $username = "2344925_valedospets";
 $password = "Adriller123@";

@@ -1,4 +1,19 @@
+
 <?php
+/*<!--
+Adriller Genova Ferreira - NºUSP: 8922201
+Allan Ribeiro Polachini - NºUSP: 8922347
+Hikaro Augusto de Oliveira - NºUSP: 9066487
+Matheus de França Cabrini - NºUSP: 8937375
+Rita Raad - NºUSP: 8061452
+
+Esta pagina faz o upload de fotos para a pasta img.
+Assim quando em um cadastro, é adicionado uma foto, a imagem é transferida para a pasta.
+
+Obs: TODAS as imagens devem conter nome MENOR que 255 caracteres e tamanho MENOR que 200kb.
+Caso contrário será recusado.
+
+-->*/
 if(isset($_FILES["foto"]["type"]))
 {
   $validextensions = array("jpeg", "jpg", "png");

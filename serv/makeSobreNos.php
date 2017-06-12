@@ -1,4 +1,15 @@
+
 <?php
+/*<!--
+Adriller Genova Ferreira - NºUSP: 8922201
+Allan Ribeiro Polachini - NºUSP: 8922347
+Hikaro Augusto de Oliveira - NºUSP: 9066487
+Matheus de França Cabrini - NºUSP: 8937375
+Rita Raad - NºUSP: 8061452
+
+Esta pagina retorna o HTML da pagina Sobre Nos
+
+-->*/
 echo '<div id="serv">
   <br><br><br><br>
   <div class="w3-container w3-padding-32 w3-hide-small"><br></div>
