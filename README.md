@@ -7,17 +7,11 @@ A aplicação gerenciará tanto os produtos e serviços envolvidos, quanto os cl
 ## Acesso
 O website pode ser acessado via http://valedospets.co.nf/
 
-## Pré-requisitos
-
---
-
-## Modo de execução
-
---
-
 ## Implementado com:
 
-* HTML5/CSS
+* HTML5/CSS/JavaScript
+* PHP
+* MySQL
 
 ## Autoria:
 
